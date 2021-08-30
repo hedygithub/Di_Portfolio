@@ -13,6 +13,2926 @@
     </image>
     
     <item>
+      <title>Introduction to ML Models</title>
+      <link>https://hedygithub.github.io/Di_Portfolio/notes/machine-learning/machine-learning-models/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://hedygithub.github.io/Di_Portfolio/notes/machine-learning/machine-learning-models/</guid>
+      <description>&lt;p&gt;Include: Linear Regression, LASSO and Ridge, Logistic Regression, Naive Bayes, Support Vector Machine, Decision Tree, Ensemble Overview &amp;amp; Stacking, Bagging &amp;amp; Random Forest, Boosting, AdaBoost &amp;amp; Gradient Boosting, K-Nearest Neighbors, Clustering Overview &amp;amp; K-Means&lt;/p&gt;
+&lt;p&gt;
+  &lt;i class=&#34;fas fa-clock  pr-1 fa-fw&#34;&gt;&lt;/i&gt; 2 hours to read&lt;/p&gt;
+&lt;!-- 
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/rfscVS0vtbw&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+ --&gt;
+&lt;h2 id=&#34;main-references&#34;&gt;Main References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/briandalessandro/DataScienceCourse/tree/master/ipython&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Introduction to Data Science (NYU CDS 1001)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Book: Data Science for Business&lt;/li&gt;
+&lt;li&gt;Notes of Probability and Statistics for Data Science (NYU CDS 1002)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://leomiolane.github.io/linalg-for-ds.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Optimization and Computational Linear Algebra for Data Science (NYU CDS 1002)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://bruceyanghy.github.io/posts/machine_learning_breadth/index_breadth.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Bruce Yang: The Breadth of Machine Learning: Part I&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://realpython.com/k-means-clustering-python/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;K-Means Clustering in Python: A Practical Guide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;linear-regression-a-namelinearregressiona&#34;&gt;Linear Regression &lt;a name=&#34;LinearRegression&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;basic-concepts&#34;&gt;Basic Concepts&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/def_simple_linear_model.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/def_general_linear_model.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Xs are the covariates (or features, or inputs, or independent variables)&lt;/li&gt;
+&lt;li&gt;Y is the response (or outcomes, or outputs, or dependent variable.&lt;/li&gt;
+&lt;li&gt;Noise Term (or errors): i.i.d. Gaussian random variables&lt;/li&gt;
+&lt;li&gt;Residuals: The errors in our predictions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;assumptions&#34;&gt;Assumptions&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Linearity:
+&lt;ul&gt;
+&lt;li&gt;There is a linear relationship between the covariates and the response.&lt;/li&gt;
+&lt;li&gt;Linear relationship can be assessed with scatter plots.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Normality:
+&lt;ul&gt;
+&lt;li&gt;For any fixed value of X, Y is normally distributed.&lt;/li&gt;
+&lt;li&gt;Normality can be assessed with histograms. Normality can also be statistically tested, for example with the Kolmogorov-Smirnov test.&lt;/li&gt;
+&lt;li&gt;When the variable is not normally distributed a non-linear transformation like Log-transformation may fix this issue.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;The Noise Term
+&lt;ul&gt;
+&lt;li&gt;The error term is assumed to be a random variable that has a mean of 0 and normally distributed (i.i.d. Gaussian random variables). (Residuals are statistically independent, have uniform variance, are normally distributed, have no auto-correlation)&lt;/li&gt;
+&lt;li&gt;Based on this assumption, we can construct confidence intervals and perform hypothesis tests about our parameters.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/why_linear_model_error_term_normal_distributed.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;The normally distributed assumption can be relaxed if we have enougth data.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Homoscedasticity
+&lt;ul&gt;
+&lt;li&gt;The error term has onstant variance σ2 at every value of X.&lt;/li&gt;
+&lt;li&gt;Why we need homoscedasticity?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/why_linear_model_homoscedastic.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;There are tests and plots to determine homescedasticity. Residual plots, White’s test and Breusch-Pagan., Levene&amp;rsquo;s test, Barlett&amp;rsquo;s test, and Goldfeld-Quandt Test.&lt;/li&gt;
+&lt;li&gt;If it is heteroscedastic, we can use Weighted Least Squares (WLS) to transform the problem into the homoscedastic case.&lt;/li&gt;
+&lt;li&gt;If we cannot perform weighted least squares or a variable transformation and must use ordinary least squares, the confidence intervals and hypothesis tests are no longer valid. There are techniques such as Huber-White that attempt to address these issues.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Non-Collinearity (Xs is full column rank in Linear Algerba):
+&lt;ul&gt;
+&lt;li&gt;Multicolinearity occurs when the independent variables are correlated with each other.&lt;/li&gt;
+&lt;li&gt;Why : Multicolinearity means Xs has no full column rank, and by rank-nullity theorem, dimension of ker(Xs) bigger than 0. Hence, it will have more than one soulution.&lt;/li&gt;
+&lt;li&gt;This can be check by heat map of correlation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;solutions-mean-squared-error-mse&#34;&gt;Solutions: Mean Squared Error (MSE)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Simple Linear Model:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/simple_linear_model_solutions.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;General Linear Model (Squared Error is a Convex Funcion):
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/general_linear_model_solutions.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;Unbiased Estimation (MSE):
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/why_linear_model_unbiased.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;Hypothesis Tesing &amp;amp; Confidence Interval: for β0, β1, for β0 + β1x (fitted Y)&lt;/li&gt;
+&lt;li&gt;Predicted Interval: Note that prediction intervals are slightly diﬀerent from conﬁdence intervals, since Y is random (along with the endpoints of the interval). Our prediction interval for Y will incorporate our uncertainty in estimating β0 + β1x, and the noise Z present in Y.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;useful-points-of-linear-model&#34;&gt;Useful Points of Linear Model&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;In simple linear model, the fitted line pass through the sample central point.&lt;/li&gt;
+&lt;li&gt;In simple linear model, if X and Y are standardized, correlation is equal to slope.&lt;/li&gt;
+&lt;li&gt;Centerated Resduals. In linear model, sum of residual equal to zero.&lt;/li&gt;
+&lt;li&gt;Reduced Variance:
+&lt;ul&gt;
+&lt;li&gt;R-squared: proportion of variance explained by the ﬁt&lt;/li&gt;
+&lt;li&gt;Adjusted R-squared: compared with R-squared, it isn’t guaranteed to grow as we add features (due to the n−k denominator that penalizes larger models), and thus can be more useful. Other methods for weighing goodness-of-ﬁt against model complexity include the AIC, BIC, and Mallows’s Cp.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Leverage: Slope has the highest sensitivity to points furthest from the mean&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;advantagesdisadvantages&#34;&gt;Advantages/Disadvantages&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Pros&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Simplicity and interpretability: linear regression is an extremely simple method. It is very easy to use, understand, and explain.&lt;/li&gt;
+&lt;li&gt;The best fit line is the line with minimum error from all the points, it has high efficiency&lt;/li&gt;
+&lt;li&gt;It needs little tuning&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Cons&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Linear regression only models relationships between dependent and independent variables that are linear. It assumes there is a straight-line relationship between them which is incorrect sometimes.&lt;/li&gt;
+&lt;li&gt;Linear regression is very sensitive to the outliers in the data (See Leverage).&lt;/li&gt;
+&lt;li&gt;Linear regression is very sensitive to missing data. (biased parameter)&lt;/li&gt;
+&lt;li&gt;Linear regression needs feature scaling. (for gradient descent)&lt;/li&gt;
+&lt;li&gt;If the number of the parameters are greater than the samples, then the model starts to model noise rather than relationship&lt;/li&gt;
+&lt;li&gt;Correlated features may affect performance.&lt;/li&gt;
+&lt;li&gt;Extensive feature engineering required.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;quesion-part&#34;&gt;Quesion Part&lt;/h3&gt;
+&lt;h4 id=&#34;question-11-missing-feature&#34;&gt;Question 1.1: Missing feature&lt;/h4&gt;
+&lt;p&gt;If you ﬁt a linear model that has some features missing, will your least squares estimates of the reduced model be biased?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It will be Biased, unless the omitted features are uncorrelated with the included features.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;question-12-extra-feature&#34;&gt;Question 1.2: Extra feature&lt;/h4&gt;
+&lt;p&gt;If you ﬁt a linear model that has some extra features, will your least squares estimates of the enlarged model be biased?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It will be Unbiased. Even though adding features does not introduce bias (and can decrease it), it can increase the variance of our estimates and produce larger conﬁdence intervals and prediction intervals.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;question-2-more-data&#34;&gt;Question 2: More Data&lt;/h4&gt;
+&lt;p&gt;What if you duplicate all the data and do regression on the new data set?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The mean and variance of the sample would not change therefore the beta estimation would be the same. The standard error will go down. However, since the sample size is doubled this will result in the lower p-value for the beta. This tells us that by simply doubling/duplicating the data, we could trick the regression model to have smaller confidence interval.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;lasso-and-ridge-a-namelassoandridgea&#34;&gt;LASSO and Ridge &lt;a name=&#34;LASSOandRidge&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;basic-concepts-1&#34;&gt;Basic Concepts&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/lasso_rigde.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/elastic_net.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;comparision&#34;&gt;Comparision&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;For identical features (High Corr. &amp;amp; Same Scale)&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;L1 regularization spreads weight arbitrarily (all weights same sign)&lt;/li&gt;
+&lt;li&gt;L2 &amp;amp; Elastic Net regularization spreads weight evenly&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;For linearly related features (High Corr. &amp;amp; Diff Scale)&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;L1 regularization chooses variable with larger scale, 0 weight to others&lt;/li&gt;
+&lt;li&gt;L2 &amp;amp; Elastic Net regularization prefers variables with larger scale – spreads weight proportional to scale&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;For correlated features (Corr. &amp;amp; Same Scale)&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;L1 regularization: Minor perturbations (in data) can drastically change intersection point (very unstable solution). Makes division of weight among highly correlated features (of same scale) seem arbitrary.&lt;/li&gt;
+&lt;li&gt;L2 &amp;amp; Elastic Net regularization: correlated random variables (similar scale) have similar coefficients.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;advantagesdisadvantages-of-lasso&#34;&gt;Advantages/Disadvantages of LASSO&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Pros&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Useful for feature selection&lt;/li&gt;
+&lt;li&gt;Much easier to interpret and produces simple models&lt;/li&gt;
+&lt;li&gt;Lasso will perform better in a setting where a relatively small number of predictors have substantial coefficients, and the remaining predictors have coefficients that are very small or that equal zero&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Cons&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;LASSO has no closed formula&lt;/li&gt;
+&lt;li&gt;LASSO needs feature scaling. (for fair regularization to parameters)&lt;/li&gt;
+&lt;li&gt;For n &amp;lt; p case (high dimensional case), LASSO can at most select n features. This has to do with the nature of convex optimization problem LASSO tries to minimize.&lt;/li&gt;
+&lt;li&gt;For usual case where we have correlated features which is usually the case for real word datasets, LASSO will select only one feature from a group of correlated features. That selection also happens to be arbitrary in nature. Often one might not want this behavior. Like in gene expression the ideal gene selection method is: eliminate the trivial genes and automatically include whole groups into the model once one gene among them is selected (‘grouped selection’). LASSO doesn&amp;rsquo;t help in grouped selection.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;advantagesdisadvantages-of-ridge&#34;&gt;Advantages/Disadvantages of Ridge&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Pros&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Useful for preventing overfitting. As lambda increases, the shrinkage of the ridge coefficient estimates leads to a substantial reduction in the variance of the predictions, at the expense of a slight increase in bias.&lt;/li&gt;
+&lt;li&gt;Ridge regression works best in situations where the least squares estimates have high variance. Meaning that a small change in the training data can cause a large change in the least squares coefficient estimates&lt;/li&gt;
+&lt;li&gt;Ridge regression has unique solution and has substantial computational advantages.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Cons&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ridge regression is not able to shrink coefficients to exactly zero. As a result, it cannot perform feature selection.&lt;/li&gt;
+&lt;li&gt;LASSO needs feature scaling. (for fair regularization to parameters)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;quesion-part-1&#34;&gt;Quesion Part&lt;/h3&gt;
+&lt;h4 id=&#34;question-1-feature-selection&#34;&gt;Question 1: Feature Selection&lt;/h4&gt;
+&lt;p&gt;Why LASSO has the property of &lt;em&gt;feature selection&lt;/em&gt; but Ridge does not?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;By Intuition
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/lasso_select_feature_1_1.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/lasso_select_feature_1_2.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;By Lasso Solution: (Note there is not closed form formula for Lasso, unless A has orthnormal matrix)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/lasso_select_feature_2.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;question-2-regularization&#34;&gt;Question 2: Regularization&lt;/h4&gt;
+&lt;p&gt;What is regularization?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What: Regularization is used to prevent overfitting. It significantly reduces the variance of the model, without substantial increase in its bias. It will improve the generalization of a model and decrease the complexity of a model.&lt;/li&gt;
+&lt;li&gt;How: It adds a penalty on the loss function to reduce the freedom of the model. Hence the model will be less likely to fit the noise of the training data.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;question-3-parameter-tuning&#34;&gt;Question 3: Parameter Tuning&lt;/h4&gt;
+&lt;p&gt;How to choose Lambda?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Lambda is the tuning parameter that decides how much we want to penalize the flexibility of our model. As lambda increases, the impact of the shrinkage penalty grows, and the ridge regression coefficient estimates will approach zero. Selecting a good value of lambda is critical, we can use cross validation to choose good lambda.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;logistic-regression-a-name--logisticregressiona&#34;&gt;Logistic Regression &lt;a name = &#34;LogisticRegression&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;basic-concept&#34;&gt;Basic Concept:&lt;/h3&gt;
+&lt;p&gt;Logistic Regression is a classification method, usually do binary classification 0 or 1. A logistic model is one where the log-odds(logit) of the probability of an event is a linear combination of independent variables.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/def_logistic_regression_ml.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;assumptions-1&#34;&gt;Assumptions:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The outcome is a binary variable like yes vs no, positive vs negative, 1 vs 0.&lt;/li&gt;
+&lt;li&gt;There is a linear relationship between the logit of the target and independent variables.&lt;/li&gt;
+&lt;li&gt;Others similiar to linear regression, such as multi-collinearity.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;cost-function&#34;&gt;Cost function:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Log-loss (Cross-Entropy)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/logistic_regression_logloss.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Understand Cross-Entropy from information theory:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/cross_entropy_understanding.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;MLE: For large data, the theory of MLEs can be used to show that the parameter estimates are jointly normally distributed, and conﬁdence intervals can be computed.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The difference between the cost function and the loss function: The loss function computes the error for a single training example; the cost function is the average of the loss function of the entire training set.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;advantagesdisadvantages-1&#34;&gt;Advantages/Disadvantages&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Pros&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Outputs have a nice probabilistic interpretation.&lt;/li&gt;
+&lt;li&gt;Based on MLE, we can do hypothesis testing on the parameter estimates of the model.&lt;/li&gt;
+&lt;li&gt;The algorithm can be regularized to avoid overfitting. Multi-collinearity is not really an issue and can be countered with L2 regularization to an extent.&lt;/li&gt;
+&lt;li&gt;Logistic Regression has been proven over and over to be very robust in small data problems, because it has strong assumption. For example: Learning curve analysis shows that LR performs better than DT in small data scenarios)&lt;/li&gt;
+&lt;li&gt;Logistic models can be updated easily with new data using stochastic gradient descent.&lt;/li&gt;
+&lt;li&gt;Linear combination of parameters β and the input vector will be incredibly easy to compute.&lt;/li&gt;
+&lt;li&gt;Wide spread industry comfort for logistic regression solutions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Cons&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Logistic regression tends to underperform when there are multiple or non-linear decision boundaries. They are not flexible enough to naturally capture more complex relationships.&lt;/li&gt;
+&lt;li&gt;Doesn’t handle large number of categorical features/variables well.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;extension-another-perspective-to-regularization---bayesian-map&#34;&gt;Extension: Another Perspective to Regularization - Bayesian MAP&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/regularization_MAP.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;extension-activation-functions-in-neural-network&#34;&gt;Extension: Activation Functions (in Neural Network)&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Ref.&lt;/em&gt; &lt;a href=&#34;https://missinglink.ai/guides/neural-network-concepts/7-types-neural-network-activation-functions-right/#commonnonlinear&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;7 types neural network activation functions&lt;/a&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/activation_function.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h4 id=&#34;sigmoid--logistic&#34;&gt;Sigmoid / Logistic&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Pros
+&lt;ul&gt;
+&lt;li&gt;Smooth gradient, preventing “jumps” in output values.&lt;/li&gt;
+&lt;li&gt;Output values bound between 0 and 1, normalizing the output of each neuron.&lt;/li&gt;
+&lt;li&gt;Clear predictions: for X above 2 or below -2, tends to bring the Y value (the prediction) to the edge of the curve, very close to 1 or 0. This enables clear predictions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Cons
+&lt;ul&gt;
+&lt;li&gt;Vanishing gradient: for very high or very low values of X, there is almost no change to the prediction, causing a vanishing gradient problem. This can result in the network refusing to learn further, or being too slow to reach an accurate prediction.&lt;/li&gt;
+&lt;li&gt;Outputs not zero centered.&lt;/li&gt;
+&lt;li&gt;Computationally expensive&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;tanh--hyperbolic-tangent&#34;&gt;TanH / Hyperbolic Tangent&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Pros
+&lt;ul&gt;
+&lt;li&gt;Zero centered—making it easier to model inputs that have strongly negative, neutral, and strongly positive values.&lt;/li&gt;
+&lt;li&gt;Otherwise like the Sigmoid function.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Cons
+&lt;ul&gt;
+&lt;li&gt;Like the Sigmoid function&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;relu-rectified-linear-unit&#34;&gt;ReLU (Rectified Linear Unit)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Pros
+&lt;ul&gt;
+&lt;li&gt;Computationally efficient—allows the network to converge very quickly&lt;/li&gt;
+&lt;li&gt;Non-linear: although it looks like a linear function, ReLU has a derivative function and allows for backpropagation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Cons
+&lt;ul&gt;
+&lt;li&gt;The Dying ReLU problem: when inputs approach zero, or are negative, the gradient of the function becomes zero, the network cannot perform backpropagation and cannot learn.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;extension-softmax-muti-class-activation-function&#34;&gt;Extension: Softmax (Muti-class Activation Function)&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/softMax.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pros
+&lt;ul&gt;
+&lt;li&gt;Able to handle multiple classes: only one class in other activation functions—normalizes the outputs for each class between 0 and 1, and divides by their sum, giving the probability of the input value being in a specific class.&lt;/li&gt;
+&lt;li&gt;Useful for output neurons—typically: Softmax is used only for the output layer, for neural networks that need to classify inputs into multiple categories.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Usage in torch:
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://pytorch.org/docs/stable/generated/torch.nn.NLLLoss.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;NLLLoss&lt;/a&gt;: The negative log likelihood loss. It is useful to train a classification problem with C classes. The input given through a forward call is expected to contain log-probabilities of each class. Obtaining log-probabilities in a neural network is easily achieved by adding a &lt;em&gt;LogSoftmax&lt;/em&gt; layer in the last layer of your network.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CrossEntropyLoss&lt;/a&gt;: If you prefer not to add an extra layer (&lt;em&gt;LogSoftmax&lt;/em&gt;), you may use &lt;em&gt;CrossEntropyLoss&lt;/em&gt; instead. &lt;em&gt;CrossEntropyLoss&lt;/em&gt; combines nn.LogSoftmax() and nn.NLLLoss() in one single class.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;niave-bayes-a-namenaivebayesa&#34;&gt;Niave Bayes &lt;a name=&#34;NaiveBayes&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;basic-concepts--assumptions&#34;&gt;Basic Concepts &amp;amp; Assumptions&lt;/h3&gt;
+&lt;p&gt;Naive Bayes is a &lt;strong&gt;generative model&lt;/strong&gt;, and is used for classification problems, especially text classification.
+Many language processing tasks can be viewed as tasks of classiﬁcation. Text categorization,in which an entire text is assigned a class from a ﬁnite set, includes such tasks as sentiment analysis, spam detection, language identiﬁcation, and authorship attribution. Sentiment analysis classiﬁes a text as reﬂecting the positive or negative orientation (sentiment) that a writer expresses toward some object.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Bayes&#39; Rule:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/bayes_rules.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;Assumptions:
+&lt;ul&gt;
+&lt;li&gt;the bag of words assumption (position doesn’t matter)&lt;/li&gt;
+&lt;li&gt;the conditional independence assumption (words are conditionally independent of each other given the class; the occurrence of a certain feature is independent of the occurrence of other features)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/naive_bayes_assumptions.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;laplace-smoothing-variance-bias-trade-off&#34;&gt;Laplace Smoothing (Variance-Bias Trade-off)&lt;/h3&gt;
+&lt;p&gt;If categorical variable has a category (in test data set), which was not observed in training data set, then model will assign a 0 (zero) probability and will be unable to make a prediction. This is often known as “Zero Frequency”. To keep a model from assigning zero probability to these unseen events, we’ll have to shave off a bit of probability mass from some more frequent events and give it to the events we’ve never seen. This modiﬁcation is called smoothing or discounting. Those method will decrease variance at the cost of increasing bias.
+The simplest way to do smoothing is to add one to all the counts, which is Laplace Smotthing.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/laplace_smoothing.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;pseudo-code-of-naive-bayes-with-laplace-smoothing&#34;&gt;Pseudo Code of Naive Bayes with Laplace Smoothing&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/naive_bayes_implement.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;advantagesdisadvantages-2&#34;&gt;Advantages/Disadvantages&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Pros&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It is easy and fast to predict class of test data set. Needs less training time. Good with moderate to large training data sets. It could be used for making predictions in real time.&lt;/li&gt;
+&lt;li&gt;It also perform well in multi class prediction.&lt;/li&gt;
+&lt;li&gt;Naive Bayes Classifier and Collaborative Filtering together could build a Recommendation System that uses machine learning and data mining techniques to filter unseen information and predict whether a user would like a given resource or not&lt;/li&gt;
+&lt;li&gt;Good when dataset contains many features.&lt;/li&gt;
+&lt;li&gt;When assumption of independence holds, a Naive Bayes classifier performs better compare to other models like logistic regression and you need less training data.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Cons&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;On the other side naive Bayes is also known as a bad estimator, so the probability outputs from predict_proba are not to be taken too seriously.&lt;/li&gt;
+&lt;li&gt;Another limitation of Naive Bayes is the assumption of independent predictors. In real life, it is almost impossible that we get a set of predictors which are completely independent.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;extension-conjugate-priorhttpsenwikipediaorgwikiconjugate_prior&#34;&gt;Extension: &lt;a href=&#34;https://en.wikipedia.org/wiki/Conjugate_prior&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Conjugate Prior&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;In Bayesian probability theory, if the posterior distributions p(θ | x) are in the same probability distribution family as the prior probability distribution p(θ), the prior and posterior are then called conjugate distributions, and the prior is called a conjugate prior for the likelihood function p(x | θ).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/conjugate_priors.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Examples&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Beta prior, Bernoulli samples&lt;/li&gt;
+&lt;li&gt;Normal prior, Normal samples&lt;/li&gt;
+&lt;li&gt;Gamma prior, Poisson samples&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Understanding Laplace Smoothing
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/dirichlet_priors.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+
+The beta distribution is the conjugate prior of the Binomial distribution. It is a special form of the Dirichlet distribution, where X has only two discrete values. The Dirichlet prior has a specific application to Naïve Bayes because X is often defined as a multinomial. In many cases we only want to deal with a binary random variable, which makes the beta distribution appropriate.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;support-vector-machine-a-namesvma&#34;&gt;Support Vector Machine &lt;a name=&#34;SVM&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Ref.&lt;/em&gt; &lt;a href=&#34;https://en.wikipedia.org/wiki/Support-vector_machine&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wikipedia: Support Vector Machine&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;basic-concepts-2&#34;&gt;Basic Concepts&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The goal of SVM is to design a hyperplane that classifies all training vectors in 2 classes. The best choice will be the hyperplane that leaves the maximum margin from both classes. (Hyperplane: is a linear decision surface that splits the space into 2 parts, it is obvious that a hyperplane is a binary classifier. A hyperplane is a p-1 dimension: in two dimensions, a hyperplane is a line, in three dimensions, a hyperplane is a plane.)&lt;/li&gt;
+&lt;li&gt;As a rule of thumb, SVMs are great for relatively small data sets with fewer outliers.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/svm_image.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;hard-margin-and-soft-margin-hinge-loss&#34;&gt;Hard Margin and Soft Margin (hinge-loss)&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/svm_hard.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/svm_soft.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;solving-the-problem-through-dual-problem-and-quadratic-programing&#34;&gt;Solving the Problem through Dual Problem and Quadratic Programing&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/svm_solve.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;kernel-trick&#34;&gt;Kernel Trick&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/kernel_trick.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;advantagesdisadvantages-3&#34;&gt;Advantages/Disadvantages&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Pros&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Strong geometric interpretation&lt;/li&gt;
+&lt;li&gt;Easily extendable to non-linear decision surfaces, with kernel trick&lt;/li&gt;
+&lt;li&gt;Only use support vextor, the risk of overfitting is less in SVM.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Cons&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Choose a &amp;ldquo;good&amp;rdquo; kernel function is not easy.&lt;/li&gt;
+&lt;li&gt;Can not give probability output.&lt;/li&gt;
+&lt;li&gt;Difficult to understand and interpret the final model, varaible weights and individual impact.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;extension-the-representaion-theory-and-kernelization&#34;&gt;Extension: The Representaion Theory and Kernelization&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/representer_theorem.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/representer_theorem_reparam.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/kernelization.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;decision-tree-a-namedecisiontreea&#34;&gt;Decision Tree &lt;a name=&#34;DecisionTree&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Decision tree uses a tree structure to specify sequences of decisions and consequences. It breaks down a dataset into smaller subsets based on the important features.&lt;/li&gt;
+&lt;li&gt;There are Regression Tree and Classification Tree.&lt;/li&gt;
+&lt;li&gt;A decision tree employs a structure of nodes and branches: Root node, Internal Node, and Leaf Node.&lt;/li&gt;
+&lt;li&gt;Tree-based methods tend to perform well on unprocessed data (i.e. without normalizing, centering, scaling features).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;finding-and-selecting-informative-attributes&#34;&gt;Finding and selecting informative attributes&lt;/h3&gt;
+&lt;h4 id=&#34;entopy-and-information-gain&#34;&gt;Entopy and Information Gain&lt;/h4&gt;
+&lt;p&gt;Character: Prefer feature(C) with more unique values(c)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Entropy: the average amount of information that is encoded by a random variable X.&lt;/li&gt;
+&lt;li&gt;Conditional Entropy: Given we know X, how much extra information is needed to encode Y.&lt;/li&gt;
+&lt;li&gt;Information Gain (IG): How much new information do we gain on Y by conditioning on X.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/dt_information_gain.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;gain-ration&#34;&gt;Gain Ration&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Gain Ration = IG(C) / IV(C)&lt;/li&gt;
+&lt;li&gt;IV intrinsic value = count unique(c of C)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;combined&#34;&gt;Combined&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;First, IG &amp;gt; Constant A&lt;/li&gt;
+&lt;li&gt;Then, Rank by Gain Ratio&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;pseudocode&#34;&gt;Pseudocode&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/dt_pseudocode.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;control-complexity&#34;&gt;Control Complexity&lt;/h3&gt;
+&lt;h4 id=&#34;hyperparams-tuning&#34;&gt;Hyperparams Tuning&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Depth of Tree (+)&lt;/li&gt;
+&lt;li&gt;Min Leaf Size (-)&lt;/li&gt;
+&lt;li&gt;Min Split Size (-)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/dt_complexity_control.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;pruning&#34;&gt;Pruning&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Pre-Pruning&lt;/li&gt;
+&lt;li&gt;Post-Pruning&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;advanced-parts&#34;&gt;Advanced Parts&lt;/h3&gt;
+&lt;h4 id=&#34;feature-exploration&#34;&gt;Feature Exploration&lt;/h4&gt;
+&lt;p&gt;Often times the Decision Tree is useful as tool for testing for feature interactions as well as ranking features by their ability to predict the target variable.
+Scikit-learn’s DecisionTree fit function automatically returns normalized information gain for each feature (also called the Gini Importance).&lt;/p&gt;
+&lt;h4 id=&#34;numeric-variables&#34;&gt;Numeric Variables&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Features: Use Split Points to discretize it. Try all split points, and choose the highest IG.&lt;/li&gt;
+&lt;li&gt;Target Variable(Regression): Measure Purity
+&lt;ul&gt;
+&lt;li&gt;Variance&lt;/li&gt;
+&lt;li&gt;Weighted Average Variance Reduction&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;probability-estimation&#34;&gt;Probability Estimation&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Frequency-Based Estimation (FBE): If we are satisfied to assign the same class probability to every member of the segment corresponding to a tree leaf, we can use instance counts at each leaf to compute a class probability estimate. p(c) = Count(c)  / (Count(all)&lt;/li&gt;
+&lt;li&gt;Frequency-Based Estimation with Laplace correction: p(c) = (Count(c) + k) / (Count(all) + Unique(c) * k). It is useful in small samples. As number of instance increases: converge to the FBE.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;advantagesdisadvantages-4&#34;&gt;Advantages/Disadvantages&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Pros&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Easy to interpret (though cumbersome to visualize if large).&lt;/li&gt;
+&lt;li&gt;Easy to implement just a series of if-­then rules. Prediction is cheap: total operations = depth of tree.&lt;/li&gt;
+&lt;li&gt;No feature engineering necessary.&lt;/li&gt;
+&lt;li&gt;Can often handle categorical/text features as is (software dependent).&lt;/li&gt;
+&lt;li&gt;Automatically detect non-­linearities and interactions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Cons&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Easy to overfit: flexibility of algorithm requires careful tuning of parameters and leaf pruning.&lt;/li&gt;
+&lt;li&gt;Decision Tree algorithms are greedy: not very stable and small changes in daat can give very different solutions.&lt;/li&gt;
+&lt;li&gt;Difficulty learning in skewed target distributions (entropy is very small at the begining).&lt;/li&gt;
+&lt;li&gt;Not well suited for problems as number of samples shrinks while number of features grows.&lt;/li&gt;
+&lt;li&gt;Decision Tree is often relatively inaccurate when dataset is samll (less assumptions). Many other predictors perform better with similar data.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;question-part&#34;&gt;Question Part&lt;/h3&gt;
+&lt;h4 id=&#34;question-1-logistic-regression-versus-tree-induction&#34;&gt;Question 1: Logistic Regression versus Tree Induction&lt;/h4&gt;
+&lt;p&gt;Classification trees and linear classifiers both use linear decision boundaries, what are the differences between them:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Decision Boundary Diresctio: A classification tree uses decision boundaries that are &lt;strong&gt;perpendicular&lt;/strong&gt; to the instancespace axes, whereas the linear classifier can use decision boundaries of &lt;strong&gt;any direction or orientation&lt;/strong&gt;. This is a direct consequence of the fact that classification trees select &lt;strong&gt;a single attribute&lt;/strong&gt; at a time whereas linear classifiers use &lt;strong&gt;a weighted combination of all attributes&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Subspace Counts:
+&lt;ul&gt;
+&lt;li&gt;A classification tree is a “piecewise” classifier that segments the instance space recursively when it has to, using &lt;strong&gt;a divide-and-conquer approach&lt;/strong&gt;. In principle, a classification tree can &lt;strong&gt;cut up the instance space arbitrarily finely into very small regions&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;A linear classifier places a single decision surface through the entire space. It has great freedom in the orientation of the surface, but it is limited to &lt;strong&gt;a single division into two segments&lt;/strong&gt;. This is a direct consequence of there being &lt;strong&gt;a single (linear) equation that uses all of the variables&lt;/strong&gt;, and must fit the entire data space.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ensemble-overview--stacking-a-namestackinga&#34;&gt;Ensemble Overview &amp;amp; Stacking &lt;a name=&#34;Stacking&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;ensemble&#34;&gt;Ensemble&lt;/h3&gt;
+&lt;p&gt;Ensemble methods are meta-algorithms that combine several machine learning techniques into one predictive model in order to &lt;strong&gt;decrease variance (bagging), bias (boosting), or improve predictions (stacking)&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;typtes-of-ensemble&#34;&gt;Typtes of Ensemble&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Stacking
+&lt;ul&gt;
+&lt;li&gt;Stacking is an ensemble learning technique that combines multiple classification or regression models via a meta-classifier or a meta-regressor.&lt;/li&gt;
+&lt;li&gt;Often considers heterogeneous base learners.&lt;/li&gt;
+&lt;li&gt;Example: Taking a weighted combination of the predictions of a total of S different classifiers.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Bagging
+&lt;ul&gt;
+&lt;li&gt;Decrease variance&lt;/li&gt;
+&lt;li&gt;The base learners are generated &lt;strong&gt;in parallel&lt;/strong&gt; through &lt;strong&gt;resampling&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Often considers homogeneous base learners.&lt;/li&gt;
+&lt;li&gt;The basic motivation of parallel methods is to exploit &lt;strong&gt;independence&lt;/strong&gt; between the base learners since the error can be reduced dramatically by averaging.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Boosting
+&lt;ul&gt;
+&lt;li&gt;Decrease bias&lt;/li&gt;
+&lt;li&gt;The base learners are generated &lt;strong&gt;sequentially&lt;/strong&gt;, using &lt;strong&gt;cumulative errors&lt;/strong&gt; to inform or weight additional classifiers.&lt;/li&gt;
+&lt;li&gt;Often considers homogeneous  base learners.&lt;/li&gt;
+&lt;li&gt;The basic motivation of sequential methods is to exploit the &lt;strong&gt;dependence&lt;/strong&gt; between the base learners. The overall performance can be boosted by weighing previously mislabeled examples with higher weight.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/baging_boosting.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;stacking-pseudocode&#34;&gt;Stacking Pseudocode&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/stacking_pseudocode.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;stacking-training-data&#34;&gt;Stacking Training Data&lt;/h3&gt;
+&lt;p&gt;In order to generalize appropriately, the meta-model needs to be built from data that is seperate from the base-models. Otherwise, the system risks overfitting. Note that this is best accomplished when sample sizes are large.&lt;/p&gt;
+&lt;h3 id=&#34;quesion-part-2&#34;&gt;Quesion Part&lt;/h3&gt;
+&lt;h4 id=&#34;question-1-why-stacking-work&#34;&gt;Question 1: Why stacking work?&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Case 1: In the case of simple averaging, the weighted average model de-noises individual models that are poentially overfir around the decision boundaries.&lt;/li&gt;
+&lt;li&gt;Case 2: Different models perform better on different parts of the input space S. For example: more complex model will do better on regions of X with higher support(more samples); more biased models may then be better where there is lower support (less samples). Then, Stacking  learns  the  best   of  both  worlds.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;bagging--random-forest-a-namebagginga&#34;&gt;Bagging &amp;amp; Random Forest &lt;a name=&#34;Bagging&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;bootstraping-statistics&#34;&gt;Bootstraping (statistics)&lt;/h3&gt;
+&lt;p&gt;“Bootstrapping is a statistical procedure that resamples a single dataset to create many simulated samples. This process allows for the calculation of standard errors, confidence intervals, and hypothesis testing” (Forst)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/bootstrape.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;bagging&#34;&gt;Bagging&lt;/h3&gt;
+&lt;p&gt;Bootstrap aggregation, or bagging is a general-purpose procedure for reducing the variance of a statistical learning method.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/bagging.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;randomforests&#34;&gt;RandomForests&lt;/h3&gt;
+&lt;h4 id=&#34;basic-concept-1&#34;&gt;Basic Concept&lt;/h4&gt;
+&lt;p&gt;The Random Forest algorithm is probably the most well known and utilized implementation of the Bagging technique.
+A Random Forest is an ensemble of Decision Trees, where both &lt;strong&gt;bagging&lt;/strong&gt; and &lt;strong&gt;random feature selection&lt;/strong&gt; are used to add randomness and reduce the variance of the forest.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/random_forest.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h4 id=&#34;why-do-random-forests-work&#34;&gt;Why do Random Forests work&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Bias
+&lt;ul&gt;
+&lt;li&gt;A single decision tree is unstable, and has high variance, but can also have extremely low bias. It can detact a all manner of interaction effects, specially when allowed to grow very deep&lt;/li&gt;
+&lt;li&gt;The  bias  of  the  average  of  identically  distributed  trees  is  equal  to  the  bias  of  the   individual  trees  (in  this  case,  very  low).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Variance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/random_forest_work.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;hyperparameters-tuning&#34;&gt;Hyperparameters Tuning:&lt;/h4&gt;
+&lt;p&gt;Usually over-fit the individual trees, and use some hold-out method to optimize forest level parameters.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tree Level Paramters
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;max_depth&lt;/em&gt;: the size of the tree. Usually you don’t want to limit this&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;min_sample_split&lt;/em&gt;: the number of instances in an intermediate node, before splitting (usually good to set to 1)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Forest Level Parameters
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;n_estimators&lt;/em&gt;: the number of trees (and bootstrapped samples) to be used&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;max_features&lt;/em&gt;: the number of features that will be randomly sampled for each tree.
+The default in RandomForestClassifier is max_features=sqrt(total_features), which is generally a good suggestion. The default for n_estimators is 10, which is probably too low.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;feature-importance&#34;&gt;Feature Importance&lt;/h4&gt;
+&lt;p&gt;Much like with Decision Trees, the Random Forest Classifier has a built in mechanism for evaluating feature importance. Quoting the sklearn documentation: &lt;em&gt;Features used at the top of the tree contribute to the final prediction of a larger fraction of the input samples. The expected fraction of the samples they contribute to can thus be used as an estimate of the relative importance of the features.&lt;/em&gt;
+The above computation is made for each feature in each tree and then averaged over all trees in the forest. The Random Forest Classifier returns an attribute with an importance score for each feature, and these scores sum to 1 across all features.&lt;/p&gt;
+&lt;h4 id=&#34;out-of-bag-error&#34;&gt;Out-of-Bag Error&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Cross-validation with Random Forest&amp;rsquo;s can be painfully slow. That&amp;rsquo;s because each cross-validation step requires building k * n_estimators trees.&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Out-of-bag&amp;rdquo; error calculation. Each tree is built from a &lt;strong&gt;bootstrap sample&lt;/strong&gt; of the data, so that for each tree, some portion of the data is not used for that tree. The Random Forest method computes an out-of-bag prediction for each record  [𝑥𝑖,𝑦𝑖]  by averaging the prediction  𝑓𝑏(𝑥𝑖,𝑦𝑖)  on record  𝑖  for the bootstrap iterations in which record  𝑖  was not chosen in the bootstrap. The out-of-bag prediction can then be used to compute out-of-sample error for model selection and validation. This method should be equivalent to  𝑁-fold cross-validation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;advantagesdisadvantages-5&#34;&gt;Advantages/Disadvantages&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Pros&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A single decision tree tends to overfit the data. The process of averaging or combining the results of different decision trees helps to overcome the problem of overfitting.&lt;/li&gt;
+&lt;li&gt;Random forests are extremely flexible and have very high accuracy.&lt;/li&gt;
+&lt;li&gt;They also do not require preparation of the input data. You do not have to scale the data.&lt;/li&gt;
+&lt;li&gt;It also maintains accuracy even when a large proportion of the data are missing.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Cons&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The main disadvantage of Random forests is their complexity. They are much harder and time-consuming to construct than decision trees.&lt;/li&gt;
+&lt;li&gt;They are less intuitive. When you have a large collection of decision trees it is hard to have an intuitive grasp of the relationship existing in the input data.&lt;/li&gt;
+&lt;li&gt;In addition, the prediction process using random forests is time-consuming than other algorithms.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;question-part-1&#34;&gt;Question Part&lt;/h3&gt;
+&lt;h4 id=&#34;question-1-bootstraping-versus-traditional-statistical-method&#34;&gt;Question 1: Bootstraping versus Traditional Statistical Method&lt;/h4&gt;
+&lt;p&gt;Please compare Bootstraping versus Traditional Statistical Method, and state why we use former?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Results derived from bootstraping are basically identical to those of the traditional approach.&lt;/li&gt;
+&lt;li&gt;Both rely largely on the observed data. If the observed data contains outliers, both may skew the estimates.&lt;/li&gt;
+&lt;li&gt;The traditional procedure requires one to have a test statistic that satisfies particular assumptions in order to achieve valid results, and this is largely dependent on the experimental design. The traditional approach also uses theory to tell what the sampling distribution should look like, but the results fall apart if the assumptions of the theory are not met.&lt;/li&gt;
+&lt;li&gt;The bootstrapping method, on the other hand, takes the original sample data and then resamples it to create many [simulated] samples. This approach does not rely on the theory since the sampling distribution can simply be observed, and one does not have to worry about any assumptions. This technique allows for accurate estimates of statistics, which is crucial when using data to make decisions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;boosting-adaboost--gradient-descent-a-nameboostinga&#34;&gt;Boosting, AdaBoost &amp;amp; Gradient Descent &lt;a name=&#34;Boosting&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;boosting&#34;&gt;Boosting&lt;/h3&gt;
+&lt;p&gt;Boosting works in a similar way with bagging, except that the trees are grown sequentially: each tree is grown using information from previously grown trees. Boosting does not involve bootstrap sampling; instead each tree is ﬁt on a modiﬁed version of the original data set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/boosting.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/boosting_params.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;adaboost&#34;&gt;AdaBoost&lt;/h3&gt;
+&lt;p&gt;Adaboost, shortened for Adaptive Boosting, is an machine learning approach.The idea is to &lt;strong&gt;set weights to both classifiers and data points (samples)&lt;/strong&gt; in a way that forces classifiers to concentrate on &lt;strong&gt;observations that are difficult to correctly classify&lt;/strong&gt;. This process is done sequentially in that the two weights are adjusted at each step as iterations of the algorithm proceed. This is why Adaboost is referred to as a &lt;em&gt;sequential ensemble method&lt;/em&gt;: ensemble referring to a type of learning that combines several models to improve the final predictive performance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/adaBoost_pseudocode.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h4 id=&#34;mathmatical-process-in-_watermelon-book-p173177_&#34;&gt;Mathmatical Process in &lt;em&gt;Watermelon Book P173~177&lt;/em&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;loss-function&#34;&gt;Loss Function&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Why Not 0-1 loss: The 0-1 loss function has nice properties that we would like to take advantage of for many problems. However, because it is not convex, it is difficult to optimize using the 0-1 loss, so we often turn to convex &lt;strong&gt;surrogate loss functions&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;What Surrogate Loss Function AdaBoost Use: Exponential Loss&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;regularization&#34;&gt;Regularization&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;which weak classifier might work best to solve their given classification problem&lt;/li&gt;
+&lt;li&gt;The number of boosting rounds that should be used during the training phase.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;advantagesdisadvantages-6&#34;&gt;Advantages/Disadvantages&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Pros&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AdaBoost is a powerful classification algorithm that has enjoyed practical success with applications in a wide variety of fields, such as biology, computer vision, and speech processing.&lt;/li&gt;
+&lt;li&gt;Unlike other powerful classifiers, such as SVM, AdaBoost can achieve similar classification results with much less tweaking of parameters or settings (unless of course you choose to use SVM with AdaBoost).&lt;/li&gt;
+&lt;li&gt;It enables a user to add several weak classifiers to the family of weak classifiers that should be used at each round of boosting. The AdaBoost algorithm will select the weak classifier that works best at that round of boosting.
+&lt;strong&gt;Cons&lt;/strong&gt;:&lt;/li&gt;
+&lt;li&gt;AdaBoost can be sensitive to noisy data and outliers. In some problems, however, it can be less susceptible to the overfitting problem than most learning algorithms.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;gradient-boosting&#34;&gt;Gradient Boosting&lt;/h3&gt;
+&lt;p&gt;Gradient boosting is a machine learning technique for regression and classification problems, which produces a prediction model in the form of an ensemble of weak prediction models, typically decision trees. It builds the model in a stage-wise fashion like other boosting methods do, and it generalizes them by allowing optimization of an arbitrary differentiable loss function.&lt;/p&gt;
+&lt;h4 id=&#34;loss-function-1&#34;&gt;Loss Function&lt;/h4&gt;
+&lt;p&gt;It depends on the model, could be square loss or exponential loss. For any loss function, we can derive a gradient boosting algorithm. Absolute loss and Huber loss are more robust to outliers than square loss.&lt;/p&gt;
+&lt;h4 id=&#34;inroduction-of-gradient&#34;&gt;Inroduction of &amp;ldquo;gradient&amp;rdquo;&lt;/h4&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/gradient_boosting_intro.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h4 id=&#34;pseudocode-1&#34;&gt;Pseudocode&lt;/h4&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/gradient_boosting_pseudocode.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h4 id=&#34;regularization-1&#34;&gt;Regularization&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Gradient boosting iterations M (i.e. the number of trees in the model when the base learner is a decision tree). Increasing M reduces the error on training set, but setting it too high may lead to overfitting. An optimal value of M is often selected by monitoring prediction error on a separate validation data set. Besides controlling M, several other regularization techniques are used.&lt;/li&gt;
+&lt;li&gt;Depth of the trees. The higher this value the more likely the model will overfit the training data.&lt;/li&gt;
+&lt;li&gt;Shrinkage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/gradient_boosting_shrinkage.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;gradient-boosting-decision-trees-gbdt&#34;&gt;Gradient Boosting Decision Trees (GBDT)&lt;/h4&gt;
+&lt;h5 id=&#34;xgboost&#34;&gt;XGBoost&lt;/h5&gt;
+&lt;p&gt;XGBoost from the university of washington and published in 2016 introduces two techniques to improve performance.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Firstly the idea of &lt;strong&gt;Weighted Quantile Sketch&lt;/strong&gt;, which is an approximation algorithm for determining how to make splits in a decision tree (candidate splits).&lt;/li&gt;
+&lt;li&gt;The second is &lt;strong&gt;Sparsity-aware split&lt;/strong&gt; finding which works on sparse data, data with many missing cells.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;lightgbm&#34;&gt;LightGBM&lt;/h5&gt;
+&lt;p&gt;LightGBM from Microsoft and published in 2017 also introduces two techniques to improve performance.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Gradient-based One-Side Sampling&lt;/strong&gt; which inspects the most informative samples while skipping the less informative samples.&lt;/li&gt;
+&lt;li&gt;And &lt;strong&gt;Exclusive Feature Bundling&lt;/strong&gt; which takes advantage of sparse datasets by grouping features in a near lossless way.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;advantagesdisadvantages-7&#34;&gt;Advantages/Disadvantages&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Pros&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Often provides predictive accuracy that cannot be beat. If you are able to use correct tuning parameters, they generally give somewhat better results than Random Forests.&lt;/li&gt;
+&lt;li&gt;Lots of flexibility: can optimize on different loss functions and provides several hyperparameter tunning options that make the function fit very flexible.&lt;/li&gt;
+&lt;li&gt;No data preprocessing required, often works great with categorical and numerical values as is.&lt;/li&gt;
+&lt;li&gt;Handles missing data, imputation not required.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Cons&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GBMs will continue improving to minimize all errors. This can overemphasize outliers and cause overfitting. Must use cross-validation to neuralize.&lt;/li&gt;
+&lt;li&gt;Computationally expensive, GBMs often require many trees (&amp;gt;1000) which can be time and memory exhaustive.&lt;/li&gt;
+&lt;li&gt;The high flexibility results in many parameters that interact and influence heavily the behavior of the approach. This requires a large grid search during tunning.&lt;/li&gt;
+&lt;li&gt;Less interpretable although this is easily addressed with various tools (varaible importance, partial dependence plots, SHAP, LIME, etc.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;k-nearest-neighbors-a-nameknna&#34;&gt;K-Nearest Neighbors &lt;a name=&#34;knn&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;basic-concept-2&#34;&gt;Basic Concept&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/knn_def.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;characters&#34;&gt;Characters&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Non-­parametric
+You don&amp;rsquo;t have to make any assumptions about the functional form that estimates E[X|X]. This makes it very powerful for estimating any arbitary decision curve, but extreme flexibility always risks overfitting.&lt;/li&gt;
+&lt;li&gt;Instance-­based learning
+You technically don&amp;rsquo;t need to train it. Estimation of E[Y|X] is done locally and a scoring time by taking the average of Y of the k nearest neighbors of the instance. There is effectively no model, just all of the training data stored in memory.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;parameters&#34;&gt;Parameters&lt;/h3&gt;
+&lt;h4 id=&#34;number-of-neighbors&#34;&gt;Number of Neighbors&lt;/h4&gt;
+&lt;p&gt;The less, the more likely to over-fitting&lt;/p&gt;
+&lt;h4 id=&#34;distance&#34;&gt;Distance&lt;/h4&gt;
+&lt;h5 id=&#34;properties-similiar-to-norm&#34;&gt;Properties (similiar to norm)&lt;/h5&gt;
+&lt;p&gt;Given two points a and b, and a distance function d():&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;d(a,b) ≥ 0 … non-­negativity&lt;/li&gt;
+&lt;li&gt;d(a,b) = 0 only if and only if a=b&lt;/li&gt;
+&lt;li&gt;d(a,b) = (b,a)  …  symmetry&lt;/li&gt;
+&lt;li&gt;d(a,c) ≤ d(a,b)+d(b,c) … triangle inequality&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;types&#34;&gt;Types&lt;/h5&gt;
+&lt;p&gt;Lp-­norm  distance  measures&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Manhattan Distance&lt;/li&gt;
+&lt;li&gt;Euclidean Distance&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;scale-matters&#34;&gt;Scale Matters&lt;/h5&gt;
+&lt;p&gt;Features with higher magnitude tend to dominate distance metrics. It may be required to normalize the data first.&lt;/p&gt;
+&lt;h3 id=&#34;chanllenges&#34;&gt;Chanllenges&lt;/h3&gt;
+&lt;h4 id=&#34;expensive-search&#34;&gt;Expensive Search&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;For every instance, it requires O(N) to know its neighbors when a brute force search is used (k-d tree will be faster).&lt;/li&gt;
+&lt;li&gt;How to alleviate it: Approximate Neatest Neighbors&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;curse-of-dimensionality-coda&#34;&gt;Curse of Dimensionality (CODA)&lt;/h4&gt;
+&lt;p&gt;When using Lp-­norm distance measures, averaged distances increase as the dimensionality increases. In a high-dimensional space, most parts are far from all other points.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;As the dimension increases, the ratio of the difference between max and min to the min distance to the center tends to 0. This means all points are equally far apart, leaving no nearest neighbors to learn from.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;advantagesdisadvantages-8&#34;&gt;Advantages/Disadvantages&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Pros&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Easy to interpret output&lt;/li&gt;
+&lt;li&gt;Naturally handles multi-class cases&lt;/li&gt;
+&lt;li&gt;Do not need to train&lt;/li&gt;
+&lt;li&gt;Predictive power, can do well in practice with enough representative data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Cons&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Large search problem to find nearest neighbors&lt;/li&gt;
+&lt;li&gt;Storage of data&lt;/li&gt;
+&lt;li&gt;Curse of dimensionality&lt;/li&gt;
+&lt;li&gt;Must know we have a meaningful distance function&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;extension-approximate-neatest-neighbors&#34;&gt;Extension: Approximate Neatest Neighbors&lt;/h3&gt;
+&lt;h4 id=&#34;partition-instead-of-searching-through-all-points-we-will-iteratively-partition-the-x-space-randomly-to-create-subsapces-and-search-only-within-those-subspaces-we-continue-partition-until-weve-reached-designate-stopping-criteria&#34;&gt;Partition: Instead of searching through all points, we will iteratively partition the X space randomly to create subsapces, and search only within those subspaces. We continue partition until we’ve reached designate stopping criteria.&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Problem of Partition:
+You are limited to just the neighbors in the terminal node of the tree.&lt;/li&gt;
+&lt;li&gt;Solution:
+You don&amp;rsquo;t have to use a single terminal node. Nearby splits (regions) can also be considered.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/knn_extension.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;clustering-overview--k-means-a-namekmeansa&#34;&gt;Clustering Overview &amp;amp; K-Means &lt;a name=&#34;kmeans&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;clustering&#34;&gt;Clustering&lt;/h3&gt;
+&lt;p&gt;Clustering is a set of techniques used to partition data into groups, or clusters. Clusters are loosely defined as groups of data objects that are more similar to other objects in their cluster than they are to data objects in other clusters. In practice, clustering helps identify two qualities of data:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Meaningfulness: Meaningful clusters expand domain knowledge.&lt;/li&gt;
+&lt;li&gt;Usefulness: Useful clusters, on the other hand, serve as an intermediate step in a data pipeline.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;types-of-clustering&#34;&gt;Types of Clustering&lt;/h3&gt;
+&lt;h4 id=&#34;partitional-clustering&#34;&gt;Partitional Clustering&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Partitional clustering divides data objects into non-overlapping groups.&lt;/li&gt;
+&lt;li&gt;These techniques require the user to &lt;strong&gt;specify the number of clusters&lt;/strong&gt;, indicated by the variable k.&lt;/li&gt;
+&lt;li&gt;Many partitional clustering algorithms work through an &lt;strong&gt;iterative process&lt;/strong&gt; to assign subsets of data points into k clusters. Two examples of partitional clustering algorithms are k-means and k-medoids.&lt;/li&gt;
+&lt;li&gt;These algorithms are both non-deterministic, meaning they could produce different results from two separate runs even if the runs were based on the same input.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;advantagesdisadvantages-9&#34;&gt;Advantages/Disadvantages&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;Pros&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;They work well when clusters have a spherical shape.&lt;/li&gt;
+&lt;li&gt;They’re scalable with respect to algorithm complexity.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Cons&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;They’re not well suited for clusters with &lt;strong&gt;complex shapes and different sizes&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;They break down when used with clusters of &lt;strong&gt;different densities&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;density-based-clustering&#34;&gt;Density-Based Clustering&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Density-based clustering determines cluster assignments based on the density of data points in a region. Clusters are assigned where there are high densities of data points separated by low-density regions.&lt;/li&gt;
+&lt;li&gt;Unlike the other clustering categories, this approach doesn’t require the user to specify the number of clusters. Instead, there is a &lt;strong&gt;distance-based parameter that acts as a tunable threshold&lt;/strong&gt;. This threshold determines how close points must be to be considered a cluster member.&lt;/li&gt;
+&lt;li&gt;Examples of density-based clustering algorithms include Density-Based Spatial Clustering of Applications with Noise (DBSCAN), and Ordering Points To Identify the Clustering Structure ( OPTICS).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;advantagesdisadvantages-10&#34;&gt;Advantages/Disadvantages&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;Pros&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;They excel at identifying clusters of nonspherical shapes.&lt;/li&gt;
+&lt;li&gt;They’re resistant to outliers.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Cons&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;They aren’t well suited for clustering in &lt;strong&gt;high-dimensional spaces&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;They have trouble identifying clusters of &lt;strong&gt;varying densities&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;hierarchical-clustering&#34;&gt;Hierarchical Clustering&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Hierarchical clustering determines cluster assignments by &lt;strong&gt;building a hierarchy&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;This is implemented by either a bottom-up or a top-down approach. These methods produce a tree-based hierarchy of points called a dendrogram.
+&lt;ul&gt;
+&lt;li&gt;Agglomerative clustering is the bottom-up approach. It merges the two points that are the most similar until all points have been merged into a single cluster.&lt;/li&gt;
+&lt;li&gt;Divisive clustering is the top-down approach. It starts with all points as one cluster and splits the least similar clusters at each step until only single data points remain.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Similar to partitional clustering, in hierarchical clustering &lt;strong&gt;the number of clusters (k) is often predetermined&lt;/strong&gt; by the user. Clusters are assigned by cutting the dendrogram at a specified depth that results in k groups of smaller dendrograms.&lt;/li&gt;
+&lt;li&gt;Unlike many partitional clustering techniques, hierarchical clustering is a deterministic process, meaning cluster assignments won’t change when you run an algorithm twice on the same input data.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;advantagesdisadvantages-11&#34;&gt;Advantages/Disadvantages&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;Pros&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;They often reveal the finer details about the relationships between data objects.&lt;/li&gt;
+&lt;li&gt;They provide an interpretable dendrogram.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Cons&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;They’re computationally expensive with respect to algorithm complexity.&lt;/li&gt;
+&lt;li&gt;They’re sensitive to noise and outliers.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;k-means-pseudocode&#34;&gt;K-Means Pseudocode&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/k_means_pseudocode.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;discussion-of-k-means-similiar-to-knn&#34;&gt;Discussion of K-Means (similiar to KNN)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Distance metrics matters. Most common distance metric is Euclidean distance.&lt;/li&gt;
+&lt;li&gt;Scalling of features matters.&lt;/li&gt;
+&lt;li&gt;Features need to be numeric.&lt;/li&gt;
+&lt;li&gt;Curse of dimensionality.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;evaluation&#34;&gt;Evaluation&lt;/h3&gt;
+&lt;h4 id=&#34;goodness-of-fit-determine-k&#34;&gt;Goodness of fit: determine k&lt;/h4&gt;
+&lt;h5 id=&#34;inertia&#34;&gt;Inertia&lt;/h5&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/inertia.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Inertia can be recognized as a measure of how internally coherent clusters are.&lt;/li&gt;
+&lt;li&gt;It suffers from various drawbacks:
+&lt;ul&gt;
+&lt;li&gt;Inertia makes the assumption that clusters are convex and isotropic, which is not always the case. It responds poorly to elongated clusters, or manifolds with irregular shapes.&lt;/li&gt;
+&lt;li&gt;Inertia is not a normalized metric: we just know that lower values are better and zero is optimal. But in very high-dimensional spaces, Euclidean distances tend to become inflated (this is an instance of the so-called “curse of dimensionality”). Running a dimensionality reduction algorithm such as Principal component analysis (PCA) prior to k-means clustering can alleviate this problem and speed up the computations.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;eblow-method&#34;&gt;Eblow Method&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;As k increases, the sum of squared distance tends to zero. Imagine we set k to its maximum value n (where n is number of samples) each sample will form its own cluster meaning sum of squared distances equals zero.&lt;/li&gt;
+&lt;li&gt;If the line chart resembles an arm, then the “elbow” (the point of inflection on the curve) is a good indication that the underlying model fits best at that point.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;silhouette-value&#34;&gt;Silhouette Value&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;The silhouette value is a measure of how similar an object is to its own cluster (cohesion) compared to other clusters (separation).&lt;/li&gt;
+&lt;li&gt;The silhouette ranges from −1 to +1, where a high value indicates that the object is well matched to its own cluster and poorly matched to neighboring clusters. If most objects have a high value, then the clustering configuration is appropriate. If many points have a low or negative value, then the clustering configuration may have too many or too few clusters.&lt;/li&gt;
+&lt;li&gt;The silhouette can be calculated with any distance metric, such as the Euclidean distance or the Manhattan distance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/silhouette.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;cluster-distribution&#34;&gt;Cluster Distribution&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Do the clusters have practical distribution across them&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;interpretation&#34;&gt;Interpretation&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Do the clusters have meaningful and useful interpretations&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>ML General Knowledge</title>
+      <link>https://hedygithub.github.io/Di_Portfolio/notes/machine-learning/machine-learning-general/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://hedygithub.github.io/Di_Portfolio/notes/machine-learning/machine-learning-general/</guid>
+      <description>&lt;p&gt;Introduction to Machine Learning General knowledge&lt;/p&gt;
+&lt;p&gt;
+  &lt;i class=&#34;fas fa-clock  pr-1 fa-fw&#34;&gt;&lt;/i&gt; 2 hours to read&lt;/p&gt;
+&lt;h2 id=&#34;main-references&#34;&gt;Main References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/briandalessandro/DataScienceCourse/tree/master/ipython&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Introduction to Data Science (NYU CDS 1001)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Book: Data Science for Business&lt;/li&gt;
+&lt;li&gt;Notes of Probability and Statistics for Data Science (NYU CDS 1002)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://leomiolane.github.io/linalg-for-ds.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Optimization and Computational Linear Algebra for Data Science (NYU CDS 1002)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://bruceyanghy.github.io/posts/machine_learning_breadth/index_breadth.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Bruce Yang: The Breadth of Machine Learning: Part I&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://realpython.com/k-means-clustering-python/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;K-Means Clustering in Python: A Practical Guide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;data-science-overview-a-nameoverviewa&#34;&gt;Data Science Overview &lt;a name=&#34;overview&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;categories&#34;&gt;Categories&lt;/h3&gt;
+&lt;h4 id=&#34;basic-categories&#34;&gt;Basic Categories&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Supervised Learning
+&lt;ul&gt;
+&lt;li&gt;Regression&lt;/li&gt;
+&lt;li&gt;Classfication &amp;amp; Class Probability Estimation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Unsupervised Learning
+&lt;ul&gt;
+&lt;li&gt;Clustering&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;categories-by-parameters&#34;&gt;Categories by Parameters&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Parametric Modeling
+&lt;ul&gt;
+&lt;li&gt;Linear Regression&lt;/li&gt;
+&lt;li&gt;SVM&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Non-Parametric Modeling
+&lt;ul&gt;
+&lt;li&gt;Decision Tree&lt;/li&gt;
+&lt;li&gt;KNN&lt;/li&gt;
+&lt;li&gt;K-Means&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;categories-for-classfication&#34;&gt;Categories for Classfication&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Discrimative
+&lt;ul&gt;
+&lt;li&gt;Logistic Regression&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Generative
+&lt;ul&gt;
+&lt;li&gt;Naive Bayes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;categories-by-application&#34;&gt;Categories by Application&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Similarity matching attempts&lt;/li&gt;
+&lt;li&gt;Co-occurrence grouping&lt;/li&gt;
+&lt;li&gt;Profiling (behavior description)&lt;/li&gt;
+&lt;li&gt;Link prediction&lt;/li&gt;
+&lt;li&gt;Data reduction&lt;/li&gt;
+&lt;li&gt;Causal modeling&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;cross-industry-standard-process-for-data-mining&#34;&gt;Cross Industry Standard Process for Data Mining&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Business Understaning&lt;/li&gt;
+&lt;li&gt;Data Understanding&lt;/li&gt;
+&lt;li&gt;Data Preparation&lt;/li&gt;
+&lt;li&gt;Modeling&lt;/li&gt;
+&lt;li&gt;Evaluation&lt;/li&gt;
+&lt;li&gt;Deployment&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;components-things-data-scientist-has-to-consider&#34;&gt;Components: Things Data Scientist has to Consider&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Data &amp;amp; Sampling
+&lt;ul&gt;
+&lt;li&gt;Define Instance&lt;/li&gt;
+&lt;li&gt;Sampling&lt;/li&gt;
+&lt;li&gt;Cleaning data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Features Representation
+&lt;ul&gt;
+&lt;li&gt;Feature Engineering&lt;/li&gt;
+&lt;li&gt;Feature Selection ( &amp;lt;- 4 / 6)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Model ( &amp;lt;- 6)&lt;/li&gt;
+&lt;li&gt;Objective Function / Loss Function (For Model Training)&lt;/li&gt;
+&lt;li&gt;Algorithm for Optimizing (Accelerate the Process)&lt;/li&gt;
+&lt;li&gt;Evaluation Metirc (For Application)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;concerns&#34;&gt;Concerns&lt;/h3&gt;
+&lt;p&gt;Concept Drift: P(X), P(Y) or P(Y|X) that changes over time
+Methods to handle it:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Monitor predictive performance&lt;/li&gt;
+&lt;li&gt;Retrain as often as possible&lt;/li&gt;
+&lt;li&gt;Test balance between data recency and data volume&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;data--sampling-a-namedataa&#34;&gt;Data &amp;amp; Sampling &lt;a name=&#34;data&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;think-about&#34;&gt;Think about:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Where to get data&lt;/li&gt;
+&lt;li&gt;How to get data&lt;/li&gt;
+&lt;li&gt;What does the data look like&lt;/li&gt;
+&lt;li&gt;What&amp;rsquo;s the limits&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;souces&#34;&gt;Souces:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Internal ETL Process&lt;/li&gt;
+&lt;li&gt;Production Logging / Sampling&lt;/li&gt;
+&lt;li&gt;Web Scraping / API&lt;/li&gt;
+&lt;li&gt;Survey / Panel&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;define-the-instance-of-the-data&#34;&gt;Define the Instance of the Data&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;What should be sampled?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Both postitives and negatitives are drawn from the same population or process&lt;/li&gt;
+&lt;li&gt;Only observe positives and find appropriate negatitives&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The granularity and range of the instance&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Time&lt;/li&gt;
+&lt;li&gt;Geo&lt;/li&gt;
+&lt;li&gt;Product Level&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Are intances independent of each other?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Geo-Spatial data&lt;/li&gt;
+&lt;li&gt;Time series data&lt;/li&gt;
+&lt;li&gt;Pairwise instances(social networks, search)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;define-the-target-variable-based-on-application-and-be-creative&#34;&gt;Define the Target Variable: Based on Application and Be Creative&lt;/h3&gt;
+&lt;h3 id=&#34;sampling&#34;&gt;Sampling&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Down-Sampling
+&lt;ul&gt;
+&lt;li&gt;Reduce comupational burden of training&lt;/li&gt;
+&lt;li&gt;Require Less Data: Less complex alogrithms &amp;amp; models with &lt;strong&gt;information rich features&lt;/strong&gt; [Check Learning Curves to see the ]&lt;/li&gt;
+&lt;li&gt;Measure empirically the effect of down-sampling (samling size): Learning Curves with X-axis Sample Size.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Up-Sampling / Down-Sampling: Rebalance classes
+&lt;ul&gt;
+&lt;li&gt;When do model evaluation, should still based on the real base rate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/down_sample.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;selction-bias&#34;&gt;Selction Bias&lt;/h3&gt;
+&lt;h4 id=&#34;implications&#34;&gt;Implications:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Affect generalizability&lt;/li&gt;
+&lt;li&gt;Affect identifiablity of model parameters&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;unbiasrandom-sample-test&#34;&gt;Unbias(random) Sample Test&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Independent on X (don&amp;rsquo;t want to be biased):
+P(Sampled) = P(Sampled | X = x)  or P(X = x) = P(X = x | Sampled)&lt;/li&gt;
+&lt;li&gt;Independent on Y (sometimes intentional bias on Y):
+P(Sampled) = P(Sampled | Y = y) or P(Y = y) = P(Y = y | Sampled)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;intentional-selection-bias&#34;&gt;Intentional Selection Bias&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Often select based on target variable&lt;/li&gt;
+&lt;li&gt;It is rational and based on business and economic factors&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;what-to-do&#34;&gt;What to do&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Avoid it&lt;/li&gt;
+&lt;li&gt;Adjust it&lt;/li&gt;
+&lt;li&gt;Expect it&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;data-cleaning--exploratory-data-analysis-a-nameedaa&#34;&gt;Data Cleaning &amp;amp; Exploratory Data Analysis &lt;a name=&#34;EDA&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;goals-to-do-eda&#34;&gt;Goals to do EDA&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Summarize main characteristics of the data [Univariate]&lt;/li&gt;
+&lt;li&gt;Gain better understanding of the data set [Univariate]&lt;/li&gt;
+&lt;li&gt;Uncover &lt;strong&gt;relationships between variables&lt;/strong&gt; [Bivariate]&lt;/li&gt;
+&lt;li&gt;Know the data set from a global view [Multivariate]&lt;/li&gt;
+&lt;li&gt;Extract important variables&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;descriptive-statistics&#34;&gt;Descriptive Statistics&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Know data types
+&lt;ul&gt;
+&lt;li&gt;Numeric
+&lt;ul&gt;
+&lt;li&gt;Continuous&lt;/li&gt;
+&lt;li&gt;Discrete&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Categorical
+&lt;ul&gt;
+&lt;li&gt;Ordinal&lt;/li&gt;
+&lt;li&gt;Nominative&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Date&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Summariz statistics using pd.describe()&lt;/li&gt;
+&lt;li&gt;Distribution: Box Plots, Scatterplot&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;data-cleaning&#34;&gt;Data Cleaning&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Missing Values&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Check with data collection source&lt;/li&gt;
+&lt;li&gt;Delete: Random &amp;amp; Rare&lt;/li&gt;
+&lt;li&gt;Fill Constants: Mean, Median, Dummy Variables&lt;/li&gt;
+&lt;li&gt;Exploit Mulit-Collinearity: Estimate E[missing given X]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Data Formating&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Correct data types&lt;/li&gt;
+&lt;li&gt;Apply calculations to incoherent representations&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Outliers&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Delete&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scale Difference&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Normalization
+&lt;ul&gt;
+&lt;li&gt;Simple Feature Scaling (X / X_max)&lt;/li&gt;
+&lt;li&gt;Min-Max&lt;/li&gt;
+&lt;li&gt;Z-score&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Skewed Distribution (for Linear Regression)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Standardize: Log()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Turning categorical variables into quantitative variables&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;One-hot encoding&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;bivariate&#34;&gt;Bivariate&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Correlation for Numerical&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Covariance Matrix &amp;amp; Heatmap&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Pros&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Expresses negative dependencies&lt;/li&gt;
+&lt;li&gt;Well understood and intuitive (easy to communicate)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Cons&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Can not capture non-linear dependencies better&lt;/li&gt;
+&lt;li&gt;Not apply to categorical data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Mutual Information
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/mutual_info.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Pros&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Can capture non-linear dependencies better&lt;/li&gt;
+&lt;li&gt;Works naturally with categorical data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Cons&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Can not express negativedependencies&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Numerical variable group by &lt;strong&gt;Categorical variable&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Analysis of Variance (ANOVA):
+&lt;ul&gt;
+&lt;li&gt;ANOVA: finding correlation between different groups of categorical values&lt;/li&gt;
+&lt;li&gt;F-test: variation between sample group means divided by variation within sample group&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Two sample T-test&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;AUC for Numerical and Categorical&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;multivariate&#34;&gt;Multivariate&lt;/h3&gt;
+&lt;h4 id=&#34;singular-value-decomposition&#34;&gt;Singular Value Decomposition&lt;/h4&gt;
+&lt;p&gt;The relative difference between singular values is a function of the level of independence of the columns.
+Applications:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The low rank approximation &amp;amp; Data Compression
+&lt;ul&gt;
+&lt;li&gt;Cost: the information retained ratio&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Dimensionality Reduction&lt;/li&gt;
+&lt;li&gt;Recommender Systems&lt;/li&gt;
+&lt;li&gt;Clustering in High Dimensions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;feature-engineering-a-namefeaturea&#34;&gt;Feature Engineering &lt;a name=&#34;feature&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Note: Deep Learning could do &amp;ldquo;implicit feature engineering, while not all problems will be a Deep Learning problem. Hence we need &amp;ldquo;explicit feature engineering&amp;rdquo;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Data Binning&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Group a set of numerical / categorical values into a set of &amp;ldquo;Bins&amp;rdquo;, based on pre-defined values.&lt;/li&gt;
+&lt;li&gt;Could use Clustering ahead to help determine the groups and bins boundaries.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Non-Linear Transformations (Ploynomial Expanion)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Higher Degree&lt;/li&gt;
+&lt;li&gt;Interaction Terms
+&lt;ul&gt;
+&lt;li&gt;The complexity is high, making it infeasible to build and test them all:
+&lt;ul&gt;
+&lt;li&gt;A good technique is to run on a Decision Tree ans make interations from the fisrt few split variables.&lt;/li&gt;
+&lt;li&gt;Another method is to use feature importance and make interactions from the more important ones.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;put-them-into-applications&#34;&gt;Put them into Applications&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Noisy and Less Info:
+&lt;ul&gt;
+&lt;li&gt;Non-Linear Transformation
+&lt;ul&gt;
+&lt;li&gt;Low Degree: Underfitting&lt;/li&gt;
+&lt;li&gt;Higher Degree: Overfitting
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/non_linear_noisy.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Bins
+&lt;ul&gt;
+&lt;li&gt;More Bins: hard to borrow information from neighbor bins (using avg Y instead)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/bin_noisy.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Info Rich Environment
+&lt;ul&gt;
+&lt;li&gt;Non-Linear Transformation
+&lt;ul&gt;
+&lt;li&gt;Higher Degree less likely to be overfit.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Bins:
+&lt;ul&gt;
+&lt;li&gt;More bins perform best, because it can approximate any arbitrary curve, but still likely to be overfitting.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;note-some-algorithms-could-do-this-for-you&#34;&gt;Note: some algorithms could do this for you:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;SVMs with Kernel: the use of kernel could map the data into an infinite space, no explicit feature engineering needed.&lt;/li&gt;
+&lt;li&gt;Trees: Tree based alogrithms can fit non-linear curves and interactions naturally by partitioning on X and estimating expectations separately for each partition (similiar to binning)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;extract-extra-features&#34;&gt;Extract Extra Features&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Datetime
+&lt;ul&gt;
+&lt;li&gt;Weekday, Weekend&lt;/li&gt;
+&lt;li&gt;Holiday&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Numerical Variable to Categorical
+&lt;ul&gt;
+&lt;li&gt;Binning&lt;/li&gt;
+&lt;li&gt;Clustering&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;leakage&#34;&gt;Leakage&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Target Variable Leakage: Having features that are caused by the outcome of the target variable&lt;/li&gt;
+&lt;li&gt;Training/Testing Leakage:
+&lt;ul&gt;
+&lt;li&gt;Having records in the training set also appear in the test set.&lt;/li&gt;
+&lt;li&gt;[Time Series Related ]Training has features that can not get at the time before testing.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;loss-function--evaluation-metrics-a-name--evaluationa&#34;&gt;Loss Function &amp;amp; Evaluation Metrics &lt;a name = &#34;Evaluation&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;loss-function-for-classification&#34;&gt;Loss Function For Classification&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Ref.&lt;/em&gt; &lt;a href=&#34;https://en.wikipedia.org/wiki/Loss_functions_for_classification&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Loss_functions_for_classification&lt;/a&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/loss.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;0-1 Loss (not convex)&lt;/li&gt;
+&lt;li&gt;Surrogate Loss (convex)
+&lt;ul&gt;
+&lt;li&gt;Logistic Loss / Cross Entropy Loss / Log-Likelihood (LL): Logistic Regression&lt;/li&gt;
+&lt;li&gt;Hinge Loss: SVM&lt;/li&gt;
+&lt;li&gt;Exponential Loss: Boosting
+Note: The validation loss metric &lt;strong&gt;does not&lt;/strong&gt; have to be the same as the training loss. Sometimes the loss metric for an application (i.e., AUC for validation) is not easy to directly minimize. Insteat we use other metric in training (i.e., logistic loss instead)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;loss-function-for-regression&#34;&gt;Loss Function for Regression&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Mean Squared Error (MSE)&lt;/li&gt;
+&lt;li&gt;Mean Absolute Loss&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;evaluation-metrics&#34;&gt;Evaluation Metrics&lt;/h3&gt;
+&lt;h4 id=&#34;confusion-matrix&#34;&gt;Confusion Matrix&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Accuracy: Most intuitive and well known&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Base Rate Dependent&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Precision: Of all the instances which the model predict as positive, how many are real positive?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Best used when &lt;strong&gt;False Positives&lt;/strong&gt; are relatively expensive, i.e. budget is limited&lt;/li&gt;
+&lt;li&gt;Base Rate Dependent&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Recall: Of the totoal real positives, how many did the model predict as positive?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Best used when &lt;strong&gt;False Negatives&lt;/strong&gt; are relatively more expensive, i.e. test tumor&lt;/li&gt;
+&lt;li&gt;Base Rate Independent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/confusion_matrix.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;F1-Score: Favor both precision and recall. It is the harmonic mean of the two.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/f1_score.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Lift: How many more positives outcomes you might expect relative to the baseline stratgey (random guess).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Used with Recall to do economic analysis (help to decide the threshold)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;roc-curve-auc-aclc&#34;&gt;ROC Curve, AUC, ACLC&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;ROC Curve: the Receiver Operating Characteristic curve.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;True Positive Rate: True Positive / Golden Negative&lt;/li&gt;
+&lt;li&gt;False Negative Rate: False Negative / Golden Positive&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;AUC: Area Under the ROC Curve&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Probability Interpretation: The AUC is the probability the model will score a randomly chosen positive class higher than a randomly chosen negative class.&lt;/li&gt;
+&lt;li&gt;Invariance to prior class probabilities or class prevalence in the data. Useful for comparing across data sets with different base rates or after down sampling.&lt;/li&gt;
+&lt;li&gt;Independence of the decision threshold.&lt;/li&gt;
+&lt;li&gt;Is nicely bounded [0, 1]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/auc.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ACLC: Area under the Cumulative Lift Curve&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;expected-value-and-cost-curve&#34;&gt;Expected Value and Cost Curve&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Expected Value: Help to choose/change a decision threshold based on cost-benefit analysis
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/expected_value.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;Cost Curve : Used in unequal cost scenario. The area measures the expected total costs.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/auc_costs_curve.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;metrics-for-different-applications&#34;&gt;Metrics for Different Applications&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Ranking (Without Threshold)
+&lt;ul&gt;
+&lt;li&gt;AUC, AULC&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Classification
+&lt;ul&gt;
+&lt;li&gt;Accuracy, Precision, Recall, F-Score, Lift&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Density Estimaion (Numerical)
+&lt;ul&gt;
+&lt;li&gt;Regression: MSE, MAE&lt;/li&gt;
+&lt;li&gt;Classification Related: Surrogate Losses&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;model-selection-a-name--modelselectiona&#34;&gt;Model Selection &lt;a name = &#34;ModelSelection&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;rules&#34;&gt;Rules:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Using the same training and validation data for each hypothesis being tested&lt;/li&gt;
+&lt;li&gt;Given a tie (statistical or exact), choose the simpler model, i.e. first std error rule&lt;/li&gt;
+&lt;li&gt;Use this methodology for all design decisions:
+&lt;ul&gt;
+&lt;li&gt;Hyper-Parameter Selection&lt;/li&gt;
+&lt;li&gt;Feature Selection&lt;/li&gt;
+&lt;li&gt;Model Selection&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;hyper-parameter-selection&#34;&gt;Hyper-Parameter Selection&lt;/h3&gt;
+&lt;h4 id=&#34;hyper-parameter-examples&#34;&gt;Hyper-Parameter Examples&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Linear Regression &amp;amp; Logistic Regression
+&lt;ul&gt;
+&lt;li&gt;L1 / L2: regularization strategy&lt;/li&gt;
+&lt;li&gt;C: regularization weight&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Support Vector Machine
+&lt;ul&gt;
+&lt;li&gt;C: regularization weight&lt;/li&gt;
+&lt;li&gt;Kernel and its associated hyperparameters&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Decision Tree
+&lt;ul&gt;
+&lt;li&gt;MaxDepth, Min LeafSize, MinSplitSize&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Random Forest
+&lt;ul&gt;
+&lt;li&gt;Tree Related&lt;/li&gt;
+&lt;li&gt;Forest Related&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;method&#34;&gt;Method&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Training-Validation-Test&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Training: the training data is used to find the optimal function given the model structure (i.e., fixed algorithm, feature set)&lt;/li&gt;
+&lt;li&gt;Validation: the validation data is used to evaluate the loss/risk for a given model configuration. The configuration with the besr loss/risk is selected as the final model&lt;/li&gt;
+&lt;li&gt;Test: test data is not used for any parameter or model selection. It is only used as a generalization measure.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/model_selection_process.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Note: Training error is our empirical risk and the test set error is our approximation of expected risk.&lt;/li&gt;
+&lt;li&gt;Note (for training part): Empirical risk minimization (ERM) is a principle in statistical learning theory which defines a family of learning algorithms and is used to give theoretical bounds on their performance. The core idea is that we cannot know exactly how well an algorithm will work in practice (the true &amp;ldquo;risk&amp;rdquo;) because we don&amp;rsquo;t know the true distribution of data that the algorithm will work on, but we can instead measure its performance on a known set of training data (the &amp;ldquo;empirical&amp;rdquo; risk).&lt;/li&gt;
+&lt;li&gt;Note (for validation part): Rules to Choose Hyper-Parameter in Validation Set:
+&lt;ul&gt;
+&lt;li&gt;Max / Min (validation loss metric)&lt;/li&gt;
+&lt;li&gt;One-StdError Rule: The one first hits: Max / Min (validation loss metric) - One-StdError&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cross Validation
+&amp;ldquo;Recycle&amp;rdquo; data using k-fold cross validation as validation scheme.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/model_selection_process_cv.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Apply to: SVM, DT&amp;hellip;&lt;/li&gt;
+&lt;li&gt;Note: Random Forest use out-of-bag error rather than error of cross-validation set (RF Based on Bootstraping)&lt;/li&gt;
+&lt;li&gt;Note: Training error is our empirical risk and the test set error is our approximation of expected risk.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Nested Cross Validation&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/nested_cross_validation.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Apply to: Time Series Data
+Note: How to split?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/splitting_schemes.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;how-to-choose-candidate-for-hyper-parameters&#34;&gt;How to Choose Candidate for Hyper-Parameters&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Range &amp;amp; Numers in this Range
+&lt;ul&gt;
+&lt;li&gt;Should span the range of low to high model complexity&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Method:
+&lt;ul&gt;
+&lt;li&gt;Grid Search&lt;/li&gt;
+&lt;li&gt;Random Search&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;feature-selection&#34;&gt;Feature Selection&lt;/h3&gt;
+&lt;h4 id=&#34;why-perform-feature-selection&#34;&gt;Why Perform Feature Selection?&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Lower expected model variance (less likely to be overfitting)&lt;/li&gt;
+&lt;li&gt;Easier interpretation of models&lt;/li&gt;
+&lt;li&gt;Better scalability, both in training and deployment&lt;/li&gt;
+&lt;li&gt;Lower maintenance costs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;common-feature-selection-techniques&#34;&gt;Common Feature Selection Techniques&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Naive Subset Selection
+&lt;ul&gt;
+&lt;li&gt;Pre-filter features based on &lt;strong&gt;heuristics&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Choose top k based on:
+&lt;ul&gt;
+&lt;li&gt;Mutual information, Correlation with Y&lt;/li&gt;
+&lt;li&gt;Has the most coverage / Support (non-na, non-zero percentage)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Application: bag-of-words selections (long-tail)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Best Subset Selection
+&lt;ul&gt;
+&lt;li&gt;Choose the best subst of k features from p features&lt;/li&gt;
+&lt;li&gt;High complexity&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Stepwise Selection
+&lt;ul&gt;
+&lt;li&gt;Incrementally add/subtract features until model performance stabilizes&lt;/li&gt;
+&lt;li&gt;Greedy: incrementally select the kth feature which improve the performance most&lt;/li&gt;
+&lt;li&gt;k could also be seen as hyper-parameters
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/stepwise_feature_selection.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Dimensionality reduction
+&lt;ul&gt;
+&lt;li&gt;take rank-k approximations of X using SVD&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Regularization
+&lt;ul&gt;
+&lt;li&gt;Implicit, based on adding complexity penalties to loss function&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;alogrithm-selection&#34;&gt;Alogrithm Selection&lt;/h3&gt;
+&lt;h4 id=&#34;types-of-alogrithms&#34;&gt;Types of Alogrithms&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Classic &amp;amp; Simplier Methods:
+&lt;ul&gt;
+&lt;li&gt;Linear Regression&lt;/li&gt;
+&lt;li&gt;Decision Tree&lt;/li&gt;
+&lt;li&gt;Naive Bayes&lt;/li&gt;
+&lt;li&gt;K-Nearest Neighbors&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Black Box but Powerful Methods
+&lt;ul&gt;
+&lt;li&gt;Random Forests&lt;/li&gt;
+&lt;li&gt;SVM with Kernel&lt;/li&gt;
+&lt;li&gt;Neural Networks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;methods-for-model-selection&#34;&gt;Methods for Model Selection&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;First, consider all constraints of the problem, and choose alogrithms under constraints.
+&lt;ul&gt;
+&lt;li&gt;Too little data (generally an estimation problem)&lt;/li&gt;
+&lt;li&gt;Too much data (generally a computation problem)&lt;/li&gt;
+&lt;li&gt;The assumptions of candidate alogrithms&lt;/li&gt;
+&lt;li&gt;Easy to interpret the model?&lt;/li&gt;
+&lt;li&gt;Does scalability matter? (training time, predicting time, model storage)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Try all of them, choose best performer based on evaluation metric&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;be-agile-iterate&#34;&gt;Be Agile: iterate&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Start with a resonable baseline model: the one with little effort but sophisticated enough to capture signals.&lt;/li&gt;
+&lt;li&gt;Iterate towards better models: measure cost-revenue at every iteration
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;../images/agile_iteration.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
       <title>Python basics</title>
       <link>https://hedygithub.github.io/Di_Portfolio/courses/example/python/</link>
       <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
@@ -128,343 +3048,126 @@ The variance of the distribution is $\sigma^{2}$.
     </item>
     
     <item>
-      <title>Welcome to Wowchemy, the website builder for Hugo</title>
-      <link>https://hedygithub.github.io/Di_Portfolio/post/getting-started/</link>
-      <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>https://hedygithub.github.io/Di_Portfolio/post/getting-started/</guid>
-      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;The Wowchemy website builder for Hugo, along with its starter templates, is designed for professional creators, educators, and teams/organizations - although it can be used to create any kind of site&lt;/li&gt;
-&lt;li&gt;The template can be modified and customised to suit your needs. It&amp;rsquo;s a good platform for anyone looking to take control of their data and online identity whilst having the convenience to start off with a &lt;strong&gt;no-code solution (write in Markdown and customize with YAML parameters)&lt;/strong&gt; and having &lt;strong&gt;flexibility to later add even deeper personalization with HTML and CSS&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;You can work with all your favourite tools and apps with hundreds of plugins and integrations to speed up your workflows, interact with your readers, and much more&lt;/li&gt;
-&lt;/ol&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  id=&#34;figure-the-template-is-mobile-first-with-a-responsive-design-to-ensure-that-your-site-looks-stunning-on-every-device&#34;&gt;
-  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://raw.githubusercontent.com/wowchemy/wowchemy-hugo-modules/master/academic.png&#34; alt=&#34;The template is mobile first with a responsive design to ensure that your site looks stunning on every device.&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;figcaption&gt;
-      The template is mobile first with a responsive design to ensure that your site looks stunning on every device.
-    &lt;/figcaption&gt;&lt;/figure&gt;
-&lt;h2 id=&#34;get-started&#34;&gt;Get Started&lt;/h2&gt;
+      <title>Self/Semi-Supervised Image Classification</title>
+      <link>https://hedygithub.github.io/Di_Portfolio/project/ssl-image-classfication/</link>
+      <pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://hedygithub.github.io/Di_Portfolio/project/ssl-image-classfication/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;At the end of Deep Learning course taught by Yann LeCun, a final project was assigned. We competed with your classmates on who can find the best self/semi-supervised learning algorithm. We were given a dataset with a large amount of unlabeled data and a small amount of labeled data to train the model, and the final performance of the model will be evaluated on a hidden test set and posted on a public leaderboard.&lt;/p&gt;
+&lt;h2 id=&#34;data-overview&#34;&gt;Data Overview&lt;/h2&gt;
+&lt;p&gt;The dataset, of color images of size 96×96, that has the following structure&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;👉 &lt;a href=&#34;https://wowchemy.com/templates/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Create a new site&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;📚 &lt;a href=&#34;https://wowchemy.com/docs/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Personalize your site&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;💬 &lt;a href=&#34;https://discord.gg/z8wNYzb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chat with the &lt;strong&gt;Wowchemy community&lt;/strong&gt;&lt;/a&gt; or &lt;a href=&#34;https://discourse.gohugo.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Hugo community&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;🐦 Twitter: &lt;a href=&#34;https://twitter.com/wowchemy&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@wowchemy&lt;/a&gt; &lt;a href=&#34;https://twitter.com/GeorgeCushen&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@GeorgeCushen&lt;/a&gt; &lt;a href=&#34;https://twitter.com/search?q=%28%23MadeWithWowchemy%20OR%20%23MadeWithAcademic%29&amp;amp;src=typed_query&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;#MadeWithWowchemy&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;💡 &lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-modules/issues&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Request a &lt;strong&gt;feature&lt;/strong&gt; or report a &lt;strong&gt;bug&lt;/strong&gt; for &lt;em&gt;Wowchemy&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;⬆️ &lt;strong&gt;Updating Wowchemy?&lt;/strong&gt; View the &lt;a href=&#34;https://wowchemy.com/docs/guide/update/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Update Guide&lt;/a&gt; and &lt;a href=&#34;https://wowchemy.com/updates/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Release Notes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;512, 000 unlabeled images.&lt;/li&gt;
+&lt;li&gt;25, 600 labeled training images (32 examples, 800 classes).&lt;/li&gt;
+&lt;li&gt;25, 600 labeled validation images (32 examples, 800 classes).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;crowd-funded-open-source-software&#34;&gt;Crowd-funded open-source software&lt;/h2&gt;
-&lt;p&gt;To help us develop this template and software sustainably under the MIT license, we ask all individuals and businesses that use it to help support its ongoing maintenance and development via sponsorship.&lt;/p&gt;
-&lt;h3 id=&#34;-click-here-to-become-a-sponsor-and-help-support-wowchemys-future-httpswowchemycomplans&#34;&gt;&lt;a href=&#34;https://wowchemy.com/plans/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;❤️ Click here to become a sponsor and help support Wowchemy&amp;rsquo;s future ❤️&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;As a token of appreciation for sponsoring, you can &lt;strong&gt;unlock &lt;a href=&#34;https://wowchemy.com/plans/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;these&lt;/a&gt; awesome rewards and extra features 🦄✨&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&#34;ecosystem&#34;&gt;Ecosystem&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/wowchemy/hugo-academic-cli&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo Academic CLI&lt;/a&gt;:&lt;/strong&gt; Automatically import publications from BibTeX&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;inspiration&#34;&gt;Inspiration&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://academic-demo.netlify.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Check out the latest &lt;strong&gt;demo&lt;/strong&gt;&lt;/a&gt; of what you&amp;rsquo;ll get in less than 10 minutes, or &lt;a href=&#34;https://wowchemy.com/user-stories/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;view the &lt;strong&gt;showcase&lt;/strong&gt;&lt;/a&gt; of personal, project, and business sites.&lt;/p&gt;
-&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Page builder&lt;/strong&gt; - Create &lt;em&gt;anything&lt;/em&gt; with &lt;a href=&#34;https://wowchemy.com/docs/page-builder/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;widgets&lt;/strong&gt;&lt;/a&gt; and &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;elements&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Edit any type of content&lt;/strong&gt; - Blog posts, publications, talks, slides, projects, and more!&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Create content&lt;/strong&gt; in &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Markdown&lt;/strong&gt;&lt;/a&gt;, &lt;a href=&#34;https://wowchemy.com/docs/import/jupyter/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Jupyter&lt;/strong&gt;&lt;/a&gt;, or &lt;a href=&#34;https://wowchemy.com/docs/install-locally/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;RStudio&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Plugin System&lt;/strong&gt; - Fully customizable &lt;a href=&#34;https://wowchemy.com/docs/customization/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;color&lt;/strong&gt; and &lt;strong&gt;font themes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Display Code and Math&lt;/strong&gt; - Code highlighting and &lt;a href=&#34;https://en.wikibooks.org/wiki/LaTeX/Mathematics&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LaTeX math&lt;/a&gt; supported&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Integrations&lt;/strong&gt; - &lt;a href=&#34;https://analytics.google.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Google Analytics&lt;/a&gt;, &lt;a href=&#34;https://disqus.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Disqus commenting&lt;/a&gt;, Maps, Contact Forms, and more!&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Beautiful Site&lt;/strong&gt; - Simple and refreshing one page design&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Industry-Leading SEO&lt;/strong&gt; - Help get your website found on search engines and social media&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Media Galleries&lt;/strong&gt; - Display your images and videos with captions in a customizable gallery&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Mobile Friendly&lt;/strong&gt; - Look amazing on every screen with a mobile friendly version of your site&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Multi-language&lt;/strong&gt; - 34+ language packs including English, 中文, and Português&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Multi-user&lt;/strong&gt; - Each author gets their own profile page&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Privacy Pack&lt;/strong&gt; - Assists with GDPR&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Stand Out&lt;/strong&gt; - Bring your site to life with animation, parallax backgrounds, and scroll effects&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;One-Click Deployment&lt;/strong&gt; - No servers. No databases. Only files.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
-&lt;p&gt;Wowchemy and its templates come with &lt;strong&gt;automatic day (light) and night (dark) mode&lt;/strong&gt; built-in. Alternatively, visitors can choose their preferred mode - click the moon icon in the top right of the &lt;a href=&#34;https://academic-demo.netlify.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Demo&lt;/a&gt; to see it in action! Day/night mode can also be disabled by the site admin in &lt;code&gt;params.toml&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://wowchemy.com/docs/customization&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Choose a stunning &lt;strong&gt;theme&lt;/strong&gt; and &lt;strong&gt;font&lt;/strong&gt;&lt;/a&gt; for your site. Themes are fully customizable.&lt;/p&gt;
-&lt;h2 id=&#34;license&#34;&gt;License&lt;/h2&gt;
-&lt;p&gt;Copyright 2016-present &lt;a href=&#34;https://georgecushen.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;George Cushen&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Released under the &lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-modules/blob/master/LICENSE.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MIT&lt;/a&gt; license.&lt;/p&gt;
+&lt;p&gt;Overall, a hidden test set was kept, which will be used to test
+the models. In order to improve performance when training our model with
+few labeled samples, we need to make use of the unlabeled data.&lt;/p&gt;
+&lt;h2 id=&#34;our-presentation&#34;&gt;Our presentation&lt;/h2&gt;
+&lt;p&gt;Semi-supervised learning incorporates both labeled and unlabeled data points in the training process and aims to use leverage the unlabeled data to learn features that would support modeling process when using the training data for specific tasks.
+The community has gained popularity as the amount of data required and cost of obtaining human labeled data increased over the years.
+This video explains the modeling and thought process our team had when tackling the given task, and achieved 50% accuracy on the test set with CoMatch.&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/NADnN1kq28w&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;all-presentations-at-deep-learning-spring-21-class&#34;&gt;All presentations at Deep Learning Spring 21 Class&lt;/h2&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/MJfnamMFylo&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
 </description>
     </item>
     
     <item>
-      <title>Writing technical content in Academic</title>
-      <link>https://hedygithub.github.io/Di_Portfolio/post/writing-technical-content/</link>
-      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
-      <guid>https://hedygithub.github.io/Di_Portfolio/post/writing-technical-content/</guid>
-      <description>&lt;p&gt;Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Highlight your code snippets, take notes on math classes, and draw diagrams from textual representation.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;On this page, you&amp;rsquo;ll find some examples of the types of technical content that can be rendered with Academic.&lt;/p&gt;
-&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
-&lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
-&lt;p&gt;Academic supports a Markdown extension for highlighting code syntax. You can enable this feature by toggling the &lt;code&gt;highlight&lt;/code&gt; option in your &lt;code&gt;config/_default/params.toml&lt;/code&gt; file.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;```python
-import pandas as pd
-data = pd.read_csv(&amp;quot;data.csv&amp;quot;)
-data.head()
-```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
-data = pd.read_csv(&amp;quot;data.csv&amp;quot;)
-data.head()
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;charts&#34;&gt;Charts&lt;/h3&gt;
-&lt;p&gt;Academic supports the popular &lt;a href=&#34;https://plot.ly/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Plotly&lt;/a&gt; chart format.&lt;/p&gt;
-&lt;p&gt;Save your Plotly JSON in your page folder, for example &lt;code&gt;chart.json&lt;/code&gt;, and then add the &lt;code&gt;{{&amp;lt; chart data=&amp;quot;chart&amp;quot; &amp;gt;}}&lt;/code&gt; shortcode where you would like the chart to appear.&lt;/p&gt;
-&lt;p&gt;Demo:&lt;/p&gt;
+      <title>Pyspark Song Recommender System</title>
+      <link>https://hedygithub.github.io/Di_Portfolio/project/recommender-system/</link>
+      <pubDate>Fri, 30 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>https://hedygithub.github.io/Di_Portfolio/project/recommender-system/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;In this final project, we apply big data tools to build and evaluate a collaborative filter based recommender system. The dataset we
+work on is the Million Song Dataset (MSD), with implicit user feedback. Using Spark’s alternating least squares (ALS) method, we
+learn latent factor representations for users and items, and recommend for users in the test set. Thereafter, we compare our model to
+single-machine implementation, and the baseline for the extension.&lt;/p&gt;
+&lt;h2 id=&#34;data-overview&#34;&gt;Data Overview&lt;/h2&gt;
+&lt;p&gt;Data used for the basic recommendation system consists of the train, validation, and test parquet files. Each row in the files consists of
+user_id (string), count (int), and track_id (string). There are 49,824,519 records for the train, 135,938 records for the validation, and
+1,368,430 for the test. Additional data including metadata, features, genre tags, lyric, are also used for the extension&lt;/p&gt;
+&lt;h2 id=&#34;report&#34;&gt;Report&lt;/h2&gt;
+&lt;p&gt;Please review the report pdf for details.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Aspect-Based Sentiment Analysis</title>
+      <link>https://hedygithub.github.io/Di_Portfolio/project/nlp-absa/</link>
+      <pubDate>Thu, 10 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://hedygithub.github.io/Di_Portfolio/project/nlp-absa/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Sentiment Analysis (SA) aims at classifying the sentiment polarity towards a whole sentence.
+Compared to SA, Aspect-Based Sentiment Analysis (ABSA) is designed to identify certain target aspects of an entity and classify sentiment polarities towards these aspects.
+For example, in the sentence “Food is pretty good but the service is horrific”, there are two target aspects: “food” and “service” with opposite sentiment polarities.
+Further, there are two variants of the ABSA problem. One is Aspect-Target Sentiment Classification (ATSC), which is our example before and also the focus of our paper.&lt;/p&gt;
+&lt;p&gt;In recent years, neutral networks have been developed and largely improved the ABSA performance by learning target-context relationships.
+Afterwards, the pre-trained language model shows powerful representation ability.
+Its application to many down-stream tasks, including ABSA, has achieved many accomplishments.
+Lately, domainspecific post-trained BERT shows better performance on this topic. In this paper, we experiment with LSTM-based and BERT-based models for aspect-based sentiment analysis, and apply these models to a more challenging dataset than the commonly used benchmark. We then conduct a robust error analysis for our models to analyze reasons for erroneous classifications.&lt;/p&gt;
+&lt;h2 id=&#34;our-presentation&#34;&gt;Our presentation&lt;/h2&gt;
+&lt;p&gt;We implement LSTM-based models (LSTM and ATAE-LSTM) and BERT-based models (vanilla BERT-base and BERT-ADA) on a challenging dataset called MAMS, which contains multiple aspects with multiple sentiment polarities.
+We also conduct error analysis through the method of input reduction. The experiment results show that BERT-ADA outperforms other models on MAMS dataset. You can find more details in the video.&lt;/p&gt;
 
-
-&lt;div id=&#34;chart-567341829&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
-&lt;script&gt;
-  (function() {
-    let a = setInterval( function() {
-      if ( typeof window.Plotly === &#39;undefined&#39; ) {
-        return;
-      }
-      clearInterval( a );
-
-      Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-567341829&#39;, chart.data, chart.layout, {responsive: true});
-      });
-    }, 500 );
-  })();
-&lt;/script&gt;
-&lt;p&gt;You might also find the &lt;a href=&#34;http://plotly-json-editor.getforge.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Plotly JSON Editor&lt;/a&gt; useful.&lt;/p&gt;
-&lt;h3 id=&#34;math&#34;&gt;Math&lt;/h3&gt;
-&lt;p&gt;Academic supports a Markdown extension for $\LaTeX$ math. You can enable this feature by toggling the &lt;code&gt;math&lt;/code&gt; option in your &lt;code&gt;config/_default/params.toml&lt;/code&gt; file.&lt;/p&gt;
-&lt;p&gt;To render &lt;em&gt;inline&lt;/em&gt; or &lt;em&gt;block&lt;/em&gt; math, wrap your LaTeX math with &lt;code&gt;$...$&lt;/code&gt; or &lt;code&gt;$$...$$&lt;/code&gt;, respectively.&lt;/p&gt;
-&lt;p&gt;Example &lt;strong&gt;math block&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;$$\gamma_{n} = \frac{ 
-\left | \left (\mathbf x_{n} - \mathbf x_{n-1} \right )^T 
-\left [\nabla F (\mathbf x_{n}) - \nabla F (\mathbf x_{n-1}) \right ] \right |}
-{\left \|\nabla F(\mathbf{x}_{n}) - \nabla F(\mathbf{x}_{n-1}) \right \|^2}$$
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;p&gt;$$\gamma_{n} = \frac{ \left | \left (\mathbf x_{n} - \mathbf x_{n-1} \right )^T \left [\nabla F (\mathbf x_{n}) - \nabla F (\mathbf x_{n-1}) \right ] \right |}{\left |\nabla F(\mathbf{x}_{n}) - \nabla F(\mathbf{x}_{n-1}) \right |^2}$$&lt;/p&gt;
-&lt;p&gt;Example &lt;strong&gt;inline math&lt;/strong&gt; &lt;code&gt;$\nabla F(\mathbf{x}_{n})$&lt;/code&gt; renders as $\nabla F(\mathbf{x}_{n})$.&lt;/p&gt;
-&lt;p&gt;Example &lt;strong&gt;multi-line math&lt;/strong&gt; using the &lt;code&gt;\\\\&lt;/code&gt; math linebreak:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;$$f(k;p_{0}^{*}) = \begin{cases}p_{0}^{*} &amp;amp; \text{if }k=1, \\\\
-1-p_{0}^{*} &amp;amp; \text{if }k=0.\end{cases}$$
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;p&gt;$$f(k;p_{0}^{*}) = \begin{cases}p_{0}^{*} &amp;amp; \text{if }k=1, \\&lt;br&gt;
-1-p_{0}^{*} &amp;amp; \text{if }k=0.\end{cases}$$&lt;/p&gt;
-&lt;h3 id=&#34;diagrams&#34;&gt;Diagrams&lt;/h3&gt;
-&lt;p&gt;Academic supports a Markdown extension for diagrams. You can enable this feature by toggling the &lt;code&gt;diagram&lt;/code&gt; option in your &lt;code&gt;config/_default/params.toml&lt;/code&gt; file or by adding &lt;code&gt;diagram: true&lt;/code&gt; to your page front matter.&lt;/p&gt;
-&lt;p&gt;An example &lt;strong&gt;flowchart&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;```mermaid
-graph TD
-A[Hard] --&amp;gt;|Text| B(Round)
-B --&amp;gt; C{Decision}
-C --&amp;gt;|One| D[Result 1]
-C --&amp;gt;|Two| E[Result 2]
-```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;graph TD
-A[Hard] --&amp;gt;|Text| B(Round)
-B --&amp;gt; C{Decision}
-C --&amp;gt;|One| D[Result 1]
-C --&amp;gt;|Two| E[Result 2]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;An example &lt;strong&gt;sequence diagram&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;```mermaid
-sequenceDiagram
-Alice-&amp;gt;&amp;gt;John: Hello John, how are you?
-loop Healthcheck
-    John-&amp;gt;&amp;gt;John: Fight against hypochondria
-end
-Note right of John: Rational thoughts!
-John--&amp;gt;&amp;gt;Alice: Great!
-John-&amp;gt;&amp;gt;Bob: How about you?
-Bob--&amp;gt;&amp;gt;John: Jolly good!
-```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;sequenceDiagram
-Alice-&amp;gt;&amp;gt;John: Hello John, how are you?
-loop Healthcheck
-    John-&amp;gt;&amp;gt;John: Fight against hypochondria
-end
-Note right of John: Rational thoughts!
-John--&amp;gt;&amp;gt;Alice: Great!
-John-&amp;gt;&amp;gt;Bob: How about you?
-Bob--&amp;gt;&amp;gt;John: Jolly good!
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;An example &lt;strong&gt;Gantt diagram&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;```mermaid
-gantt
-section Section
-Completed :done,    des1, 2014-01-06,2014-01-08
-Active        :active,  des2, 2014-01-07, 3d
-Parallel 1   :         des3, after des1, 1d
-Parallel 2   :         des4, after des1, 1d
-Parallel 3   :         des5, after des3, 1d
-Parallel 4   :         des6, after des4, 1d
-```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;gantt
-section Section
-Completed :done,    des1, 2014-01-06,2014-01-08
-Active        :active,  des2, 2014-01-07, 3d
-Parallel 1   :         des3, after des1, 1d
-Parallel 2   :         des4, after des1, 1d
-Parallel 3   :         des5, after des3, 1d
-Parallel 4   :         des6, after des4, 1d
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;An example &lt;strong&gt;class diagram&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;```mermaid
-classDiagram
-Class01 &amp;lt;|-- AveryLongClass : Cool
-&amp;lt;&amp;lt;interface&amp;gt;&amp;gt; Class01
-Class09 --&amp;gt; C2 : Where am i?
-Class09 --* C3
-Class09 --|&amp;gt; Class07
-Class07 : equals()
-Class07 : Object[] elementData
-Class01 : size()
-Class01 : int chimp
-Class01 : int gorilla
-class Class10 {
-  &amp;lt;&amp;lt;service&amp;gt;&amp;gt;
-  int id
-  size()
-}
-```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;classDiagram
-Class01 &amp;lt;|-- AveryLongClass : Cool
-&amp;lt;&amp;lt;interface&amp;gt;&amp;gt; Class01
-Class09 --&amp;gt; C2 : Where am i?
-Class09 --* C3
-Class09 --|&amp;gt; Class07
-Class07 : equals()
-Class07 : Object[] elementData
-Class01 : size()
-Class01 : int chimp
-Class01 : int gorilla
-class Class10 {
-  &amp;lt;&amp;lt;service&amp;gt;&amp;gt;
-  int id
-  size()
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;An example &lt;strong&gt;state diagram&lt;/strong&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;```mermaid
-stateDiagram
-[*] --&amp;gt; Still
-Still --&amp;gt; [*]
-Still --&amp;gt; Moving
-Moving --&amp;gt; Still
-Moving --&amp;gt; Crash
-Crash --&amp;gt; [*]
-```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;stateDiagram
-[*] --&amp;gt; Still
-Still --&amp;gt; [*]
-Still --&amp;gt; Moving
-Moving --&amp;gt; Still
-Moving --&amp;gt; Crash
-Crash --&amp;gt; [*]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;todo-lists&#34;&gt;Todo lists&lt;/h3&gt;
-&lt;p&gt;You can even write your todo lists in Academic too:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;- [x] Write math example
-- [x] Write diagram example
-- [ ] Do something else
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Write math example&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Write diagram example&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Do something else&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;tables&#34;&gt;Tables&lt;/h3&gt;
-&lt;p&gt;Represent your data in tables:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;First Header&lt;/th&gt;
-&lt;th&gt;Second Header&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Content Cell&lt;/td&gt;
-&lt;td&gt;Content Cell&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Content Cell&lt;/td&gt;
-&lt;td&gt;Content Cell&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&#34;callouts&#34;&gt;Callouts&lt;/h3&gt;
-&lt;p&gt;Academic supports a &lt;a href=&#34;https://wowchemy.com/docs/content/writing-markdown-latex/#callouts&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;shortcode for callouts&lt;/a&gt;, also referred to as &lt;em&gt;asides&lt;/em&gt;, &lt;em&gt;hints&lt;/em&gt;, or &lt;em&gt;alerts&lt;/em&gt;. By wrapping a paragraph in &lt;code&gt;{{% callout note %}} ... {{% /callout %}}&lt;/code&gt;, it will render as an aside.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{% callout note %}}
-A Markdown aside is useful for displaying notices, hints, or definitions to your readers.
-{{% /callout %}}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    A Markdown aside is useful for displaying notices, hints, or definitions to your readers.
-  &lt;/div&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/jacbPazwgZ4&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
-&lt;h3 id=&#34;spoilers&#34;&gt;Spoilers&lt;/h3&gt;
-&lt;p&gt;Add a spoiler to a page to reveal text, such as an answer to a question, after a button is clicked.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{&amp;lt; spoiler text=&amp;quot;Click to view the spoiler&amp;quot; &amp;gt;}}
-You found me!
-{{&amp;lt; /spoiler &amp;gt;}}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;details class=&#34;spoiler &#34;  id=&#34;spoiler-2&#34;&gt;
-  &lt;summary&gt;Click to view the spoiler&lt;/summary&gt;
-  &lt;p&gt;You found me!&lt;/p&gt;
-&lt;/details&gt;
-&lt;h3 id=&#34;icons&#34;&gt;Icons&lt;/h3&gt;
-&lt;p&gt;Academic enables you to use a wide range of &lt;a href=&#34;https://sourcethemes.com/academic/docs/page-builder/#icons&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;icons from &lt;em&gt;Font Awesome&lt;/em&gt; and &lt;em&gt;Academicons&lt;/em&gt;&lt;/a&gt; in addition to &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/#emojis&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;emojis&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Here are some examples using the &lt;code&gt;icon&lt;/code&gt; shortcode to render icons:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{&amp;lt; icon name=&amp;quot;terminal&amp;quot; pack=&amp;quot;fas&amp;quot; &amp;gt;}} Terminal  
-{{&amp;lt; icon name=&amp;quot;python&amp;quot; pack=&amp;quot;fab&amp;quot; &amp;gt;}} Python  
-{{&amp;lt; icon name=&amp;quot;r-project&amp;quot; pack=&amp;quot;fab&amp;quot; &amp;gt;}} R
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;p&gt;
-  &lt;i class=&#34;fas fa-terminal  pr-1 fa-fw&#34;&gt;&lt;/i&gt; Terminal&lt;br&gt;
 
-  &lt;i class=&#34;fab fa-python  pr-1 fa-fw&#34;&gt;&lt;/i&gt; Python&lt;br&gt;
-
-  &lt;i class=&#34;fab fa-r-project  pr-1 fa-fw&#34;&gt;&lt;/i&gt; R&lt;/p&gt;
-&lt;h3 id=&#34;did-you-find-this-page-helpful-consider-sharing-it-&#34;&gt;Did you find this page helpful? Consider sharing it 🙌&lt;/h3&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Predict number of views for videos on Bilibili</title>
+      <link>https://hedygithub.github.io/Di_Portfolio/project/bilibili/</link>
+      <pubDate>Thu, 10 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://hedygithub.github.io/Di_Portfolio/project/bilibili/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bear Maps</title>
+      <link>https://hedygithub.github.io/Di_Portfolio/project/map/</link>
+      <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://hedygithub.github.io/Di_Portfolio/project/map/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;This project was originally created by former TA Alan Yao (now at AirBNB). It is a web mapping application inspired by Alan’s time on the Google Maps team and the OpenStreetMap project, from which the tile images and map feature data was downloaded.&lt;/p&gt;
+&lt;p&gt;In this project, you’ll build the “smart” pieces of a web-browser based Google Maps clone. This is typical in real world programming, where you don’t have the luxury and freedom that comes with starting from totally blank files. As a result, you’ll need to spend some time getting to know the provided code, so that you can complete the parts that need completing. The map should have these functions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Zoom in and zoom out the map.&lt;/li&gt;
+&lt;li&gt;Autocomplete the search input. Prefix is the partial query string. The prefix will be a cleaned name for search that is: (1) everything except characters A through Z and spaces removed, and (2) everything is lowercased. The method will return a list containing the full names of all locations whose cleaned names share the cleaned query string prefix, without duplicates.&lt;/li&gt;
+&lt;li&gt;Search. The user should also be able to search for places of interest. Implementing this method correctly will allow the web application to draw red dot markers on each of the matching locations.&lt;/li&gt;
+&lt;li&gt;Turn-by-turn navigation. As an extra-challanging feature, you can use your A* search route to generate a sequence of navigation instructions that the server will then be able to display when you create a route.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;By the end of this project, with some extra work, you can even host your application as a publicly available web app. More details will be provided at the end of this spec.&lt;/p&gt;
+&lt;p&gt;More details about the project can be found: &lt;a href=&#34;https://sp19.datastructur.es/materials/proj/proj2c/proj2c#introduction&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://sp19.datastructur.es/materials/proj/proj2c/proj2c#introduction&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;my-publicly-available-web-app-on-heroku&#34;&gt;My Publicly Available Web App on Heroku&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://bearmaps-cs61b-sp19-hedy.herokuapp.com/map.html#lat=37.871826&amp;amp;lon=-122.260086&amp;amp;depth=3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;http://bearmaps-cs61b-sp19-hedy.herokuapp.com/map.html#lat=37.871826&amp;lon=-122.260086&amp;depth=3&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Suggested Store Locations</title>
+      <link>https://hedygithub.github.io/Di_Portfolio/project/store-location/</link>
+      <pubDate>Mon, 30 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://hedygithub.github.io/Di_Portfolio/project/store-location/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;With the fast development of China consumer market, a global fast-fashion brand plans to enter China market. And they have chosen Shanghai, the most fashion city in China, as their first entered city. At first stage, the company plans to open about 8~10 stores, based on their judgments of the market and company’s financial ability.&lt;/li&gt;
+&lt;li&gt;The business problem is where are the best locations to open those stores. Without considering rent costs, the company should open a store in the most popular place, where bring stores high traffic and target customers. Therefore, we must know where the company’s target customer mostly like to visit. It can be breakdown to two questions. First, how to find the place our target customers like to visit. In this case, our customer is those 18~30 girls who like fashion clothes, shoes, and bags. Second, where is the most popular places among all the places they like.&lt;/li&gt;
+&lt;li&gt;Another problem is to decide the store opening sequence and the possible shopping malls near those optimal locations to open those stores. Maybe we can rank those popular places according to their popularity and open store according to this rank. And we can find nearby shopping malls as a list to give the company’s mangers as a reference.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;report&#34;&gt;Report&lt;/h2&gt;
+&lt;p&gt;Suggested new store locations using K-means and DBSCAN clustering with parsed geolocation data including public transport locations, E-commerce delivery addresses, competitors&#39; store locations. More details in the pdf and slides.&lt;/p&gt;
 </description>
     </item>
     
@@ -694,27 +3397,6 @@ Three
     </item>
     
     <item>
-      <title>External Project</title>
-      <link>https://hedygithub.github.io/Di_Portfolio/project/external-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://hedygithub.github.io/Di_Portfolio/project/external-project/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Internal Project</title>
-      <link>https://hedygithub.github.io/Di_Portfolio/project/internal-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://hedygithub.github.io/Di_Portfolio/project/internal-project/</guid>
-      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
-&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
-&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
-&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
-&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>An example journal article</title>
       <link>https://hedygithub.github.io/Di_Portfolio/publication/journal-article/</link>
       <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
@@ -757,6 +3439,14 @@ Three
       <link>https://hedygithub.github.io/Di_Portfolio/admin/config.yml</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://hedygithub.github.io/Di_Portfolio/admin/config.yml</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>https://hedygithub.github.io/Di_Portfolio/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://hedygithub.github.io/Di_Portfolio/projects/</guid>
       <description></description>
     </item>
     

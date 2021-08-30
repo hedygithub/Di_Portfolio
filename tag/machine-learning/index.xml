@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine Learning | Academic</title>
+    <link>https://hedygithub.github.io/Di_Portfolio/tag/machine-learning/</link>
+      <atom:link href="https://hedygithub.github.io/Di_Portfolio/tag/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <description>Machine Learning</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 30 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://hedygithub.github.io/Di_Portfolio/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>Machine Learning</title>
+      <link>https://hedygithub.github.io/Di_Portfolio/tag/machine-learning/</link>
+    </image>
+    
+    <item>
+      <title>Pyspark Song Recommender System</title>
+      <link>https://hedygithub.github.io/Di_Portfolio/project/recommender-system/</link>
+      <pubDate>Fri, 30 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>https://hedygithub.github.io/Di_Portfolio/project/recommender-system/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;In this final project, we apply big data tools to build and evaluate a collaborative filter based recommender system. The dataset we
+work on is the Million Song Dataset (MSD), with implicit user feedback. Using Spark’s alternating least squares (ALS) method, we
+learn latent factor representations for users and items, and recommend for users in the test set. Thereafter, we compare our model to
+single-machine implementation, and the baseline for the extension.&lt;/p&gt;
+&lt;h2 id=&#34;data-overview&#34;&gt;Data Overview&lt;/h2&gt;
+&lt;p&gt;Data used for the basic recommendation system consists of the train, validation, and test parquet files. Each row in the files consists of
+user_id (string), count (int), and track_id (string). There are 49,824,519 records for the train, 135,938 records for the validation, and
+1,368,430 for the test. Additional data including metadata, features, genre tags, lyric, are also used for the extension&lt;/p&gt;
+&lt;h2 id=&#34;report&#34;&gt;Report&lt;/h2&gt;
+&lt;p&gt;Please review the report pdf for details.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Predict number of views for videos on Bilibili</title>
+      <link>https://hedygithub.github.io/Di_Portfolio/project/bilibili/</link>
+      <pubDate>Thu, 10 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://hedygithub.github.io/Di_Portfolio/project/bilibili/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Suggested Store Locations</title>
+      <link>https://hedygithub.github.io/Di_Portfolio/project/store-location/</link>
+      <pubDate>Mon, 30 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://hedygithub.github.io/Di_Portfolio/project/store-location/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;With the fast development of China consumer market, a global fast-fashion brand plans to enter China market. And they have chosen Shanghai, the most fashion city in China, as their first entered city. At first stage, the company plans to open about 8~10 stores, based on their judgments of the market and company’s financial ability.&lt;/li&gt;
+&lt;li&gt;The business problem is where are the best locations to open those stores. Without considering rent costs, the company should open a store in the most popular place, where bring stores high traffic and target customers. Therefore, we must know where the company’s target customer mostly like to visit. It can be breakdown to two questions. First, how to find the place our target customers like to visit. In this case, our customer is those 18~30 girls who like fashion clothes, shoes, and bags. Second, where is the most popular places among all the places they like.&lt;/li&gt;
+&lt;li&gt;Another problem is to decide the store opening sequence and the possible shopping malls near those optimal locations to open those stores. Maybe we can rank those popular places according to their popularity and open store according to this rank. And we can find nearby shopping malls as a list to give the company’s mangers as a reference.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;report&#34;&gt;Report&lt;/h2&gt;
+&lt;p&gt;Suggested new store locations using K-means and DBSCAN clustering with parsed geolocation data including public transport locations, E-commerce delivery addresses, competitors&#39; store locations. More details in the pdf and slides.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

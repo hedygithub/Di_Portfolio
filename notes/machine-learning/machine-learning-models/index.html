@@ -1,0 +1,2970 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.3.0 for Hugo" />
+  
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Di He" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Include: Linear Regression, LASSO and Ridge, Logistic Regression, Naive Bayes, Support Vector Machine, Decision Tree, Ensemble Overview &amp; Stacking, Bagging &amp; Random Forest, Boosting, AdaBoost &amp; Gradient Boosting, K-Nearest Neighbors, Clustering Overview &amp; K-Means" />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://hedygithub.github.io/Di_Portfolio/notes/machine-learning/machine-learning-models/" />
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+
+  
+
+  <link rel="stylesheet" href="/Di_Portfolio/css/vendor-bundle.min.f1ecf783c14edc00c9320c205831ad8e.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/Di_Portfolio/css/wowchemy.481af39c39ffd87b2d14f39943e7c723.css" />
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/Di_Portfolio/manifest.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/Di_Portfolio/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/Di_Portfolio/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://hedygithub.github.io/Di_Portfolio/notes/machine-learning/machine-learning-models/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary" />
+  
+  <meta property="og:site_name" content="Academic" />
+  <meta property="og:url" content="https://hedygithub.github.io/Di_Portfolio/notes/machine-learning/machine-learning-models/" />
+  <meta property="og:title" content="Introduction to ML Models | Academic" />
+  <meta property="og:description" content="Include: Linear Regression, LASSO and Ridge, Logistic Regression, Naive Bayes, Support Vector Machine, Decision Tree, Ensemble Overview &amp; Stacking, Bagging &amp; Random Forest, Boosting, AdaBoost &amp; Gradient Boosting, K-Nearest Neighbors, Clustering Overview &amp; K-Means" /><meta property="og:image" content="https://hedygithub.github.io/Di_Portfolio/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" />
+    <meta property="twitter:image" content="https://hedygithub.github.io/Di_Portfolio/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2021-01-01T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2021-01-01T00:00:00&#43;00:00">
+  
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>Introduction to ML Models | Academic</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="e2a30045fa346f6f1eb1a3249ef51baf" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/Di_Portfolio/js/wowchemy-init.min.8988fb2a4bba758785868cfcb5244555.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/Di_Portfolio/">Academic</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/Di_Portfolio/">Academic</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/Di_Portfolio/#about"><span>About</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/Di_Portfolio/projects/"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/Di_Portfolio/notes/"><span>Notes</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    
+
+
+
+
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      <form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-md-3 w-100" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <div class="d-flex">
+      <span class="d-md-none pl-1 flex-grow-1 text-left overflow-hidden">
+        
+          Overview
+        
+      </span>
+      <span><i class="fas fa-chevron-down"></i></span>
+    </div>
+  </button>
+
+  
+  <button class="form-control sidebar-search js-search d-none d-md-flex">
+    <i class="fas fa-search pr-2"></i>
+    <span class="sidebar-search-text">Search...</span>
+    <span class="sidebar-search-shortcut">/</span>
+  </button>
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  
+  
+  
+  
+
+  
+  
+    
+
+    
+      
+
+      <ul class="nav docs-sidenav">
+        <li><a href="/Di_Portfolio/notes/"><i class="fas fa-arrow-left pr-1"></i>Notes</a></li>
+      </ul>
+
+      
+      
+        
+          
+        
+      
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/Di_Portfolio/notes/machine-learning/">Overview</a>
+    
+      
+        <ul class="nav docs-sidenav">
+      
+
+
+  <li class="active"><a href="/Di_Portfolio/notes/machine-learning/machine-learning-models/">Introduction to ML Models</a></li>
+
+
+
+  <li class=""><a href="/Di_Portfolio/notes/machine-learning/machine-learning-general/">ML General Knowledge</a></li>
+
+      
+        </ul>
+      
+    
+
+    
+      </div>
+    
+
+    
+  
+</nav>
+
+    </div>
+
+    
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      
+
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#main-references">Main References</a></li>
+    <li><a href="#linear-regression-a-namelinearregressiona">Linear Regression <a name="LinearRegression"></a></a>
+      <ul>
+        <li><a href="#basic-concepts">Basic Concepts</a></li>
+        <li><a href="#assumptions">Assumptions</a></li>
+        <li><a href="#solutions-mean-squared-error-mse">Solutions: Mean Squared Error (MSE)</a></li>
+        <li><a href="#useful-points-of-linear-model">Useful Points of Linear Model</a></li>
+        <li><a href="#advantagesdisadvantages">Advantages/Disadvantages</a></li>
+        <li><a href="#quesion-part">Quesion Part</a></li>
+      </ul>
+    </li>
+    <li><a href="#lasso-and-ridge-a-namelassoandridgea">LASSO and Ridge <a name="LASSOandRidge"></a></a>
+      <ul>
+        <li><a href="#basic-concepts-1">Basic Concepts</a></li>
+        <li><a href="#comparision">Comparision</a></li>
+        <li><a href="#advantagesdisadvantages-of-lasso">Advantages/Disadvantages of LASSO</a></li>
+        <li><a href="#advantagesdisadvantages-of-ridge">Advantages/Disadvantages of Ridge</a></li>
+        <li><a href="#quesion-part-1">Quesion Part</a></li>
+      </ul>
+    </li>
+    <li><a href="#logistic-regression-a-name--logisticregressiona">Logistic Regression <a name = "LogisticRegression"></a></a>
+      <ul>
+        <li><a href="#basic-concept">Basic Concept:</a></li>
+        <li><a href="#assumptions-1">Assumptions:</a></li>
+        <li><a href="#cost-function">Cost function:</a></li>
+        <li><a href="#advantagesdisadvantages-1">Advantages/Disadvantages</a></li>
+        <li><a href="#extension-another-perspective-to-regularization---bayesian-map">Extension: Another Perspective to Regularization - Bayesian MAP</a></li>
+        <li><a href="#extension-activation-functions-in-neural-network">Extension: Activation Functions (in Neural Network)</a></li>
+        <li><a href="#extension-softmax-muti-class-activation-function">Extension: Softmax (Muti-class Activation Function)</a></li>
+      </ul>
+    </li>
+    <li><a href="#niave-bayes-a-namenaivebayesa">Niave Bayes <a name="NaiveBayes"></a></a>
+      <ul>
+        <li><a href="#basic-concepts--assumptions">Basic Concepts &amp; Assumptions</a></li>
+        <li><a href="#laplace-smoothing-variance-bias-trade-off">Laplace Smoothing (Variance-Bias Trade-off)</a></li>
+        <li><a href="#pseudo-code-of-naive-bayes-with-laplace-smoothing">Pseudo Code of Naive Bayes with Laplace Smoothing</a></li>
+        <li><a href="#advantagesdisadvantages-2">Advantages/Disadvantages</a></li>
+        <li><a href="#extension-conjugate-priorhttpsenwikipediaorgwikiconjugate_prior">Extension: <a href="https://en.wikipedia.org/wiki/Conjugate_prior">Conjugate Prior</a></a></li>
+      </ul>
+    </li>
+    <li><a href="#support-vector-machine-a-namesvma">Support Vector Machine <a name="SVM"></a></a>
+      <ul>
+        <li><a href="#basic-concepts-2">Basic Concepts</a></li>
+        <li><a href="#hard-margin-and-soft-margin-hinge-loss">Hard Margin and Soft Margin (hinge-loss)</a></li>
+        <li><a href="#solving-the-problem-through-dual-problem-and-quadratic-programing">Solving the Problem through Dual Problem and Quadratic Programing</a></li>
+        <li><a href="#kernel-trick">Kernel Trick</a></li>
+        <li><a href="#advantagesdisadvantages-3">Advantages/Disadvantages</a></li>
+        <li><a href="#extension-the-representaion-theory-and-kernelization">Extension: The Representaion Theory and Kernelization</a></li>
+      </ul>
+    </li>
+    <li><a href="#decision-tree-a-namedecisiontreea">Decision Tree <a name="DecisionTree"></a></a>
+      <ul>
+        <li><a href="#finding-and-selecting-informative-attributes">Finding and selecting informative attributes</a></li>
+        <li><a href="#pseudocode">Pseudocode</a></li>
+        <li><a href="#control-complexity">Control Complexity</a></li>
+        <li><a href="#advanced-parts">Advanced Parts</a></li>
+        <li><a href="#advantagesdisadvantages-4">Advantages/Disadvantages</a></li>
+        <li><a href="#question-part">Question Part</a></li>
+      </ul>
+    </li>
+    <li><a href="#ensemble-overview--stacking-a-namestackinga">Ensemble Overview &amp; Stacking <a name="Stacking"></a></a>
+      <ul>
+        <li><a href="#ensemble">Ensemble</a></li>
+        <li><a href="#typtes-of-ensemble">Typtes of Ensemble</a></li>
+        <li><a href="#stacking-pseudocode">Stacking Pseudocode</a></li>
+        <li><a href="#stacking-training-data">Stacking Training Data</a></li>
+        <li><a href="#quesion-part-2">Quesion Part</a></li>
+      </ul>
+    </li>
+    <li><a href="#bagging--random-forest-a-namebagginga">Bagging &amp; Random Forest <a name="Bagging"></a></a>
+      <ul>
+        <li><a href="#bootstraping-statistics">Bootstraping (statistics)</a></li>
+        <li><a href="#bagging">Bagging</a></li>
+        <li><a href="#randomforests">RandomForests</a></li>
+        <li><a href="#advantagesdisadvantages-5">Advantages/Disadvantages</a></li>
+        <li><a href="#question-part-1">Question Part</a></li>
+      </ul>
+    </li>
+    <li><a href="#boosting-adaboost--gradient-descent-a-nameboostinga">Boosting, AdaBoost &amp; Gradient Descent <a name="Boosting"></a></a>
+      <ul>
+        <li><a href="#boosting">Boosting</a></li>
+        <li><a href="#adaboost">AdaBoost</a></li>
+        <li><a href="#gradient-boosting">Gradient Boosting</a></li>
+      </ul>
+    </li>
+    <li><a href="#k-nearest-neighbors-a-nameknna">K-Nearest Neighbors <a name="knn"></a></a>
+      <ul>
+        <li><a href="#basic-concept-2">Basic Concept</a></li>
+        <li><a href="#characters">Characters</a></li>
+        <li><a href="#parameters">Parameters</a></li>
+        <li><a href="#chanllenges">Chanllenges</a></li>
+        <li><a href="#advantagesdisadvantages-8">Advantages/Disadvantages</a></li>
+        <li><a href="#extension-approximate-neatest-neighbors">Extension: Approximate Neatest Neighbors</a></li>
+      </ul>
+    </li>
+    <li><a href="#clustering-overview--k-means-a-namekmeansa">Clustering Overview &amp; K-Means <a name="kmeans"></a></a>
+      <ul>
+        <li><a href="#clustering">Clustering</a></li>
+        <li><a href="#types-of-clustering">Types of Clustering</a></li>
+        <li><a href="#k-means-pseudocode">K-Means Pseudocode</a></li>
+        <li><a href="#discussion-of-k-means-similiar-to-knn">Discussion of K-Means (similiar to KNN)</a></li>
+        <li><a href="#evaluation">Evaluation</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article">
+
+        <div class="docs-article-container">
+          
+            
+  <nav class="d-none d-md-flex" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      
+  
+  
+  
+
+  <li class="breadcrumb-item">
+    <a href="/Di_Portfolio/">
+      
+        Home
+      
+    </a>
+  </li>
+
+
+  <li class="breadcrumb-item">
+    <a href="/Di_Portfolio/notes/">
+      
+        Notes
+      
+    </a>
+  </li>
+
+
+  <li class="breadcrumb-item">
+    <a href="/Di_Portfolio/notes/machine-learning/">
+      
+        Overview
+      
+    </a>
+  </li>
+
+
+      <li class="breadcrumb-item active" aria-current="page">
+        Introduction to ML Models
+      </li>
+    </ol>
+  </nav>
+
+
+          
+
+          <h1>Introduction to ML Models</h1>
+
+          <div class="article-style">
+            <p>Include: Linear Regression, LASSO and Ridge, Logistic Regression, Naive Bayes, Support Vector Machine, Decision Tree, Ensemble Overview &amp; Stacking, Bagging &amp; Random Forest, Boosting, AdaBoost &amp; Gradient Boosting, K-Nearest Neighbors, Clustering Overview &amp; K-Means</p>
+<p>
+  <i class="fas fa-clock  pr-1 fa-fw"></i> 2 hours to read</p>
+<!-- 
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/rfscVS0vtbw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+ -->
+<h2 id="main-references">Main References</h2>
+<ul>
+<li><a href="https://github.com/briandalessandro/DataScienceCourse/tree/master/ipython" target="_blank" rel="noopener">Introduction to Data Science (NYU CDS 1001)</a></li>
+<li>Book: Data Science for Business</li>
+<li>Notes of Probability and Statistics for Data Science (NYU CDS 1002)</li>
+<li><a href="https://leomiolane.github.io/linalg-for-ds.html" target="_blank" rel="noopener">Optimization and Computational Linear Algebra for Data Science (NYU CDS 1002)</a></li>
+<li><a href="https://bruceyanghy.github.io/posts/machine_learning_breadth/index_breadth.html" target="_blank" rel="noopener">Bruce Yang: The Breadth of Machine Learning: Part I</a></li>
+<li><a href="https://realpython.com/k-means-clustering-python/" target="_blank" rel="noopener">K-Means Clustering in Python: A Practical Guide</a></li>
+</ul>
+<h2 id="linear-regression-a-namelinearregressiona">Linear Regression <a name="LinearRegression"></a></h2>
+<h3 id="basic-concepts">Basic Concepts</h3>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/def_simple_linear_model.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/def_general_linear_model.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<ul>
+<li>Xs are the covariates (or features, or inputs, or independent variables)</li>
+<li>Y is the response (or outcomes, or outputs, or dependent variable.</li>
+<li>Noise Term (or errors): i.i.d. Gaussian random variables</li>
+<li>Residuals: The errors in our predictions</li>
+</ul>
+<h3 id="assumptions">Assumptions</h3>
+<ol>
+<li>Linearity:
+<ul>
+<li>There is a linear relationship between the covariates and the response.</li>
+<li>Linear relationship can be assessed with scatter plots.</li>
+</ul>
+</li>
+<li>Normality:
+<ul>
+<li>For any fixed value of X, Y is normally distributed.</li>
+<li>Normality can be assessed with histograms. Normality can also be statistically tested, for example with the Kolmogorov-Smirnov test.</li>
+<li>When the variable is not normally distributed a non-linear transformation like Log-transformation may fix this issue.</li>
+</ul>
+</li>
+<li>The Noise Term
+<ul>
+<li>The error term is assumed to be a random variable that has a mean of 0 and normally distributed (i.i.d. Gaussian random variables). (Residuals are statistically independent, have uniform variance, are normally distributed, have no auto-correlation)</li>
+<li>Based on this assumption, we can construct confidence intervals and perform hypothesis tests about our parameters.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/why_linear_model_error_term_normal_distributed.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</li>
+<li>The normally distributed assumption can be relaxed if we have enougth data.</li>
+</ul>
+</li>
+<li>Homoscedasticity
+<ul>
+<li>The error term has onstant variance σ2 at every value of X.</li>
+<li>Why we need homoscedasticity?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/why_linear_model_homoscedastic.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</li>
+<li>There are tests and plots to determine homescedasticity. Residual plots, White’s test and Breusch-Pagan., Levene&rsquo;s test, Barlett&rsquo;s test, and Goldfeld-Quandt Test.</li>
+<li>If it is heteroscedastic, we can use Weighted Least Squares (WLS) to transform the problem into the homoscedastic case.</li>
+<li>If we cannot perform weighted least squares or a variable transformation and must use ordinary least squares, the confidence intervals and hypothesis tests are no longer valid. There are techniques such as Huber-White that attempt to address these issues.</li>
+</ul>
+</li>
+<li>Non-Collinearity (Xs is full column rank in Linear Algerba):
+<ul>
+<li>Multicolinearity occurs when the independent variables are correlated with each other.</li>
+<li>Why : Multicolinearity means Xs has no full column rank, and by rank-nullity theorem, dimension of ker(Xs) bigger than 0. Hence, it will have more than one soulution.</li>
+<li>This can be check by heat map of correlation.</li>
+</ul>
+</li>
+</ol>
+<h3 id="solutions-mean-squared-error-mse">Solutions: Mean Squared Error (MSE)</h3>
+<ol>
+<li>Simple Linear Model:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/simple_linear_model_solutions.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</li>
+<li>General Linear Model (Squared Error is a Convex Funcion):
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/general_linear_model_solutions.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</li>
+<li>Unbiased Estimation (MSE):
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/why_linear_model_unbiased.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</li>
+<li>Hypothesis Tesing &amp; Confidence Interval: for β0, β1, for β0 + β1x (fitted Y)</li>
+<li>Predicted Interval: Note that prediction intervals are slightly diﬀerent from conﬁdence intervals, since Y is random (along with the endpoints of the interval). Our prediction interval for Y will incorporate our uncertainty in estimating β0 + β1x, and the noise Z present in Y.</li>
+</ol>
+<h3 id="useful-points-of-linear-model">Useful Points of Linear Model</h3>
+<ol>
+<li>In simple linear model, the fitted line pass through the sample central point.</li>
+<li>In simple linear model, if X and Y are standardized, correlation is equal to slope.</li>
+<li>Centerated Resduals. In linear model, sum of residual equal to zero.</li>
+<li>Reduced Variance:
+<ul>
+<li>R-squared: proportion of variance explained by the ﬁt</li>
+<li>Adjusted R-squared: compared with R-squared, it isn’t guaranteed to grow as we add features (due to the n−k denominator that penalizes larger models), and thus can be more useful. Other methods for weighing goodness-of-ﬁt against model complexity include the AIC, BIC, and Mallows’s Cp.</li>
+</ul>
+</li>
+<li>Leverage: Slope has the highest sensitivity to points furthest from the mean</li>
+</ol>
+<h3 id="advantagesdisadvantages">Advantages/Disadvantages</h3>
+<p><strong>Pros</strong>:</p>
+<ul>
+<li>Simplicity and interpretability: linear regression is an extremely simple method. It is very easy to use, understand, and explain.</li>
+<li>The best fit line is the line with minimum error from all the points, it has high efficiency</li>
+<li>It needs little tuning</li>
+</ul>
+<p><strong>Cons</strong>:</p>
+<ul>
+<li>Linear regression only models relationships between dependent and independent variables that are linear. It assumes there is a straight-line relationship between them which is incorrect sometimes.</li>
+<li>Linear regression is very sensitive to the outliers in the data (See Leverage).</li>
+<li>Linear regression is very sensitive to missing data. (biased parameter)</li>
+<li>Linear regression needs feature scaling. (for gradient descent)</li>
+<li>If the number of the parameters are greater than the samples, then the model starts to model noise rather than relationship</li>
+<li>Correlated features may affect performance.</li>
+<li>Extensive feature engineering required.</li>
+</ul>
+<h3 id="quesion-part">Quesion Part</h3>
+<h4 id="question-11-missing-feature">Question 1.1: Missing feature</h4>
+<p>If you ﬁt a linear model that has some features missing, will your least squares estimates of the reduced model be biased?</p>
+<ul>
+<li>It will be Biased, unless the omitted features are uncorrelated with the included features.</li>
+</ul>
+<h4 id="question-12-extra-feature">Question 1.2: Extra feature</h4>
+<p>If you ﬁt a linear model that has some extra features, will your least squares estimates of the enlarged model be biased?</p>
+<ul>
+<li>It will be Unbiased. Even though adding features does not introduce bias (and can decrease it), it can increase the variance of our estimates and produce larger conﬁdence intervals and prediction intervals.</li>
+</ul>
+<h4 id="question-2-more-data">Question 2: More Data</h4>
+<p>What if you duplicate all the data and do regression on the new data set?</p>
+<ul>
+<li>The mean and variance of the sample would not change therefore the beta estimation would be the same. The standard error will go down. However, since the sample size is doubled this will result in the lower p-value for the beta. This tells us that by simply doubling/duplicating the data, we could trick the regression model to have smaller confidence interval.</li>
+</ul>
+<h2 id="lasso-and-ridge-a-namelassoandridgea">LASSO and Ridge <a name="LASSOandRidge"></a></h2>
+<h3 id="basic-concepts-1">Basic Concepts</h3>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/lasso_rigde.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/elastic_net.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h3 id="comparision">Comparision</h3>
+<p><strong>For identical features (High Corr. &amp; Same Scale)</strong>:</p>
+<ul>
+<li>L1 regularization spreads weight arbitrarily (all weights same sign)</li>
+<li>L2 &amp; Elastic Net regularization spreads weight evenly</li>
+</ul>
+<p><strong>For linearly related features (High Corr. &amp; Diff Scale)</strong>:</p>
+<ul>
+<li>L1 regularization chooses variable with larger scale, 0 weight to others</li>
+<li>L2 &amp; Elastic Net regularization prefers variables with larger scale – spreads weight proportional to scale</li>
+</ul>
+<p><strong>For correlated features (Corr. &amp; Same Scale)</strong>:</p>
+<ul>
+<li>L1 regularization: Minor perturbations (in data) can drastically change intersection point (very unstable solution). Makes division of weight among highly correlated features (of same scale) seem arbitrary.</li>
+<li>L2 &amp; Elastic Net regularization: correlated random variables (similar scale) have similar coefficients.</li>
+</ul>
+<h3 id="advantagesdisadvantages-of-lasso">Advantages/Disadvantages of LASSO</h3>
+<p><strong>Pros</strong>:</p>
+<ul>
+<li>Useful for feature selection</li>
+<li>Much easier to interpret and produces simple models</li>
+<li>Lasso will perform better in a setting where a relatively small number of predictors have substantial coefficients, and the remaining predictors have coefficients that are very small or that equal zero</li>
+</ul>
+<p><strong>Cons</strong>:</p>
+<ul>
+<li>LASSO has no closed formula</li>
+<li>LASSO needs feature scaling. (for fair regularization to parameters)</li>
+<li>For n &lt; p case (high dimensional case), LASSO can at most select n features. This has to do with the nature of convex optimization problem LASSO tries to minimize.</li>
+<li>For usual case where we have correlated features which is usually the case for real word datasets, LASSO will select only one feature from a group of correlated features. That selection also happens to be arbitrary in nature. Often one might not want this behavior. Like in gene expression the ideal gene selection method is: eliminate the trivial genes and automatically include whole groups into the model once one gene among them is selected (‘grouped selection’). LASSO doesn&rsquo;t help in grouped selection.</li>
+</ul>
+<h3 id="advantagesdisadvantages-of-ridge">Advantages/Disadvantages of Ridge</h3>
+<p><strong>Pros</strong>:</p>
+<ul>
+<li>Useful for preventing overfitting. As lambda increases, the shrinkage of the ridge coefficient estimates leads to a substantial reduction in the variance of the predictions, at the expense of a slight increase in bias.</li>
+<li>Ridge regression works best in situations where the least squares estimates have high variance. Meaning that a small change in the training data can cause a large change in the least squares coefficient estimates</li>
+<li>Ridge regression has unique solution and has substantial computational advantages.</li>
+</ul>
+<p><strong>Cons</strong>:</p>
+<ul>
+<li>Ridge regression is not able to shrink coefficients to exactly zero. As a result, it cannot perform feature selection.</li>
+<li>LASSO needs feature scaling. (for fair regularization to parameters)</li>
+</ul>
+<h3 id="quesion-part-1">Quesion Part</h3>
+<h4 id="question-1-feature-selection">Question 1: Feature Selection</h4>
+<p>Why LASSO has the property of <em>feature selection</em> but Ridge does not?</p>
+<ul>
+<li>By Intuition
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/lasso_select_feature_1_1.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/lasso_select_feature_1_2.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</li>
+<li>By Lasso Solution: (Note there is not closed form formula for Lasso, unless A has orthnormal matrix)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/lasso_select_feature_2.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</li>
+</ul>
+<h4 id="question-2-regularization">Question 2: Regularization</h4>
+<p>What is regularization?</p>
+<ul>
+<li>What: Regularization is used to prevent overfitting. It significantly reduces the variance of the model, without substantial increase in its bias. It will improve the generalization of a model and decrease the complexity of a model.</li>
+<li>How: It adds a penalty on the loss function to reduce the freedom of the model. Hence the model will be less likely to fit the noise of the training data.</li>
+</ul>
+<h4 id="question-3-parameter-tuning">Question 3: Parameter Tuning</h4>
+<p>How to choose Lambda?</p>
+<ul>
+<li>Lambda is the tuning parameter that decides how much we want to penalize the flexibility of our model. As lambda increases, the impact of the shrinkage penalty grows, and the ridge regression coefficient estimates will approach zero. Selecting a good value of lambda is critical, we can use cross validation to choose good lambda.</li>
+</ul>
+<h2 id="logistic-regression-a-name--logisticregressiona">Logistic Regression <a name = "LogisticRegression"></a></h2>
+<h3 id="basic-concept">Basic Concept:</h3>
+<p>Logistic Regression is a classification method, usually do binary classification 0 or 1. A logistic model is one where the log-odds(logit) of the probability of an event is a linear combination of independent variables.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/def_logistic_regression_ml.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h3 id="assumptions-1">Assumptions:</h3>
+<ul>
+<li>The outcome is a binary variable like yes vs no, positive vs negative, 1 vs 0.</li>
+<li>There is a linear relationship between the logit of the target and independent variables.</li>
+<li>Others similiar to linear regression, such as multi-collinearity.</li>
+</ul>
+<h3 id="cost-function">Cost function:</h3>
+<ul>
+<li>
+<p>Log-loss (Cross-Entropy)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/logistic_regression_logloss.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+</li>
+<li>
+<p>Understand Cross-Entropy from information theory:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/cross_entropy_understanding.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+</li>
+<li>
+<p>MLE: For large data, the theory of MLEs can be used to show that the parameter estimates are jointly normally distributed, and conﬁdence intervals can be computed.</p>
+</li>
+<li>
+<p>The difference between the cost function and the loss function: The loss function computes the error for a single training example; the cost function is the average of the loss function of the entire training set.</p>
+</li>
+</ul>
+<h3 id="advantagesdisadvantages-1">Advantages/Disadvantages</h3>
+<p><strong>Pros</strong>:</p>
+<ul>
+<li>Outputs have a nice probabilistic interpretation.</li>
+<li>Based on MLE, we can do hypothesis testing on the parameter estimates of the model.</li>
+<li>The algorithm can be regularized to avoid overfitting. Multi-collinearity is not really an issue and can be countered with L2 regularization to an extent.</li>
+<li>Logistic Regression has been proven over and over to be very robust in small data problems, because it has strong assumption. For example: Learning curve analysis shows that LR performs better than DT in small data scenarios)</li>
+<li>Logistic models can be updated easily with new data using stochastic gradient descent.</li>
+<li>Linear combination of parameters β and the input vector will be incredibly easy to compute.</li>
+<li>Wide spread industry comfort for logistic regression solutions.</li>
+</ul>
+<p><strong>Cons</strong>:</p>
+<ul>
+<li>Logistic regression tends to underperform when there are multiple or non-linear decision boundaries. They are not flexible enough to naturally capture more complex relationships.</li>
+<li>Doesn’t handle large number of categorical features/variables well.</li>
+</ul>
+<h3 id="extension-another-perspective-to-regularization---bayesian-map">Extension: Another Perspective to Regularization - Bayesian MAP</h3>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/regularization_MAP.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h3 id="extension-activation-functions-in-neural-network">Extension: Activation Functions (in Neural Network)</h3>
+<p><em>Ref.</em> <a href="https://missinglink.ai/guides/neural-network-concepts/7-types-neural-network-activation-functions-right/#commonnonlinear" target="_blank" rel="noopener">7 types neural network activation functions</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/activation_function.jpg" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h4 id="sigmoid--logistic">Sigmoid / Logistic</h4>
+<ul>
+<li>Pros
+<ul>
+<li>Smooth gradient, preventing “jumps” in output values.</li>
+<li>Output values bound between 0 and 1, normalizing the output of each neuron.</li>
+<li>Clear predictions: for X above 2 or below -2, tends to bring the Y value (the prediction) to the edge of the curve, very close to 1 or 0. This enables clear predictions.</li>
+</ul>
+</li>
+<li>Cons
+<ul>
+<li>Vanishing gradient: for very high or very low values of X, there is almost no change to the prediction, causing a vanishing gradient problem. This can result in the network refusing to learn further, or being too slow to reach an accurate prediction.</li>
+<li>Outputs not zero centered.</li>
+<li>Computationally expensive</li>
+</ul>
+</li>
+</ul>
+<h4 id="tanh--hyperbolic-tangent">TanH / Hyperbolic Tangent</h4>
+<ul>
+<li>Pros
+<ul>
+<li>Zero centered—making it easier to model inputs that have strongly negative, neutral, and strongly positive values.</li>
+<li>Otherwise like the Sigmoid function.</li>
+</ul>
+</li>
+<li>Cons
+<ul>
+<li>Like the Sigmoid function</li>
+</ul>
+</li>
+</ul>
+<h4 id="relu-rectified-linear-unit">ReLU (Rectified Linear Unit)</h4>
+<ul>
+<li>Pros
+<ul>
+<li>Computationally efficient—allows the network to converge very quickly</li>
+<li>Non-linear: although it looks like a linear function, ReLU has a derivative function and allows for backpropagation</li>
+</ul>
+</li>
+<li>Cons
+<ul>
+<li>The Dying ReLU problem: when inputs approach zero, or are negative, the gradient of the function becomes zero, the network cannot perform backpropagation and cannot learn.</li>
+</ul>
+</li>
+</ul>
+<h3 id="extension-softmax-muti-class-activation-function">Extension: Softmax (Muti-class Activation Function)</h3>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/softMax.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<ul>
+<li>Pros
+<ul>
+<li>Able to handle multiple classes: only one class in other activation functions—normalizes the outputs for each class between 0 and 1, and divides by their sum, giving the probability of the input value being in a specific class.</li>
+<li>Useful for output neurons—typically: Softmax is used only for the output layer, for neural networks that need to classify inputs into multiple categories.</li>
+</ul>
+</li>
+<li>Usage in torch:
+<ul>
+<li><a href="https://pytorch.org/docs/stable/generated/torch.nn.NLLLoss.html" target="_blank" rel="noopener">NLLLoss</a>: The negative log likelihood loss. It is useful to train a classification problem with C classes. The input given through a forward call is expected to contain log-probabilities of each class. Obtaining log-probabilities in a neural network is easily achieved by adding a <em>LogSoftmax</em> layer in the last layer of your network.</li>
+<li><a href="https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html" target="_blank" rel="noopener">CrossEntropyLoss</a>: If you prefer not to add an extra layer (<em>LogSoftmax</em>), you may use <em>CrossEntropyLoss</em> instead. <em>CrossEntropyLoss</em> combines nn.LogSoftmax() and nn.NLLLoss() in one single class.</li>
+</ul>
+</li>
+</ul>
+<h2 id="niave-bayes-a-namenaivebayesa">Niave Bayes <a name="NaiveBayes"></a></h2>
+<h3 id="basic-concepts--assumptions">Basic Concepts &amp; Assumptions</h3>
+<p>Naive Bayes is a <strong>generative model</strong>, and is used for classification problems, especially text classification.
+Many language processing tasks can be viewed as tasks of classiﬁcation. Text categorization,in which an entire text is assigned a class from a ﬁnite set, includes such tasks as sentiment analysis, spam detection, language identiﬁcation, and authorship attribution. Sentiment analysis classiﬁes a text as reﬂecting the positive or negative orientation (sentiment) that a writer expresses toward some object.</p>
+<ol>
+<li>Bayes' Rule:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/bayes_rules.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</li>
+<li>Assumptions:
+<ul>
+<li>the bag of words assumption (position doesn’t matter)</li>
+<li>the conditional independence assumption (words are conditionally independent of each other given the class; the occurrence of a certain feature is independent of the occurrence of other features)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/naive_bayes_assumptions.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="laplace-smoothing-variance-bias-trade-off">Laplace Smoothing (Variance-Bias Trade-off)</h3>
+<p>If categorical variable has a category (in test data set), which was not observed in training data set, then model will assign a 0 (zero) probability and will be unable to make a prediction. This is often known as “Zero Frequency”. To keep a model from assigning zero probability to these unseen events, we’ll have to shave off a bit of probability mass from some more frequent events and give it to the events we’ve never seen. This modiﬁcation is called smoothing or discounting. Those method will decrease variance at the cost of increasing bias.
+The simplest way to do smoothing is to add one to all the counts, which is Laplace Smotthing.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/laplace_smoothing.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h3 id="pseudo-code-of-naive-bayes-with-laplace-smoothing">Pseudo Code of Naive Bayes with Laplace Smoothing</h3>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/naive_bayes_implement.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h3 id="advantagesdisadvantages-2">Advantages/Disadvantages</h3>
+<p><strong>Pros</strong>:</p>
+<ul>
+<li>It is easy and fast to predict class of test data set. Needs less training time. Good with moderate to large training data sets. It could be used for making predictions in real time.</li>
+<li>It also perform well in multi class prediction.</li>
+<li>Naive Bayes Classifier and Collaborative Filtering together could build a Recommendation System that uses machine learning and data mining techniques to filter unseen information and predict whether a user would like a given resource or not</li>
+<li>Good when dataset contains many features.</li>
+<li>When assumption of independence holds, a Naive Bayes classifier performs better compare to other models like logistic regression and you need less training data.</li>
+</ul>
+<p><strong>Cons</strong>:</p>
+<ul>
+<li>On the other side naive Bayes is also known as a bad estimator, so the probability outputs from predict_proba are not to be taken too seriously.</li>
+<li>Another limitation of Naive Bayes is the assumption of independent predictors. In real life, it is almost impossible that we get a set of predictors which are completely independent.</li>
+</ul>
+<h3 id="extension-conjugate-priorhttpsenwikipediaorgwikiconjugate_prior">Extension: <a href="https://en.wikipedia.org/wiki/Conjugate_prior" target="_blank" rel="noopener">Conjugate Prior</a></h3>
+<ul>
+<li>
+<p>In Bayesian probability theory, if the posterior distributions p(θ | x) are in the same probability distribution family as the prior probability distribution p(θ), the prior and posterior are then called conjugate distributions, and the prior is called a conjugate prior for the likelihood function p(x | θ).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/conjugate_priors.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+</li>
+<li>
+<p>Examples</p>
+<ul>
+<li>Beta prior, Bernoulli samples</li>
+<li>Normal prior, Normal samples</li>
+<li>Gamma prior, Poisson samples</li>
+</ul>
+</li>
+<li>
+<p>Understanding Laplace Smoothing
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/dirichlet_priors.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+
+The beta distribution is the conjugate prior of the Binomial distribution. It is a special form of the Dirichlet distribution, where X has only two discrete values. The Dirichlet prior has a specific application to Naïve Bayes because X is often defined as a multinomial. In many cases we only want to deal with a binary random variable, which makes the beta distribution appropriate.</p>
+</li>
+</ul>
+<h2 id="support-vector-machine-a-namesvma">Support Vector Machine <a name="SVM"></a></h2>
+<p><em>Ref.</em> <a href="https://en.wikipedia.org/wiki/Support-vector_machine" target="_blank" rel="noopener">Wikipedia: Support Vector Machine</a></p>
+<h3 id="basic-concepts-2">Basic Concepts</h3>
+<ul>
+<li>The goal of SVM is to design a hyperplane that classifies all training vectors in 2 classes. The best choice will be the hyperplane that leaves the maximum margin from both classes. (Hyperplane: is a linear decision surface that splits the space into 2 parts, it is obvious that a hyperplane is a binary classifier. A hyperplane is a p-1 dimension: in two dimensions, a hyperplane is a line, in three dimensions, a hyperplane is a plane.)</li>
+<li>As a rule of thumb, SVMs are great for relatively small data sets with fewer outliers.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/svm_image.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</li>
+</ul>
+<h3 id="hard-margin-and-soft-margin-hinge-loss">Hard Margin and Soft Margin (hinge-loss)</h3>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/svm_hard.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/svm_soft.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h3 id="solving-the-problem-through-dual-problem-and-quadratic-programing">Solving the Problem through Dual Problem and Quadratic Programing</h3>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/svm_solve.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h3 id="kernel-trick">Kernel Trick</h3>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/kernel_trick.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h3 id="advantagesdisadvantages-3">Advantages/Disadvantages</h3>
+<p><strong>Pros</strong>:</p>
+<ul>
+<li>Strong geometric interpretation</li>
+<li>Easily extendable to non-linear decision surfaces, with kernel trick</li>
+<li>Only use support vextor, the risk of overfitting is less in SVM.</li>
+</ul>
+<p><strong>Cons</strong>:</p>
+<ul>
+<li>Choose a &ldquo;good&rdquo; kernel function is not easy.</li>
+<li>Can not give probability output.</li>
+<li>Difficult to understand and interpret the final model, varaible weights and individual impact.</li>
+</ul>
+<h3 id="extension-the-representaion-theory-and-kernelization">Extension: The Representaion Theory and Kernelization</h3>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/representer_theorem.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/representer_theorem_reparam.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/kernelization.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h2 id="decision-tree-a-namedecisiontreea">Decision Tree <a name="DecisionTree"></a></h2>
+<ul>
+<li>Decision tree uses a tree structure to specify sequences of decisions and consequences. It breaks down a dataset into smaller subsets based on the important features.</li>
+<li>There are Regression Tree and Classification Tree.</li>
+<li>A decision tree employs a structure of nodes and branches: Root node, Internal Node, and Leaf Node.</li>
+<li>Tree-based methods tend to perform well on unprocessed data (i.e. without normalizing, centering, scaling features).</li>
+</ul>
+<h3 id="finding-and-selecting-informative-attributes">Finding and selecting informative attributes</h3>
+<h4 id="entopy-and-information-gain">Entopy and Information Gain</h4>
+<p>Character: Prefer feature(C) with more unique values(c)</p>
+<ul>
+<li>Entropy: the average amount of information that is encoded by a random variable X.</li>
+<li>Conditional Entropy: Given we know X, how much extra information is needed to encode Y.</li>
+<li>Information Gain (IG): How much new information do we gain on Y by conditioning on X.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/dt_information_gain.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</li>
+</ul>
+<h4 id="gain-ration">Gain Ration</h4>
+<ul>
+<li>Gain Ration = IG(C) / IV(C)</li>
+<li>IV intrinsic value = count unique(c of C)</li>
+</ul>
+<h4 id="combined">Combined</h4>
+<ol>
+<li>First, IG &gt; Constant A</li>
+<li>Then, Rank by Gain Ratio</li>
+</ol>
+<h3 id="pseudocode">Pseudocode</h3>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/dt_pseudocode.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h3 id="control-complexity">Control Complexity</h3>
+<h4 id="hyperparams-tuning">Hyperparams Tuning</h4>
+<ul>
+<li>Depth of Tree (+)</li>
+<li>Min Leaf Size (-)</li>
+<li>Min Split Size (-)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/dt_complexity_control.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</li>
+</ul>
+<h4 id="pruning">Pruning</h4>
+<ul>
+<li>Pre-Pruning</li>
+<li>Post-Pruning</li>
+</ul>
+<h3 id="advanced-parts">Advanced Parts</h3>
+<h4 id="feature-exploration">Feature Exploration</h4>
+<p>Often times the Decision Tree is useful as tool for testing for feature interactions as well as ranking features by their ability to predict the target variable.
+Scikit-learn’s DecisionTree fit function automatically returns normalized information gain for each feature (also called the Gini Importance).</p>
+<h4 id="numeric-variables">Numeric Variables</h4>
+<ul>
+<li>Features: Use Split Points to discretize it. Try all split points, and choose the highest IG.</li>
+<li>Target Variable(Regression): Measure Purity
+<ul>
+<li>Variance</li>
+<li>Weighted Average Variance Reduction</li>
+</ul>
+</li>
+</ul>
+<h4 id="probability-estimation">Probability Estimation</h4>
+<ul>
+<li>Frequency-Based Estimation (FBE): If we are satisfied to assign the same class probability to every member of the segment corresponding to a tree leaf, we can use instance counts at each leaf to compute a class probability estimate. p(c) = Count(c)  / (Count(all)</li>
+<li>Frequency-Based Estimation with Laplace correction: p(c) = (Count(c) + k) / (Count(all) + Unique(c) * k). It is useful in small samples. As number of instance increases: converge to the FBE.</li>
+</ul>
+<h3 id="advantagesdisadvantages-4">Advantages/Disadvantages</h3>
+<p><strong>Pros</strong>:</p>
+<ul>
+<li>Easy to interpret (though cumbersome to visualize if large).</li>
+<li>Easy to implement just a series of if-­then rules. Prediction is cheap: total operations = depth of tree.</li>
+<li>No feature engineering necessary.</li>
+<li>Can often handle categorical/text features as is (software dependent).</li>
+<li>Automatically detect non-­linearities and interactions.</li>
+</ul>
+<p><strong>Cons</strong>:</p>
+<ul>
+<li>Easy to overfit: flexibility of algorithm requires careful tuning of parameters and leaf pruning.</li>
+<li>Decision Tree algorithms are greedy: not very stable and small changes in daat can give very different solutions.</li>
+<li>Difficulty learning in skewed target distributions (entropy is very small at the begining).</li>
+<li>Not well suited for problems as number of samples shrinks while number of features grows.</li>
+<li>Decision Tree is often relatively inaccurate when dataset is samll (less assumptions). Many other predictors perform better with similar data.</li>
+</ul>
+<h3 id="question-part">Question Part</h3>
+<h4 id="question-1-logistic-regression-versus-tree-induction">Question 1: Logistic Regression versus Tree Induction</h4>
+<p>Classification trees and linear classifiers both use linear decision boundaries, what are the differences between them:</p>
+<ul>
+<li>Decision Boundary Diresctio: A classification tree uses decision boundaries that are <strong>perpendicular</strong> to the instancespace axes, whereas the linear classifier can use decision boundaries of <strong>any direction or orientation</strong>. This is a direct consequence of the fact that classification trees select <strong>a single attribute</strong> at a time whereas linear classifiers use <strong>a weighted combination of all attributes</strong>.</li>
+<li>Subspace Counts:
+<ul>
+<li>A classification tree is a “piecewise” classifier that segments the instance space recursively when it has to, using <strong>a divide-and-conquer approach</strong>. In principle, a classification tree can <strong>cut up the instance space arbitrarily finely into very small regions</strong>.</li>
+<li>A linear classifier places a single decision surface through the entire space. It has great freedom in the orientation of the surface, but it is limited to <strong>a single division into two segments</strong>. This is a direct consequence of there being <strong>a single (linear) equation that uses all of the variables</strong>, and must fit the entire data space.</li>
+</ul>
+</li>
+</ul>
+<h2 id="ensemble-overview--stacking-a-namestackinga">Ensemble Overview &amp; Stacking <a name="Stacking"></a></h2>
+<h3 id="ensemble">Ensemble</h3>
+<p>Ensemble methods are meta-algorithms that combine several machine learning techniques into one predictive model in order to <strong>decrease variance (bagging), bias (boosting), or improve predictions (stacking)</strong>.</p>
+<h3 id="typtes-of-ensemble">Typtes of Ensemble</h3>
+<ul>
+<li>Stacking
+<ul>
+<li>Stacking is an ensemble learning technique that combines multiple classification or regression models via a meta-classifier or a meta-regressor.</li>
+<li>Often considers heterogeneous base learners.</li>
+<li>Example: Taking a weighted combination of the predictions of a total of S different classifiers.</li>
+</ul>
+</li>
+<li>Bagging
+<ul>
+<li>Decrease variance</li>
+<li>The base learners are generated <strong>in parallel</strong> through <strong>resampling</strong>.</li>
+<li>Often considers homogeneous base learners.</li>
+<li>The basic motivation of parallel methods is to exploit <strong>independence</strong> between the base learners since the error can be reduced dramatically by averaging.</li>
+</ul>
+</li>
+<li>Boosting
+<ul>
+<li>Decrease bias</li>
+<li>The base learners are generated <strong>sequentially</strong>, using <strong>cumulative errors</strong> to inform or weight additional classifiers.</li>
+<li>Often considers homogeneous  base learners.</li>
+<li>The basic motivation of sequential methods is to exploit the <strong>dependence</strong> between the base learners. The overall performance can be boosted by weighing previously mislabeled examples with higher weight.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/baging_boosting.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="stacking-pseudocode">Stacking Pseudocode</h3>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/stacking_pseudocode.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h3 id="stacking-training-data">Stacking Training Data</h3>
+<p>In order to generalize appropriately, the meta-model needs to be built from data that is seperate from the base-models. Otherwise, the system risks overfitting. Note that this is best accomplished when sample sizes are large.</p>
+<h3 id="quesion-part-2">Quesion Part</h3>
+<h4 id="question-1-why-stacking-work">Question 1: Why stacking work?</h4>
+<ul>
+<li>Case 1: In the case of simple averaging, the weighted average model de-noises individual models that are poentially overfir around the decision boundaries.</li>
+<li>Case 2: Different models perform better on different parts of the input space S. For example: more complex model will do better on regions of X with higher support(more samples); more biased models may then be better where there is lower support (less samples). Then, Stacking  learns  the  best   of  both  worlds.</li>
+</ul>
+<h2 id="bagging--random-forest-a-namebagginga">Bagging &amp; Random Forest <a name="Bagging"></a></h2>
+<h3 id="bootstraping-statistics">Bootstraping (statistics)</h3>
+<p>“Bootstrapping is a statistical procedure that resamples a single dataset to create many simulated samples. This process allows for the calculation of standard errors, confidence intervals, and hypothesis testing” (Forst)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/bootstrape.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h3 id="bagging">Bagging</h3>
+<p>Bootstrap aggregation, or bagging is a general-purpose procedure for reducing the variance of a statistical learning method.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/bagging.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h3 id="randomforests">RandomForests</h3>
+<h4 id="basic-concept-1">Basic Concept</h4>
+<p>The Random Forest algorithm is probably the most well known and utilized implementation of the Bagging technique.
+A Random Forest is an ensemble of Decision Trees, where both <strong>bagging</strong> and <strong>random feature selection</strong> are used to add randomness and reduce the variance of the forest.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/random_forest.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h4 id="why-do-random-forests-work">Why do Random Forests work</h4>
+<ul>
+<li>Bias
+<ul>
+<li>A single decision tree is unstable, and has high variance, but can also have extremely low bias. It can detact a all manner of interaction effects, specially when allowed to grow very deep</li>
+<li>The  bias  of  the  average  of  identically  distributed  trees  is  equal  to  the  bias  of  the   individual  trees  (in  this  case,  very  low).</li>
+</ul>
+</li>
+<li>Variance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/random_forest_work.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</li>
+</ul>
+<h4 id="hyperparameters-tuning">Hyperparameters Tuning:</h4>
+<p>Usually over-fit the individual trees, and use some hold-out method to optimize forest level parameters.</p>
+<ul>
+<li>Tree Level Paramters
+<ul>
+<li><em>max_depth</em>: the size of the tree. Usually you don’t want to limit this</li>
+<li><em>min_sample_split</em>: the number of instances in an intermediate node, before splitting (usually good to set to 1)</li>
+</ul>
+</li>
+<li>Forest Level Parameters
+<ul>
+<li><em>n_estimators</em>: the number of trees (and bootstrapped samples) to be used</li>
+<li><em>max_features</em>: the number of features that will be randomly sampled for each tree.
+The default in RandomForestClassifier is max_features=sqrt(total_features), which is generally a good suggestion. The default for n_estimators is 10, which is probably too low.</li>
+</ul>
+</li>
+</ul>
+<h4 id="feature-importance">Feature Importance</h4>
+<p>Much like with Decision Trees, the Random Forest Classifier has a built in mechanism for evaluating feature importance. Quoting the sklearn documentation: <em>Features used at the top of the tree contribute to the final prediction of a larger fraction of the input samples. The expected fraction of the samples they contribute to can thus be used as an estimate of the relative importance of the features.</em>
+The above computation is made for each feature in each tree and then averaged over all trees in the forest. The Random Forest Classifier returns an attribute with an importance score for each feature, and these scores sum to 1 across all features.</p>
+<h4 id="out-of-bag-error">Out-of-Bag Error</h4>
+<ul>
+<li>Cross-validation with Random Forest&rsquo;s can be painfully slow. That&rsquo;s because each cross-validation step requires building k * n_estimators trees.</li>
+<li>&ldquo;Out-of-bag&rdquo; error calculation. Each tree is built from a <strong>bootstrap sample</strong> of the data, so that for each tree, some portion of the data is not used for that tree. The Random Forest method computes an out-of-bag prediction for each record  [𝑥𝑖,𝑦𝑖]  by averaging the prediction  𝑓𝑏(𝑥𝑖,𝑦𝑖)  on record  𝑖  for the bootstrap iterations in which record  𝑖  was not chosen in the bootstrap. The out-of-bag prediction can then be used to compute out-of-sample error for model selection and validation. This method should be equivalent to  𝑁-fold cross-validation.</li>
+</ul>
+<h3 id="advantagesdisadvantages-5">Advantages/Disadvantages</h3>
+<p><strong>Pros</strong>:</p>
+<ul>
+<li>A single decision tree tends to overfit the data. The process of averaging or combining the results of different decision trees helps to overcome the problem of overfitting.</li>
+<li>Random forests are extremely flexible and have very high accuracy.</li>
+<li>They also do not require preparation of the input data. You do not have to scale the data.</li>
+<li>It also maintains accuracy even when a large proportion of the data are missing.</li>
+</ul>
+<p><strong>Cons</strong>:</p>
+<ul>
+<li>The main disadvantage of Random forests is their complexity. They are much harder and time-consuming to construct than decision trees.</li>
+<li>They are less intuitive. When you have a large collection of decision trees it is hard to have an intuitive grasp of the relationship existing in the input data.</li>
+<li>In addition, the prediction process using random forests is time-consuming than other algorithms.</li>
+</ul>
+<h3 id="question-part-1">Question Part</h3>
+<h4 id="question-1-bootstraping-versus-traditional-statistical-method">Question 1: Bootstraping versus Traditional Statistical Method</h4>
+<p>Please compare Bootstraping versus Traditional Statistical Method, and state why we use former?</p>
+<ul>
+<li>Results derived from bootstraping are basically identical to those of the traditional approach.</li>
+<li>Both rely largely on the observed data. If the observed data contains outliers, both may skew the estimates.</li>
+<li>The traditional procedure requires one to have a test statistic that satisfies particular assumptions in order to achieve valid results, and this is largely dependent on the experimental design. The traditional approach also uses theory to tell what the sampling distribution should look like, but the results fall apart if the assumptions of the theory are not met.</li>
+<li>The bootstrapping method, on the other hand, takes the original sample data and then resamples it to create many [simulated] samples. This approach does not rely on the theory since the sampling distribution can simply be observed, and one does not have to worry about any assumptions. This technique allows for accurate estimates of statistics, which is crucial when using data to make decisions.</li>
+</ul>
+<h2 id="boosting-adaboost--gradient-descent-a-nameboostinga">Boosting, AdaBoost &amp; Gradient Descent <a name="Boosting"></a></h2>
+<h3 id="boosting">Boosting</h3>
+<p>Boosting works in a similar way with bagging, except that the trees are grown sequentially: each tree is grown using information from previously grown trees. Boosting does not involve bootstrap sampling; instead each tree is ﬁt on a modiﬁed version of the original data set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/boosting.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/boosting_params.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h3 id="adaboost">AdaBoost</h3>
+<p>Adaboost, shortened for Adaptive Boosting, is an machine learning approach.The idea is to <strong>set weights to both classifiers and data points (samples)</strong> in a way that forces classifiers to concentrate on <strong>observations that are difficult to correctly classify</strong>. This process is done sequentially in that the two weights are adjusted at each step as iterations of the algorithm proceed. This is why Adaboost is referred to as a <em>sequential ensemble method</em>: ensemble referring to a type of learning that combines several models to improve the final predictive performance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/adaBoost_pseudocode.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h4 id="mathmatical-process-in-_watermelon-book-p173177_">Mathmatical Process in <em>Watermelon Book P173~177</em></h4>
+<h4 id="loss-function">Loss Function</h4>
+<ul>
+<li>Why Not 0-1 loss: The 0-1 loss function has nice properties that we would like to take advantage of for many problems. However, because it is not convex, it is difficult to optimize using the 0-1 loss, so we often turn to convex <strong>surrogate loss functions</strong>.</li>
+<li>What Surrogate Loss Function AdaBoost Use: Exponential Loss</li>
+</ul>
+<h4 id="regularization">Regularization</h4>
+<ul>
+<li>which weak classifier might work best to solve their given classification problem</li>
+<li>The number of boosting rounds that should be used during the training phase.</li>
+</ul>
+<h4 id="advantagesdisadvantages-6">Advantages/Disadvantages</h4>
+<p><strong>Pros</strong>:</p>
+<ul>
+<li>AdaBoost is a powerful classification algorithm that has enjoyed practical success with applications in a wide variety of fields, such as biology, computer vision, and speech processing.</li>
+<li>Unlike other powerful classifiers, such as SVM, AdaBoost can achieve similar classification results with much less tweaking of parameters or settings (unless of course you choose to use SVM with AdaBoost).</li>
+<li>It enables a user to add several weak classifiers to the family of weak classifiers that should be used at each round of boosting. The AdaBoost algorithm will select the weak classifier that works best at that round of boosting.
+<strong>Cons</strong>:</li>
+<li>AdaBoost can be sensitive to noisy data and outliers. In some problems, however, it can be less susceptible to the overfitting problem than most learning algorithms.</li>
+</ul>
+<h3 id="gradient-boosting">Gradient Boosting</h3>
+<p>Gradient boosting is a machine learning technique for regression and classification problems, which produces a prediction model in the form of an ensemble of weak prediction models, typically decision trees. It builds the model in a stage-wise fashion like other boosting methods do, and it generalizes them by allowing optimization of an arbitrary differentiable loss function.</p>
+<h4 id="loss-function-1">Loss Function</h4>
+<p>It depends on the model, could be square loss or exponential loss. For any loss function, we can derive a gradient boosting algorithm. Absolute loss and Huber loss are more robust to outliers than square loss.</p>
+<h4 id="inroduction-of-gradient">Inroduction of &ldquo;gradient&rdquo;</h4>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/gradient_boosting_intro.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h4 id="pseudocode-1">Pseudocode</h4>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/gradient_boosting_pseudocode.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h4 id="regularization-1">Regularization</h4>
+<ul>
+<li>Gradient boosting iterations M (i.e. the number of trees in the model when the base learner is a decision tree). Increasing M reduces the error on training set, but setting it too high may lead to overfitting. An optimal value of M is often selected by monitoring prediction error on a separate validation data set. Besides controlling M, several other regularization techniques are used.</li>
+<li>Depth of the trees. The higher this value the more likely the model will overfit the training data.</li>
+<li>Shrinkage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/gradient_boosting_shrinkage.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</li>
+</ul>
+<h4 id="gradient-boosting-decision-trees-gbdt">Gradient Boosting Decision Trees (GBDT)</h4>
+<h5 id="xgboost">XGBoost</h5>
+<p>XGBoost from the university of washington and published in 2016 introduces two techniques to improve performance.</p>
+<ul>
+<li>Firstly the idea of <strong>Weighted Quantile Sketch</strong>, which is an approximation algorithm for determining how to make splits in a decision tree (candidate splits).</li>
+<li>The second is <strong>Sparsity-aware split</strong> finding which works on sparse data, data with many missing cells.</li>
+</ul>
+<h5 id="lightgbm">LightGBM</h5>
+<p>LightGBM from Microsoft and published in 2017 also introduces two techniques to improve performance.</p>
+<ul>
+<li><strong>Gradient-based One-Side Sampling</strong> which inspects the most informative samples while skipping the less informative samples.</li>
+<li>And <strong>Exclusive Feature Bundling</strong> which takes advantage of sparse datasets by grouping features in a near lossless way.</li>
+</ul>
+<h4 id="advantagesdisadvantages-7">Advantages/Disadvantages</h4>
+<p><strong>Pros</strong>:</p>
+<ul>
+<li>Often provides predictive accuracy that cannot be beat. If you are able to use correct tuning parameters, they generally give somewhat better results than Random Forests.</li>
+<li>Lots of flexibility: can optimize on different loss functions and provides several hyperparameter tunning options that make the function fit very flexible.</li>
+<li>No data preprocessing required, often works great with categorical and numerical values as is.</li>
+<li>Handles missing data, imputation not required.</li>
+</ul>
+<p><strong>Cons</strong>:</p>
+<ul>
+<li>GBMs will continue improving to minimize all errors. This can overemphasize outliers and cause overfitting. Must use cross-validation to neuralize.</li>
+<li>Computationally expensive, GBMs often require many trees (&gt;1000) which can be time and memory exhaustive.</li>
+<li>The high flexibility results in many parameters that interact and influence heavily the behavior of the approach. This requires a large grid search during tunning.</li>
+<li>Less interpretable although this is easily addressed with various tools (varaible importance, partial dependence plots, SHAP, LIME, etc.)</li>
+</ul>
+<h2 id="k-nearest-neighbors-a-nameknna">K-Nearest Neighbors <a name="knn"></a></h2>
+<h3 id="basic-concept-2">Basic Concept</h3>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/knn_def.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h3 id="characters">Characters</h3>
+<ul>
+<li>Non-­parametric
+You don&rsquo;t have to make any assumptions about the functional form that estimates E[X|X]. This makes it very powerful for estimating any arbitary decision curve, but extreme flexibility always risks overfitting.</li>
+<li>Instance-­based learning
+You technically don&rsquo;t need to train it. Estimation of E[Y|X] is done locally and a scoring time by taking the average of Y of the k nearest neighbors of the instance. There is effectively no model, just all of the training data stored in memory.</li>
+</ul>
+<h3 id="parameters">Parameters</h3>
+<h4 id="number-of-neighbors">Number of Neighbors</h4>
+<p>The less, the more likely to over-fitting</p>
+<h4 id="distance">Distance</h4>
+<h5 id="properties-similiar-to-norm">Properties (similiar to norm)</h5>
+<p>Given two points a and b, and a distance function d():</p>
+<ol>
+<li>d(a,b) ≥ 0 … non-­negativity</li>
+<li>d(a,b) = 0 only if and only if a=b</li>
+<li>d(a,b) = (b,a)  …  symmetry</li>
+<li>d(a,c) ≤ d(a,b)+d(b,c) … triangle inequality</li>
+</ol>
+<h5 id="types">Types</h5>
+<p>Lp-­norm  distance  measures</p>
+<ul>
+<li>Manhattan Distance</li>
+<li>Euclidean Distance</li>
+</ul>
+<h5 id="scale-matters">Scale Matters</h5>
+<p>Features with higher magnitude tend to dominate distance metrics. It may be required to normalize the data first.</p>
+<h3 id="chanllenges">Chanllenges</h3>
+<h4 id="expensive-search">Expensive Search</h4>
+<ul>
+<li>For every instance, it requires O(N) to know its neighbors when a brute force search is used (k-d tree will be faster).</li>
+<li>How to alleviate it: Approximate Neatest Neighbors</li>
+</ul>
+<h4 id="curse-of-dimensionality-coda">Curse of Dimensionality (CODA)</h4>
+<p>When using Lp-­norm distance measures, averaged distances increase as the dimensionality increases. In a high-dimensional space, most parts are far from all other points.</p>
+<ul>
+<li>As the dimension increases, the ratio of the difference between max and min to the min distance to the center tends to 0. This means all points are equally far apart, leaving no nearest neighbors to learn from.</li>
+</ul>
+<h3 id="advantagesdisadvantages-8">Advantages/Disadvantages</h3>
+<p><strong>Pros</strong>:</p>
+<ul>
+<li>Easy to interpret output</li>
+<li>Naturally handles multi-class cases</li>
+<li>Do not need to train</li>
+<li>Predictive power, can do well in practice with enough representative data</li>
+</ul>
+<p><strong>Cons</strong>:</p>
+<ul>
+<li>Large search problem to find nearest neighbors</li>
+<li>Storage of data</li>
+<li>Curse of dimensionality</li>
+<li>Must know we have a meaningful distance function</li>
+</ul>
+<h3 id="extension-approximate-neatest-neighbors">Extension: Approximate Neatest Neighbors</h3>
+<h4 id="partition-instead-of-searching-through-all-points-we-will-iteratively-partition-the-x-space-randomly-to-create-subsapces-and-search-only-within-those-subspaces-we-continue-partition-until-weve-reached-designate-stopping-criteria">Partition: Instead of searching through all points, we will iteratively partition the X space randomly to create subsapces, and search only within those subspaces. We continue partition until we’ve reached designate stopping criteria.</h4>
+<ul>
+<li>Problem of Partition:
+You are limited to just the neighbors in the terminal node of the tree.</li>
+<li>Solution:
+You don&rsquo;t have to use a single terminal node. Nearby splits (regions) can also be considered.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/knn_extension.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</li>
+</ul>
+<h2 id="clustering-overview--k-means-a-namekmeansa">Clustering Overview &amp; K-Means <a name="kmeans"></a></h2>
+<h3 id="clustering">Clustering</h3>
+<p>Clustering is a set of techniques used to partition data into groups, or clusters. Clusters are loosely defined as groups of data objects that are more similar to other objects in their cluster than they are to data objects in other clusters. In practice, clustering helps identify two qualities of data:</p>
+<ul>
+<li>Meaningfulness: Meaningful clusters expand domain knowledge.</li>
+<li>Usefulness: Useful clusters, on the other hand, serve as an intermediate step in a data pipeline.</li>
+</ul>
+<h3 id="types-of-clustering">Types of Clustering</h3>
+<h4 id="partitional-clustering">Partitional Clustering</h4>
+<ul>
+<li>Partitional clustering divides data objects into non-overlapping groups.</li>
+<li>These techniques require the user to <strong>specify the number of clusters</strong>, indicated by the variable k.</li>
+<li>Many partitional clustering algorithms work through an <strong>iterative process</strong> to assign subsets of data points into k clusters. Two examples of partitional clustering algorithms are k-means and k-medoids.</li>
+<li>These algorithms are both non-deterministic, meaning they could produce different results from two separate runs even if the runs were based on the same input.</li>
+</ul>
+<h5 id="advantagesdisadvantages-9">Advantages/Disadvantages</h5>
+<p><strong>Pros</strong>:</p>
+<ul>
+<li>They work well when clusters have a spherical shape.</li>
+<li>They’re scalable with respect to algorithm complexity.</li>
+</ul>
+<p><strong>Cons</strong>:</p>
+<ul>
+<li>They’re not well suited for clusters with <strong>complex shapes and different sizes</strong>.</li>
+<li>They break down when used with clusters of <strong>different densities</strong>.</li>
+</ul>
+<h4 id="density-based-clustering">Density-Based Clustering</h4>
+<ul>
+<li>Density-based clustering determines cluster assignments based on the density of data points in a region. Clusters are assigned where there are high densities of data points separated by low-density regions.</li>
+<li>Unlike the other clustering categories, this approach doesn’t require the user to specify the number of clusters. Instead, there is a <strong>distance-based parameter that acts as a tunable threshold</strong>. This threshold determines how close points must be to be considered a cluster member.</li>
+<li>Examples of density-based clustering algorithms include Density-Based Spatial Clustering of Applications with Noise (DBSCAN), and Ordering Points To Identify the Clustering Structure ( OPTICS).</li>
+</ul>
+<h5 id="advantagesdisadvantages-10">Advantages/Disadvantages</h5>
+<p><strong>Pros</strong>:</p>
+<ul>
+<li>They excel at identifying clusters of nonspherical shapes.</li>
+<li>They’re resistant to outliers.</li>
+</ul>
+<p><strong>Cons</strong>:</p>
+<ul>
+<li>They aren’t well suited for clustering in <strong>high-dimensional spaces</strong>.</li>
+<li>They have trouble identifying clusters of <strong>varying densities</strong>.</li>
+</ul>
+<h4 id="hierarchical-clustering">Hierarchical Clustering</h4>
+<ul>
+<li>Hierarchical clustering determines cluster assignments by <strong>building a hierarchy</strong>.</li>
+<li>This is implemented by either a bottom-up or a top-down approach. These methods produce a tree-based hierarchy of points called a dendrogram.
+<ul>
+<li>Agglomerative clustering is the bottom-up approach. It merges the two points that are the most similar until all points have been merged into a single cluster.</li>
+<li>Divisive clustering is the top-down approach. It starts with all points as one cluster and splits the least similar clusters at each step until only single data points remain.</li>
+</ul>
+</li>
+<li>Similar to partitional clustering, in hierarchical clustering <strong>the number of clusters (k) is often predetermined</strong> by the user. Clusters are assigned by cutting the dendrogram at a specified depth that results in k groups of smaller dendrograms.</li>
+<li>Unlike many partitional clustering techniques, hierarchical clustering is a deterministic process, meaning cluster assignments won’t change when you run an algorithm twice on the same input data.</li>
+</ul>
+<h5 id="advantagesdisadvantages-11">Advantages/Disadvantages</h5>
+<p><strong>Pros</strong>:</p>
+<ul>
+<li>They often reveal the finer details about the relationships between data objects.</li>
+<li>They provide an interpretable dendrogram.</li>
+</ul>
+<p><strong>Cons</strong>:</p>
+<ul>
+<li>They’re computationally expensive with respect to algorithm complexity.</li>
+<li>They’re sensitive to noise and outliers.</li>
+</ul>
+<h3 id="k-means-pseudocode">K-Means Pseudocode</h3>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/k_means_pseudocode.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h3 id="discussion-of-k-means-similiar-to-knn">Discussion of K-Means (similiar to KNN)</h3>
+<ul>
+<li>Distance metrics matters. Most common distance metric is Euclidean distance.</li>
+<li>Scalling of features matters.</li>
+<li>Features need to be numeric.</li>
+<li>Curse of dimensionality.</li>
+</ul>
+<h3 id="evaluation">Evaluation</h3>
+<h4 id="goodness-of-fit-determine-k">Goodness of fit: determine k</h4>
+<h5 id="inertia">Inertia</h5>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/inertia.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<ul>
+<li>Inertia can be recognized as a measure of how internally coherent clusters are.</li>
+<li>It suffers from various drawbacks:
+<ul>
+<li>Inertia makes the assumption that clusters are convex and isotropic, which is not always the case. It responds poorly to elongated clusters, or manifolds with irregular shapes.</li>
+<li>Inertia is not a normalized metric: we just know that lower values are better and zero is optimal. But in very high-dimensional spaces, Euclidean distances tend to become inflated (this is an instance of the so-called “curse of dimensionality”). Running a dimensionality reduction algorithm such as Principal component analysis (PCA) prior to k-means clustering can alleviate this problem and speed up the computations.</li>
+</ul>
+</li>
+</ul>
+<h5 id="eblow-method">Eblow Method</h5>
+<ul>
+<li>As k increases, the sum of squared distance tends to zero. Imagine we set k to its maximum value n (where n is number of samples) each sample will form its own cluster meaning sum of squared distances equals zero.</li>
+<li>If the line chart resembles an arm, then the “elbow” (the point of inflection on the curve) is a good indication that the underlying model fits best at that point.</li>
+</ul>
+<h5 id="silhouette-value">Silhouette Value</h5>
+<ul>
+<li>The silhouette value is a measure of how similar an object is to its own cluster (cohesion) compared to other clusters (separation).</li>
+<li>The silhouette ranges from −1 to +1, where a high value indicates that the object is well matched to its own cluster and poorly matched to neighboring clusters. If most objects have a high value, then the clustering configuration is appropriate. If many points have a low or negative value, then the clustering configuration may have too many or too few clusters.</li>
+<li>The silhouette can be calculated with any distance metric, such as the Euclidean distance or the Manhattan distance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/silhouette.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</li>
+</ul>
+<h4 id="cluster-distribution">Cluster Distribution</h4>
+<ul>
+<li>Do the clusters have practical distribution across them</li>
+</ul>
+<h4 id="interpretation">Interpretation</h4>
+<ul>
+<li>Do the clusters have meaningful and useful interpretations</li>
+</ul>
+          </div>
+
+          
+
+
+
+          
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="/Di_Portfolio/notes/machine-learning/machine-learning-general/" rel="prev">ML General Knowledge</a>
+  </div>
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          <p>Last updated on Jan 1, 2021</p>
+
+          
+
+
+
+
+
+          
+
+
+
+
+          
+
+
+  
+  
+
+
+
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+
+  
+
+
+
+  
+
+  
+  <p class="powered-by">
+    
+      <a href="/Di_Portfolio/privacy/">Privacy Policy</a>
+    
+    
+       &middot; 
+      <a href="/Di_Portfolio/terms/">Terms</a>
+    
+  </p>
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+  </div>
+
+  <div class="page-footer">
+    
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    <script src="/Di_Portfolio/js/vendor-bundle.min.b73dfaac3b6499dc997741748a7c3fe2.js"></script>
+
+    
+    
+    
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/latex.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/SQL.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/Tableau.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/AWS.min.js" crossorigin="anonymous"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js" integrity="sha512-I7w3ZdSFzw5j3jU3ZkNikBNeIrl3i+hEuEdwNmqUJvwNcaBUNcijnP2gd9DtGlgVYDplfjGoD8vTNsID+lCjqg==" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/Di_Portfolio/en/js/wowchemy.min.72338405899cd64422baba3a060ad924.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>

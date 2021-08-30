@@ -1,0 +1,2083 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.3.0 for Hugo" />
+  
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Di He" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Introduction to Machine Learning General knowledge" />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://hedygithub.github.io/Di_Portfolio/notes/machine-learning/machine-learning-general/" />
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+    
+    <script src="/Di_Portfolio/js/mathjax-config.js"></script>
+  
+
+  
+
+  <link rel="stylesheet" href="/Di_Portfolio/css/vendor-bundle.min.f1ecf783c14edc00c9320c205831ad8e.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/Di_Portfolio/css/wowchemy.481af39c39ffd87b2d14f39943e7c723.css" />
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/Di_Portfolio/manifest.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/Di_Portfolio/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/Di_Portfolio/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://hedygithub.github.io/Di_Portfolio/notes/machine-learning/machine-learning-general/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary" />
+  
+  <meta property="og:site_name" content="Academic" />
+  <meta property="og:url" content="https://hedygithub.github.io/Di_Portfolio/notes/machine-learning/machine-learning-general/" />
+  <meta property="og:title" content="ML General Knowledge | Academic" />
+  <meta property="og:description" content="Introduction to Machine Learning General knowledge" /><meta property="og:image" content="https://hedygithub.github.io/Di_Portfolio/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" />
+    <meta property="twitter:image" content="https://hedygithub.github.io/Di_Portfolio/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2021-01-01T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2021-01-01T00:00:00&#43;00:00">
+  
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>ML General Knowledge | Academic</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="95a522624536ab9e1fbb62ac2aa63e78" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/Di_Portfolio/js/wowchemy-init.min.8988fb2a4bba758785868cfcb5244555.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/Di_Portfolio/">Academic</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/Di_Portfolio/">Academic</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/Di_Portfolio/#about"><span>About</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/Di_Portfolio/projects/"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/Di_Portfolio/notes/"><span>Notes</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    
+
+
+
+
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      <form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-md-3 w-100" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <div class="d-flex">
+      <span class="d-md-none pl-1 flex-grow-1 text-left overflow-hidden">
+        
+          Overview
+        
+      </span>
+      <span><i class="fas fa-chevron-down"></i></span>
+    </div>
+  </button>
+
+  
+  <button class="form-control sidebar-search js-search d-none d-md-flex">
+    <i class="fas fa-search pr-2"></i>
+    <span class="sidebar-search-text">Search...</span>
+    <span class="sidebar-search-shortcut">/</span>
+  </button>
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  
+  
+  
+  
+
+  
+  
+    
+
+    
+      
+
+      <ul class="nav docs-sidenav">
+        <li><a href="/Di_Portfolio/notes/"><i class="fas fa-arrow-left pr-1"></i>Notes</a></li>
+      </ul>
+
+      
+      
+        
+          
+        
+      
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/Di_Portfolio/notes/machine-learning/">Overview</a>
+    
+      
+        <ul class="nav docs-sidenav">
+      
+
+
+  <li class=""><a href="/Di_Portfolio/notes/machine-learning/machine-learning-models/">Introduction to ML Models</a></li>
+
+
+
+  <li class="active"><a href="/Di_Portfolio/notes/machine-learning/machine-learning-general/">ML General Knowledge</a></li>
+
+      
+        </ul>
+      
+    
+
+    
+      </div>
+    
+
+    
+  
+</nav>
+
+    </div>
+
+    
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      
+
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#main-references">Main References</a></li>
+    <li><a href="#data-science-overview-a-nameoverviewa">Data Science Overview <a name="overview"></a></a>
+      <ul>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#cross-industry-standard-process-for-data-mining">Cross Industry Standard Process for Data Mining</a></li>
+        <li><a href="#components-things-data-scientist-has-to-consider">Components: Things Data Scientist has to Consider</a></li>
+        <li><a href="#concerns">Concerns</a></li>
+      </ul>
+    </li>
+    <li><a href="#data--sampling-a-namedataa">Data &amp; Sampling <a name="data"></a></a>
+      <ul>
+        <li><a href="#think-about">Think about:</a></li>
+        <li><a href="#souces">Souces:</a></li>
+        <li><a href="#define-the-instance-of-the-data">Define the Instance of the Data</a></li>
+        <li><a href="#define-the-target-variable-based-on-application-and-be-creative">Define the Target Variable: Based on Application and Be Creative</a></li>
+        <li><a href="#sampling">Sampling</a></li>
+        <li><a href="#selction-bias">Selction Bias</a></li>
+      </ul>
+    </li>
+    <li><a href="#data-cleaning--exploratory-data-analysis-a-nameedaa">Data Cleaning &amp; Exploratory Data Analysis <a name="EDA"></a></a>
+      <ul>
+        <li><a href="#goals-to-do-eda">Goals to do EDA</a></li>
+        <li><a href="#descriptive-statistics">Descriptive Statistics</a></li>
+        <li><a href="#data-cleaning">Data Cleaning</a></li>
+        <li><a href="#bivariate">Bivariate</a></li>
+        <li><a href="#multivariate">Multivariate</a></li>
+      </ul>
+    </li>
+    <li><a href="#feature-engineering-a-namefeaturea">Feature Engineering <a name="feature"></a></a>
+      <ul>
+        <li><a href="#put-them-into-applications">Put them into Applications</a></li>
+        <li><a href="#note-some-algorithms-could-do-this-for-you">Note: some algorithms could do this for you:</a></li>
+        <li><a href="#extract-extra-features">Extract Extra Features</a></li>
+        <li><a href="#leakage">Leakage</a></li>
+      </ul>
+    </li>
+    <li><a href="#loss-function--evaluation-metrics-a-name--evaluationa">Loss Function &amp; Evaluation Metrics <a name = "Evaluation"></a></a>
+      <ul>
+        <li><a href="#loss-function-for-classification">Loss Function For Classification</a></li>
+        <li><a href="#loss-function-for-regression">Loss Function for Regression</a></li>
+        <li><a href="#evaluation-metrics">Evaluation Metrics</a></li>
+      </ul>
+    </li>
+    <li><a href="#model-selection-a-name--modelselectiona">Model Selection <a name = "ModelSelection"></a></a>
+      <ul>
+        <li><a href="#rules">Rules:</a></li>
+        <li><a href="#hyper-parameter-selection">Hyper-Parameter Selection</a></li>
+        <li><a href="#feature-selection">Feature Selection</a></li>
+        <li><a href="#alogrithm-selection">Alogrithm Selection</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article">
+
+        <div class="docs-article-container">
+          
+            
+  <nav class="d-none d-md-flex" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      
+  
+  
+  
+
+  <li class="breadcrumb-item">
+    <a href="/Di_Portfolio/">
+      
+        Home
+      
+    </a>
+  </li>
+
+
+  <li class="breadcrumb-item">
+    <a href="/Di_Portfolio/notes/">
+      
+        Notes
+      
+    </a>
+  </li>
+
+
+  <li class="breadcrumb-item">
+    <a href="/Di_Portfolio/notes/machine-learning/">
+      
+        Overview
+      
+    </a>
+  </li>
+
+
+      <li class="breadcrumb-item active" aria-current="page">
+        ML General Knowledge
+      </li>
+    </ol>
+  </nav>
+
+
+          
+
+          <h1>ML General Knowledge</h1>
+
+          <div class="article-style">
+            <p>Introduction to Machine Learning General knowledge</p>
+<p>
+  <i class="fas fa-clock  pr-1 fa-fw"></i> 2 hours to read</p>
+<h2 id="main-references">Main References</h2>
+<ul>
+<li><a href="https://github.com/briandalessandro/DataScienceCourse/tree/master/ipython" target="_blank" rel="noopener">Introduction to Data Science (NYU CDS 1001)</a></li>
+<li>Book: Data Science for Business</li>
+<li>Notes of Probability and Statistics for Data Science (NYU CDS 1002)</li>
+<li><a href="https://leomiolane.github.io/linalg-for-ds.html" target="_blank" rel="noopener">Optimization and Computational Linear Algebra for Data Science (NYU CDS 1002)</a></li>
+<li><a href="https://bruceyanghy.github.io/posts/machine_learning_breadth/index_breadth.html" target="_blank" rel="noopener">Bruce Yang: The Breadth of Machine Learning: Part I</a></li>
+<li><a href="https://realpython.com/k-means-clustering-python/" target="_blank" rel="noopener">K-Means Clustering in Python: A Practical Guide</a></li>
+</ul>
+<h2 id="data-science-overview-a-nameoverviewa">Data Science Overview <a name="overview"></a></h2>
+<h3 id="categories">Categories</h3>
+<h4 id="basic-categories">Basic Categories</h4>
+<ul>
+<li>Supervised Learning
+<ul>
+<li>Regression</li>
+<li>Classfication &amp; Class Probability Estimation</li>
+</ul>
+</li>
+<li>Unsupervised Learning
+<ul>
+<li>Clustering</li>
+</ul>
+</li>
+</ul>
+<h4 id="categories-by-parameters">Categories by Parameters</h4>
+<ul>
+<li>Parametric Modeling
+<ul>
+<li>Linear Regression</li>
+<li>SVM</li>
+</ul>
+</li>
+<li>Non-Parametric Modeling
+<ul>
+<li>Decision Tree</li>
+<li>KNN</li>
+<li>K-Means</li>
+</ul>
+</li>
+</ul>
+<h4 id="categories-for-classfication">Categories for Classfication</h4>
+<ul>
+<li>Discrimative
+<ul>
+<li>Logistic Regression</li>
+</ul>
+</li>
+<li>Generative
+<ul>
+<li>Naive Bayes</li>
+</ul>
+</li>
+</ul>
+<h4 id="categories-by-application">Categories by Application</h4>
+<ul>
+<li>Similarity matching attempts</li>
+<li>Co-occurrence grouping</li>
+<li>Profiling (behavior description)</li>
+<li>Link prediction</li>
+<li>Data reduction</li>
+<li>Causal modeling</li>
+</ul>
+<h3 id="cross-industry-standard-process-for-data-mining">Cross Industry Standard Process for Data Mining</h3>
+<ul>
+<li>Business Understaning</li>
+<li>Data Understanding</li>
+<li>Data Preparation</li>
+<li>Modeling</li>
+<li>Evaluation</li>
+<li>Deployment</li>
+</ul>
+<h3 id="components-things-data-scientist-has-to-consider">Components: Things Data Scientist has to Consider</h3>
+<ol>
+<li>Data &amp; Sampling
+<ul>
+<li>Define Instance</li>
+<li>Sampling</li>
+<li>Cleaning data</li>
+</ul>
+</li>
+<li>Features Representation
+<ul>
+<li>Feature Engineering</li>
+<li>Feature Selection ( &lt;- 4 / 6)</li>
+</ul>
+</li>
+<li>Model ( &lt;- 6)</li>
+<li>Objective Function / Loss Function (For Model Training)</li>
+<li>Algorithm for Optimizing (Accelerate the Process)</li>
+<li>Evaluation Metirc (For Application)</li>
+</ol>
+<h3 id="concerns">Concerns</h3>
+<p>Concept Drift: P(X), P(Y) or P(Y|X) that changes over time
+Methods to handle it:</p>
+<ul>
+<li>Monitor predictive performance</li>
+<li>Retrain as often as possible</li>
+<li>Test balance between data recency and data volume</li>
+</ul>
+<h2 id="data--sampling-a-namedataa">Data &amp; Sampling <a name="data"></a></h2>
+<h3 id="think-about">Think about:</h3>
+<ul>
+<li>Where to get data</li>
+<li>How to get data</li>
+<li>What does the data look like</li>
+<li>What&rsquo;s the limits</li>
+</ul>
+<h3 id="souces">Souces:</h3>
+<ul>
+<li>Internal ETL Process</li>
+<li>Production Logging / Sampling</li>
+<li>Web Scraping / API</li>
+<li>Survey / Panel</li>
+</ul>
+<h3 id="define-the-instance-of-the-data">Define the Instance of the Data</h3>
+<ul>
+<li>
+<p>What should be sampled?</p>
+<ul>
+<li>Both postitives and negatitives are drawn from the same population or process</li>
+<li>Only observe positives and find appropriate negatitives</li>
+</ul>
+</li>
+<li>
+<p>The granularity and range of the instance</p>
+<ul>
+<li>Time</li>
+<li>Geo</li>
+<li>Product Level</li>
+</ul>
+</li>
+<li>
+<p>Are intances independent of each other?</p>
+<ul>
+<li>Geo-Spatial data</li>
+<li>Time series data</li>
+<li>Pairwise instances(social networks, search)</li>
+</ul>
+</li>
+</ul>
+<h3 id="define-the-target-variable-based-on-application-and-be-creative">Define the Target Variable: Based on Application and Be Creative</h3>
+<h3 id="sampling">Sampling</h3>
+<ul>
+<li>Down-Sampling
+<ul>
+<li>Reduce comupational burden of training</li>
+<li>Require Less Data: Less complex alogrithms &amp; models with <strong>information rich features</strong> [Check Learning Curves to see the ]</li>
+<li>Measure empirically the effect of down-sampling (samling size): Learning Curves with X-axis Sample Size.</li>
+</ul>
+</li>
+<li>Up-Sampling / Down-Sampling: Rebalance classes
+<ul>
+<li>When do model evaluation, should still based on the real base rate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/down_sample.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="selction-bias">Selction Bias</h3>
+<h4 id="implications">Implications:</h4>
+<ul>
+<li>Affect generalizability</li>
+<li>Affect identifiablity of model parameters</li>
+</ul>
+<h4 id="unbiasrandom-sample-test">Unbias(random) Sample Test</h4>
+<ul>
+<li>Independent on X (don&rsquo;t want to be biased):
+P(Sampled) = P(Sampled | X = x)  or P(X = x) = P(X = x | Sampled)</li>
+<li>Independent on Y (sometimes intentional bias on Y):
+P(Sampled) = P(Sampled | Y = y) or P(Y = y) = P(Y = y | Sampled)</li>
+</ul>
+<h4 id="intentional-selection-bias">Intentional Selection Bias</h4>
+<ul>
+<li>Often select based on target variable</li>
+<li>It is rational and based on business and economic factors</li>
+</ul>
+<h4 id="what-to-do">What to do</h4>
+<ul>
+<li>Avoid it</li>
+<li>Adjust it</li>
+<li>Expect it</li>
+</ul>
+<h2 id="data-cleaning--exploratory-data-analysis-a-nameedaa">Data Cleaning &amp; Exploratory Data Analysis <a name="EDA"></a></h2>
+<h3 id="goals-to-do-eda">Goals to do EDA</h3>
+<ul>
+<li>Summarize main characteristics of the data [Univariate]</li>
+<li>Gain better understanding of the data set [Univariate]</li>
+<li>Uncover <strong>relationships between variables</strong> [Bivariate]</li>
+<li>Know the data set from a global view [Multivariate]</li>
+<li>Extract important variables</li>
+</ul>
+<h3 id="descriptive-statistics">Descriptive Statistics</h3>
+<ul>
+<li>Know data types
+<ul>
+<li>Numeric
+<ul>
+<li>Continuous</li>
+<li>Discrete</li>
+</ul>
+</li>
+<li>Categorical
+<ul>
+<li>Ordinal</li>
+<li>Nominative</li>
+</ul>
+</li>
+<li>Date</li>
+</ul>
+</li>
+<li>Summariz statistics using pd.describe()</li>
+<li>Distribution: Box Plots, Scatterplot</li>
+</ul>
+<h3 id="data-cleaning">Data Cleaning</h3>
+<ol>
+<li>
+<p>Missing Values</p>
+<ul>
+<li>Check with data collection source</li>
+<li>Delete: Random &amp; Rare</li>
+<li>Fill Constants: Mean, Median, Dummy Variables</li>
+<li>Exploit Mulit-Collinearity: Estimate E[missing given X]</li>
+</ul>
+</li>
+<li>
+<p>Data Formating</p>
+<ul>
+<li>Correct data types</li>
+<li>Apply calculations to incoherent representations</li>
+</ul>
+</li>
+<li>
+<p>Outliers</p>
+<ul>
+<li>Delete</li>
+</ul>
+</li>
+<li>
+<p>Scale Difference</p>
+<ul>
+<li>Normalization
+<ul>
+<li>Simple Feature Scaling (X / X_max)</li>
+<li>Min-Max</li>
+<li>Z-score</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Skewed Distribution (for Linear Regression)</p>
+<ul>
+<li>Standardize: Log()</li>
+</ul>
+</li>
+<li>
+<p>Turning categorical variables into quantitative variables</p>
+<ul>
+<li>One-hot encoding</li>
+</ul>
+</li>
+</ol>
+<h3 id="bivariate">Bivariate</h3>
+<ol>
+<li>
+<p>Correlation for Numerical</p>
+<ul>
+<li>
+<p>Covariance Matrix &amp; Heatmap</p>
+</li>
+<li>
+<p><strong>Pros</strong>:</p>
+<ul>
+<li>Expresses negative dependencies</li>
+<li>Well understood and intuitive (easy to communicate)</li>
+</ul>
+</li>
+<li>
+<p><strong>Cons</strong>:</p>
+<ul>
+<li>Can not capture non-linear dependencies better</li>
+<li>Not apply to categorical data</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Mutual Information
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/mutual_info.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<ul>
+<li>
+<p><strong>Pros</strong>:</p>
+<ul>
+<li>Can capture non-linear dependencies better</li>
+<li>Works naturally with categorical data</li>
+</ul>
+</li>
+<li>
+<p><strong>Cons</strong>：</p>
+<ul>
+<li>Can not express negativedependencies</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Numerical variable group by <strong>Categorical variable</strong></p>
+<ul>
+<li>Analysis of Variance (ANOVA):
+<ul>
+<li>ANOVA: finding correlation between different groups of categorical values</li>
+<li>F-test: variation between sample group means divided by variation within sample group</li>
+</ul>
+</li>
+<li>Two sample T-test</li>
+</ul>
+</li>
+<li>
+<p>AUC for Numerical and Categorical</p>
+</li>
+</ol>
+<h3 id="multivariate">Multivariate</h3>
+<h4 id="singular-value-decomposition">Singular Value Decomposition</h4>
+<p>The relative difference between singular values is a function of the level of independence of the columns.
+Applications:</p>
+<ul>
+<li>The low rank approximation &amp; Data Compression
+<ul>
+<li>Cost: the information retained ratio</li>
+</ul>
+</li>
+<li>Dimensionality Reduction</li>
+<li>Recommender Systems</li>
+<li>Clustering in High Dimensions</li>
+</ul>
+<h2 id="feature-engineering-a-namefeaturea">Feature Engineering <a name="feature"></a></h2>
+<p>Note: Deep Learning could do &ldquo;implicit feature engineering, while not all problems will be a Deep Learning problem. Hence we need &ldquo;explicit feature engineering&rdquo;</p>
+<ol>
+<li>
+<p>Data Binning</p>
+<ul>
+<li>Group a set of numerical / categorical values into a set of &ldquo;Bins&rdquo;, based on pre-defined values.</li>
+<li>Could use Clustering ahead to help determine the groups and bins boundaries.</li>
+</ul>
+</li>
+<li>
+<p>Non-Linear Transformations (Ploynomial Expanion)</p>
+<ul>
+<li>Higher Degree</li>
+<li>Interaction Terms
+<ul>
+<li>The complexity is high, making it infeasible to build and test them all:
+<ul>
+<li>A good technique is to run on a Decision Tree ans make interations from the fisrt few split variables.</li>
+<li>Another method is to use feature importance and make interactions from the more important ones.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="put-them-into-applications">Put them into Applications</h3>
+<ol>
+<li>Noisy and Less Info:
+<ul>
+<li>Non-Linear Transformation
+<ul>
+<li>Low Degree: Underfitting</li>
+<li>Higher Degree: Overfitting
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/non_linear_noisy.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</li>
+</ul>
+</li>
+<li>Bins
+<ul>
+<li>More Bins: hard to borrow information from neighbor bins (using avg Y instead)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/bin_noisy.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Info Rich Environment
+<ul>
+<li>Non-Linear Transformation
+<ul>
+<li>Higher Degree less likely to be overfit.</li>
+</ul>
+</li>
+<li>Bins:
+<ul>
+<li>More bins perform best, because it can approximate any arbitrary curve, but still likely to be overfitting.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="note-some-algorithms-could-do-this-for-you">Note: some algorithms could do this for you:</h3>
+<ul>
+<li>SVMs with Kernel: the use of kernel could map the data into an infinite space, no explicit feature engineering needed.</li>
+<li>Trees: Tree based alogrithms can fit non-linear curves and interactions naturally by partitioning on X and estimating expectations separately for each partition (similiar to binning)</li>
+</ul>
+<h3 id="extract-extra-features">Extract Extra Features</h3>
+<ul>
+<li>Datetime
+<ul>
+<li>Weekday, Weekend</li>
+<li>Holiday</li>
+<li>&hellip;</li>
+</ul>
+</li>
+<li>Numerical Variable to Categorical
+<ul>
+<li>Binning</li>
+<li>Clustering</li>
+</ul>
+</li>
+</ul>
+<h3 id="leakage">Leakage</h3>
+<ul>
+<li>Target Variable Leakage: Having features that are caused by the outcome of the target variable</li>
+<li>Training/Testing Leakage:
+<ul>
+<li>Having records in the training set also appear in the test set.</li>
+<li>[Time Series Related ]Training has features that can not get at the time before testing.</li>
+</ul>
+</li>
+</ul>
+<h2 id="loss-function--evaluation-metrics-a-name--evaluationa">Loss Function &amp; Evaluation Metrics <a name = "Evaluation"></a></h2>
+<h3 id="loss-function-for-classification">Loss Function For Classification</h3>
+<p><em>Ref.</em> <a href="https://en.wikipedia.org/wiki/Loss_functions_for_classification" target="_blank" rel="noopener">Loss_functions_for_classification</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/loss.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<ul>
+<li>0-1 Loss (not convex)</li>
+<li>Surrogate Loss (convex)
+<ul>
+<li>Logistic Loss / Cross Entropy Loss / Log-Likelihood (LL): Logistic Regression</li>
+<li>Hinge Loss: SVM</li>
+<li>Exponential Loss: Boosting
+Note: The validation loss metric <strong>does not</strong> have to be the same as the training loss. Sometimes the loss metric for an application (i.e., AUC for validation) is not easy to directly minimize. Insteat we use other metric in training (i.e., logistic loss instead)</li>
+</ul>
+</li>
+</ul>
+<h3 id="loss-function-for-regression">Loss Function for Regression</h3>
+<ul>
+<li>Mean Squared Error (MSE)</li>
+<li>Mean Absolute Loss</li>
+</ul>
+<h3 id="evaluation-metrics">Evaluation Metrics</h3>
+<h4 id="confusion-matrix">Confusion Matrix</h4>
+<ul>
+<li>
+<p>Accuracy: Most intuitive and well known</p>
+<ul>
+<li>Base Rate Dependent</li>
+</ul>
+</li>
+<li>
+<p>Precision: Of all the instances which the model predict as positive, how many are real positive?</p>
+<ul>
+<li>Best used when <strong>False Positives</strong> are relatively expensive, i.e. budget is limited</li>
+<li>Base Rate Dependent</li>
+</ul>
+</li>
+<li>
+<p>Recall: Of the totoal real positives, how many did the model predict as positive?</p>
+<ul>
+<li>Best used when <strong>False Negatives</strong> are relatively more expensive, i.e. test tumor</li>
+<li>Base Rate Independent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/confusion_matrix.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</li>
+</ul>
+</li>
+<li>
+<p>F1-Score: Favor both precision and recall. It is the harmonic mean of the two.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/f1_score.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+</li>
+<li>
+<p>Lift: How many more positives outcomes you might expect relative to the baseline stratgey (random guess).</p>
+<ul>
+<li>Used with Recall to do economic analysis (help to decide the threshold)</li>
+</ul>
+</li>
+</ul>
+<h4 id="roc-curve-auc-aclc">ROC Curve, AUC, ACLC</h4>
+<ul>
+<li>
+<p>ROC Curve: the Receiver Operating Characteristic curve.</p>
+<ul>
+<li>True Positive Rate: True Positive / Golden Negative</li>
+<li>False Negative Rate: False Negative / Golden Positive</li>
+</ul>
+</li>
+<li>
+<p>AUC: Area Under the ROC Curve</p>
+<ul>
+<li>Probability Interpretation: The AUC is the probability the model will score a randomly chosen positive class higher than a randomly chosen negative class.</li>
+<li>Invariance to prior class probabilities or class prevalence in the data. Useful for comparing across data sets with different base rates or after down sampling.</li>
+<li>Independence of the decision threshold.</li>
+<li>Is nicely bounded [0, 1]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/auc.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</li>
+</ul>
+</li>
+<li>
+<p>ACLC: Area under the Cumulative Lift Curve</p>
+</li>
+</ul>
+<h4 id="expected-value-and-cost-curve">Expected Value and Cost Curve</h4>
+<ul>
+<li>Expected Value: Help to choose/change a decision threshold based on cost-benefit analysis
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/expected_value.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</li>
+<li>Cost Curve : Used in unequal cost scenario. The area measures the expected total costs.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/auc_costs_curve.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</li>
+</ul>
+<h4 id="metrics-for-different-applications">Metrics for Different Applications</h4>
+<ul>
+<li>Ranking (Without Threshold)
+<ul>
+<li>AUC, AULC</li>
+</ul>
+</li>
+<li>Classification
+<ul>
+<li>Accuracy, Precision, Recall, F-Score, Lift</li>
+</ul>
+</li>
+<li>Density Estimaion (Numerical)
+<ul>
+<li>Regression: MSE, MAE</li>
+<li>Classification Related: Surrogate Losses</li>
+</ul>
+</li>
+</ul>
+<h2 id="model-selection-a-name--modelselectiona">Model Selection <a name = "ModelSelection"></a></h2>
+<h3 id="rules">Rules:</h3>
+<ul>
+<li>Using the same training and validation data for each hypothesis being tested</li>
+<li>Given a tie (statistical or exact), choose the simpler model, i.e. first std error rule</li>
+<li>Use this methodology for all design decisions:
+<ul>
+<li>Hyper-Parameter Selection</li>
+<li>Feature Selection</li>
+<li>Model Selection</li>
+</ul>
+</li>
+</ul>
+<h3 id="hyper-parameter-selection">Hyper-Parameter Selection</h3>
+<h4 id="hyper-parameter-examples">Hyper-Parameter Examples</h4>
+<ul>
+<li>Linear Regression &amp; Logistic Regression
+<ul>
+<li>L1 / L2: regularization strategy</li>
+<li>C: regularization weight</li>
+</ul>
+</li>
+<li>Support Vector Machine
+<ul>
+<li>C: regularization weight</li>
+<li>Kernel and its associated hyperparameters</li>
+</ul>
+</li>
+<li>Decision Tree
+<ul>
+<li>MaxDepth, Min LeafSize, MinSplitSize</li>
+</ul>
+</li>
+<li>Random Forest
+<ul>
+<li>Tree Related</li>
+<li>Forest Related</li>
+</ul>
+</li>
+</ul>
+<h4 id="method">Method</h4>
+<ul>
+<li>
+<p>Training-Validation-Test</p>
+<ol>
+<li>Training: the training data is used to find the optimal function given the model structure (i.e., fixed algorithm, feature set)</li>
+<li>Validation: the validation data is used to evaluate the loss/risk for a given model configuration. The configuration with the besr loss/risk is selected as the final model</li>
+<li>Test: test data is not used for any parameter or model selection. It is only used as a generalization measure.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/model_selection_process.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</li>
+</ol>
+<ul>
+<li>Note: Training error is our empirical risk and the test set error is our approximation of expected risk.</li>
+<li>Note (for training part): Empirical risk minimization (ERM) is a principle in statistical learning theory which defines a family of learning algorithms and is used to give theoretical bounds on their performance. The core idea is that we cannot know exactly how well an algorithm will work in practice (the true &ldquo;risk&rdquo;) because we don&rsquo;t know the true distribution of data that the algorithm will work on, but we can instead measure its performance on a known set of training data (the &ldquo;empirical&rdquo; risk).</li>
+<li>Note (for validation part): Rules to Choose Hyper-Parameter in Validation Set:
+<ul>
+<li>Max / Min (validation loss metric)</li>
+<li>One-StdError Rule: The one first hits: Max / Min (validation loss metric) - One-StdError</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Cross Validation
+&ldquo;Recycle&rdquo; data using k-fold cross validation as validation scheme.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/model_selection_process_cv.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<ul>
+<li>Apply to: SVM, DT&hellip;</li>
+<li>Note: Random Forest use out-of-bag error rather than error of cross-validation set (RF Based on Bootstraping)</li>
+<li>Note: Training error is our empirical risk and the test set error is our approximation of expected risk.</li>
+</ul>
+</li>
+<li>
+<p>Nested Cross Validation</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/nested_cross_validation.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<ul>
+<li>Apply to: Time Series Data
+Note: How to split?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/splitting_schemes.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="how-to-choose-candidate-for-hyper-parameters">How to Choose Candidate for Hyper-Parameters</h4>
+<ol>
+<li>Range &amp; Numers in this Range
+<ul>
+<li>Should span the range of low to high model complexity</li>
+</ul>
+</li>
+<li>Method:
+<ul>
+<li>Grid Search</li>
+<li>Random Search</li>
+</ul>
+</li>
+</ol>
+<h3 id="feature-selection">Feature Selection</h3>
+<h4 id="why-perform-feature-selection">Why Perform Feature Selection?</h4>
+<ul>
+<li>Lower expected model variance (less likely to be overfitting)</li>
+<li>Easier interpretation of models</li>
+<li>Better scalability, both in training and deployment</li>
+<li>Lower maintenance costs</li>
+</ul>
+<h4 id="common-feature-selection-techniques">Common Feature Selection Techniques</h4>
+<ol>
+<li>Naive Subset Selection
+<ul>
+<li>Pre-filter features based on <strong>heuristics</strong></li>
+<li>Choose top k based on:
+<ul>
+<li>Mutual information, Correlation with Y</li>
+<li>Has the most coverage / Support (non-na, non-zero percentage)</li>
+</ul>
+</li>
+<li>Application: bag-of-words selections (long-tail)</li>
+</ul>
+</li>
+<li>Best Subset Selection
+<ul>
+<li>Choose the best subst of k features from p features</li>
+<li>High complexity</li>
+</ul>
+</li>
+<li>Stepwise Selection
+<ul>
+<li>Incrementally add/subtract features until model performance stabilizes</li>
+<li>Greedy: incrementally select the kth feature which improve the performance most</li>
+<li>k could also be seen as hyper-parameters
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/stepwise_feature_selection.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</li>
+</ul>
+</li>
+<li>Dimensionality reduction
+<ul>
+<li>take rank-k approximations of X using SVD</li>
+</ul>
+</li>
+<li>Regularization
+<ul>
+<li>Implicit, based on adding complexity penalties to loss function</li>
+</ul>
+</li>
+</ol>
+<h3 id="alogrithm-selection">Alogrithm Selection</h3>
+<h4 id="types-of-alogrithms">Types of Alogrithms</h4>
+<ol>
+<li>Classic &amp; Simplier Methods:
+<ul>
+<li>Linear Regression</li>
+<li>Decision Tree</li>
+<li>Naive Bayes</li>
+<li>K-Nearest Neighbors</li>
+</ul>
+</li>
+<li>Black Box but Powerful Methods
+<ul>
+<li>Random Forests</li>
+<li>SVM with Kernel</li>
+<li>Neural Networks</li>
+</ul>
+</li>
+</ol>
+<h4 id="methods-for-model-selection">Methods for Model Selection</h4>
+<ol>
+<li>First, consider all constraints of the problem, and choose alogrithms under constraints.
+<ul>
+<li>Too little data (generally an estimation problem)</li>
+<li>Too much data (generally a computation problem)</li>
+<li>The assumptions of candidate alogrithms</li>
+<li>Easy to interpret the model?</li>
+<li>Does scalability matter? (training time, predicting time, model storage)</li>
+</ul>
+</li>
+<li>Try all of them, choose best performer based on evaluation metric</li>
+</ol>
+<h4 id="be-agile-iterate">Be Agile: iterate</h4>
+<ol>
+<li>Start with a resonable baseline model: the one with little effort but sophisticated enough to capture signals.</li>
+<li>Iterate towards better models: measure cost-revenue at every iteration
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/agile_iteration.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</li>
+</ol>
+          </div>
+
+          
+
+
+
+          
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Previous</div>
+    <a href="/Di_Portfolio/notes/machine-learning/machine-learning-models/" rel="next">Introduction to ML Models</a>
+  </div>
+  
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          <p>Last updated on Jan 1, 2021</p>
+
+          
+
+
+
+
+
+          
+
+
+
+
+          
+
+
+  
+  
+
+
+
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+
+  
+
+
+
+  
+
+  
+  <p class="powered-by">
+    
+      <a href="/Di_Portfolio/privacy/">Privacy Policy</a>
+    
+    
+       &middot; 
+      <a href="/Di_Portfolio/terms/">Terms</a>
+    
+  </p>
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+  </div>
+
+  <div class="page-footer">
+    
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    <script src="/Di_Portfolio/js/vendor-bundle.min.b73dfaac3b6499dc997741748a7c3fe2.js"></script>
+
+    
+    
+    
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/latex.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/SQL.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/Tableau.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/AWS.min.js" crossorigin="anonymous"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js" integrity="sha512-I7w3ZdSFzw5j3jU3ZkNikBNeIrl3i+hEuEdwNmqUJvwNcaBUNcijnP2gd9DtGlgVYDplfjGoD8vTNsID+lCjqg==" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/Di_Portfolio/en/js/wowchemy.min.72338405899cd64422baba3a060ad924.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>

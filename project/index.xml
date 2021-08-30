@@ -5,7 +5,7 @@
     <link>https://hedygithub.github.io/Di_Portfolio/project/</link>
       <atom:link href="https://hedygithub.github.io/Di_Portfolio/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 10 May 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://hedygithub.github.io/Di_Portfolio/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
       <title>Projects</title>
@@ -13,23 +13,126 @@
     </image>
     
     <item>
-      <title>External Project</title>
-      <link>https://hedygithub.github.io/Di_Portfolio/project/external-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://hedygithub.github.io/Di_Portfolio/project/external-project/</guid>
+      <title>Self/Semi-Supervised Image Classification</title>
+      <link>https://hedygithub.github.io/Di_Portfolio/project/ssl-image-classfication/</link>
+      <pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://hedygithub.github.io/Di_Portfolio/project/ssl-image-classfication/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;At the end of Deep Learning course taught by Yann LeCun, a final project was assigned. We competed with your classmates on who can find the best self/semi-supervised learning algorithm. We were given a dataset with a large amount of unlabeled data and a small amount of labeled data to train the model, and the final performance of the model will be evaluated on a hidden test set and posted on a public leaderboard.&lt;/p&gt;
+&lt;h2 id=&#34;data-overview&#34;&gt;Data Overview&lt;/h2&gt;
+&lt;p&gt;The dataset, of color images of size 96×96, that has the following structure&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;512, 000 unlabeled images.&lt;/li&gt;
+&lt;li&gt;25, 600 labeled training images (32 examples, 800 classes).&lt;/li&gt;
+&lt;li&gt;25, 600 labeled validation images (32 examples, 800 classes).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Overall, a hidden test set was kept, which will be used to test
+the models. In order to improve performance when training our model with
+few labeled samples, we need to make use of the unlabeled data.&lt;/p&gt;
+&lt;h2 id=&#34;our-presentation&#34;&gt;Our presentation&lt;/h2&gt;
+&lt;p&gt;Semi-supervised learning incorporates both labeled and unlabeled data points in the training process and aims to use leverage the unlabeled data to learn features that would support modeling process when using the training data for specific tasks.
+The community has gained popularity as the amount of data required and cost of obtaining human labeled data increased over the years.
+This video explains the modeling and thought process our team had when tackling the given task, and achieved 50% accuracy on the test set with CoMatch.&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/NADnN1kq28w&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;all-presentations-at-deep-learning-spring-21-class&#34;&gt;All presentations at Deep Learning Spring 21 Class&lt;/h2&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/MJfnamMFylo&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Pyspark Song Recommender System</title>
+      <link>https://hedygithub.github.io/Di_Portfolio/project/recommender-system/</link>
+      <pubDate>Fri, 30 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>https://hedygithub.github.io/Di_Portfolio/project/recommender-system/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;In this final project, we apply big data tools to build and evaluate a collaborative filter based recommender system. The dataset we
+work on is the Million Song Dataset (MSD), with implicit user feedback. Using Spark’s alternating least squares (ALS) method, we
+learn latent factor representations for users and items, and recommend for users in the test set. Thereafter, we compare our model to
+single-machine implementation, and the baseline for the extension.&lt;/p&gt;
+&lt;h2 id=&#34;data-overview&#34;&gt;Data Overview&lt;/h2&gt;
+&lt;p&gt;Data used for the basic recommendation system consists of the train, validation, and test parquet files. Each row in the files consists of
+user_id (string), count (int), and track_id (string). There are 49,824,519 records for the train, 135,938 records for the validation, and
+1,368,430 for the test. Additional data including metadata, features, genre tags, lyric, are also used for the extension&lt;/p&gt;
+&lt;h2 id=&#34;report&#34;&gt;Report&lt;/h2&gt;
+&lt;p&gt;Please review the report pdf for details.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Aspect-Based Sentiment Analysis</title>
+      <link>https://hedygithub.github.io/Di_Portfolio/project/nlp-absa/</link>
+      <pubDate>Thu, 10 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://hedygithub.github.io/Di_Portfolio/project/nlp-absa/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Sentiment Analysis (SA) aims at classifying the sentiment polarity towards a whole sentence.
+Compared to SA, Aspect-Based Sentiment Analysis (ABSA) is designed to identify certain target aspects of an entity and classify sentiment polarities towards these aspects.
+For example, in the sentence “Food is pretty good but the service is horrific”, there are two target aspects: “food” and “service” with opposite sentiment polarities.
+Further, there are two variants of the ABSA problem. One is Aspect-Target Sentiment Classification (ATSC), which is our example before and also the focus of our paper.&lt;/p&gt;
+&lt;p&gt;In recent years, neutral networks have been developed and largely improved the ABSA performance by learning target-context relationships.
+Afterwards, the pre-trained language model shows powerful representation ability.
+Its application to many down-stream tasks, including ABSA, has achieved many accomplishments.
+Lately, domainspecific post-trained BERT shows better performance on this topic. In this paper, we experiment with LSTM-based and BERT-based models for aspect-based sentiment analysis, and apply these models to a more challenging dataset than the commonly used benchmark. We then conduct a robust error analysis for our models to analyze reasons for erroneous classifications.&lt;/p&gt;
+&lt;h2 id=&#34;our-presentation&#34;&gt;Our presentation&lt;/h2&gt;
+&lt;p&gt;We implement LSTM-based models (LSTM and ATAE-LSTM) and BERT-based models (vanilla BERT-base and BERT-ADA) on a challenging dataset called MAMS, which contains multiple aspects with multiple sentiment polarities.
+We also conduct error analysis through the method of input reduction. The experiment results show that BERT-ADA outperforms other models on MAMS dataset. You can find more details in the video.&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/jacbPazwgZ4&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Predict number of views for videos on Bilibili</title>
+      <link>https://hedygithub.github.io/Di_Portfolio/project/bilibili/</link>
+      <pubDate>Thu, 10 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://hedygithub.github.io/Di_Portfolio/project/bilibili/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Internal Project</title>
-      <link>https://hedygithub.github.io/Di_Portfolio/project/internal-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://hedygithub.github.io/Di_Portfolio/project/internal-project/</guid>
-      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
-&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
-&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
-&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
-&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+      <title>Bear Maps</title>
+      <link>https://hedygithub.github.io/Di_Portfolio/project/map/</link>
+      <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://hedygithub.github.io/Di_Portfolio/project/map/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;This project was originally created by former TA Alan Yao (now at AirBNB). It is a web mapping application inspired by Alan’s time on the Google Maps team and the OpenStreetMap project, from which the tile images and map feature data was downloaded.&lt;/p&gt;
+&lt;p&gt;In this project, you’ll build the “smart” pieces of a web-browser based Google Maps clone. This is typical in real world programming, where you don’t have the luxury and freedom that comes with starting from totally blank files. As a result, you’ll need to spend some time getting to know the provided code, so that you can complete the parts that need completing. The map should have these functions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Zoom in and zoom out the map.&lt;/li&gt;
+&lt;li&gt;Autocomplete the search input. Prefix is the partial query string. The prefix will be a cleaned name for search that is: (1) everything except characters A through Z and spaces removed, and (2) everything is lowercased. The method will return a list containing the full names of all locations whose cleaned names share the cleaned query string prefix, without duplicates.&lt;/li&gt;
+&lt;li&gt;Search. The user should also be able to search for places of interest. Implementing this method correctly will allow the web application to draw red dot markers on each of the matching locations.&lt;/li&gt;
+&lt;li&gt;Turn-by-turn navigation. As an extra-challanging feature, you can use your A* search route to generate a sequence of navigation instructions that the server will then be able to display when you create a route.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;By the end of this project, with some extra work, you can even host your application as a publicly available web app. More details will be provided at the end of this spec.&lt;/p&gt;
+&lt;p&gt;More details about the project can be found: &lt;a href=&#34;https://sp19.datastructur.es/materials/proj/proj2c/proj2c#introduction&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://sp19.datastructur.es/materials/proj/proj2c/proj2c#introduction&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;my-publicly-available-web-app-on-heroku&#34;&gt;My Publicly Available Web App on Heroku&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://bearmaps-cs61b-sp19-hedy.herokuapp.com/map.html#lat=37.871826&amp;amp;lon=-122.260086&amp;amp;depth=3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;http://bearmaps-cs61b-sp19-hedy.herokuapp.com/map.html#lat=37.871826&amp;lon=-122.260086&amp;depth=3&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Suggested Store Locations</title>
+      <link>https://hedygithub.github.io/Di_Portfolio/project/store-location/</link>
+      <pubDate>Mon, 30 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://hedygithub.github.io/Di_Portfolio/project/store-location/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;With the fast development of China consumer market, a global fast-fashion brand plans to enter China market. And they have chosen Shanghai, the most fashion city in China, as their first entered city. At first stage, the company plans to open about 8~10 stores, based on their judgments of the market and company’s financial ability.&lt;/li&gt;
+&lt;li&gt;The business problem is where are the best locations to open those stores. Without considering rent costs, the company should open a store in the most popular place, where bring stores high traffic and target customers. Therefore, we must know where the company’s target customer mostly like to visit. It can be breakdown to two questions. First, how to find the place our target customers like to visit. In this case, our customer is those 18~30 girls who like fashion clothes, shoes, and bags. Second, where is the most popular places among all the places they like.&lt;/li&gt;
+&lt;li&gt;Another problem is to decide the store opening sequence and the possible shopping malls near those optimal locations to open those stores. Maybe we can rank those popular places according to their popularity and open store according to this rank. And we can find nearby shopping malls as a list to give the company’s mangers as a reference.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;report&#34;&gt;Report&lt;/h2&gt;
+&lt;p&gt;Suggested new store locations using K-means and DBSCAN clustering with parsed geolocation data including public transport locations, E-commerce delivery addresses, competitors&#39; store locations. More details in the pdf and slides.&lt;/p&gt;
 </description>
     </item>
     

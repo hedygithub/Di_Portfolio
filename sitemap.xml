@@ -2,6 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://hedygithub.github.io/Di_Portfolio/notes/machine-learning/machine-learning-models/</loc>
+    <lastmod>2021-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hedygithub.github.io/Di_Portfolio/notes/machine-learning/machine-learning-general/</loc>
+    <lastmod>2021-01-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://hedygithub.github.io/Di_Portfolio/courses/example/python/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
   </url><url>
@@ -20,53 +26,65 @@
     <loc>https://hedygithub.github.io/Di_Portfolio/event/</loc>
     <lastmod>2030-06-01T13:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://hedygithub.github.io/Di_Portfolio/tag/deep-learning/</loc>
+    <lastmod>2021-05-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hedygithub.github.io/Di_Portfolio/project/</loc>
+    <lastmod>2021-05-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hedygithub.github.io/Di_Portfolio/project/ssl-image-classfication/</loc>
+    <lastmod>2021-05-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hedygithub.github.io/Di_Portfolio/tags/</loc>
+    <lastmod>2021-05-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hedygithub.github.io/Di_Portfolio/tag/machine-learning/</loc>
+    <lastmod>2021-04-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hedygithub.github.io/Di_Portfolio/project/recommender-system/</loc>
+    <lastmod>2021-04-30T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://hedygithub.github.io/Di_Portfolio/courses/</loc>
     <lastmod>2021-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://hedygithub.github.io/Di_Portfolio/courses/example/</loc>
     <lastmod>2021-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hedygithub.github.io/Di_Portfolio/tag/academic/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+    <loc>https://hedygithub.github.io/Di_Portfolio/notes/</loc>
+    <lastmod>2021-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hedygithub.github.io/Di_Portfolio/authors/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+    <loc>https://hedygithub.github.io/Di_Portfolio/notes/machine-learning/</loc>
+    <lastmod>2021-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hedygithub.github.io/Di_Portfolio/categories/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+    <loc>https://hedygithub.github.io/Di_Portfolio/project/nlp-absa/</loc>
+    <lastmod>2020-12-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hedygithub.github.io/Di_Portfolio/category/demo/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+    <loc>https://hedygithub.github.io/Di_Portfolio/tag/nlp/</loc>
+    <lastmod>2020-12-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hedygithub.github.io/Di_Portfolio/author/nelson-bighetti/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+    <loc>https://hedygithub.github.io/Di_Portfolio/project/bilibili/</loc>
+    <lastmod>2020-12-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hedygithub.github.io/Di_Portfolio/post/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+    <loc>https://hedygithub.github.io/Di_Portfolio/project/map/</loc>
+    <lastmod>2020-07-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hedygithub.github.io/Di_Portfolio/tags/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+    <loc>https://hedygithub.github.io/Di_Portfolio/tag/other/</loc>
+    <lastmod>2020-07-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hedygithub.github.io/Di_Portfolio/post/getting-started/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://hedygithub.github.io/Di_Portfolio/author/%E5%90%B3%E6%81%A9%E9%81%94/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://hedygithub.github.io/Di_Portfolio/tag/%E5%BC%80%E6%BA%90/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://hedygithub.github.io/Di_Portfolio/category/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://hedygithub.github.io/Di_Portfolio/post/writing-technical-content/</loc>
-    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
+    <loc>https://hedygithub.github.io/Di_Portfolio/project/store-location/</loc>
+    <lastmod>2020-03-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://hedygithub.github.io/Di_Portfolio/publication-type/3/</loc>
     <lastmod>2019-04-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://hedygithub.github.io/Di_Portfolio/publication/preprint/</loc>
     <lastmod>2019-04-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hedygithub.github.io/Di_Portfolio/authors/</loc>
+    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://hedygithub.github.io/Di_Portfolio/author/di-he/</loc>
+    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://hedygithub.github.io/Di_Portfolio/publication_types/</loc>
     <lastmod>2019-04-07T00:00:00+00:00</lastmod>
@@ -80,6 +98,9 @@
     <loc>https://hedygithub.github.io/Di_Portfolio/post/jupyter/</loc>
     <lastmod>2019-09-05T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://hedygithub.github.io/Di_Portfolio/post/</loc>
+    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://hedygithub.github.io/Di_Portfolio/slides/</loc>
     <lastmod>2019-02-05T00:00:00+00:00</lastmod>
   </url><url>
@@ -91,21 +112,6 @@
   </url><url>
     <loc>https://hedygithub.github.io/Di_Portfolio/terms/</loc>
     <lastmod>2018-06-28T00:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://hedygithub.github.io/Di_Portfolio/tag/deep-learning/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://hedygithub.github.io/Di_Portfolio/tag/demo/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://hedygithub.github.io/Di_Portfolio/project/external-project/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://hedygithub.github.io/Di_Portfolio/project/internal-project/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://hedygithub.github.io/Di_Portfolio/project/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://hedygithub.github.io/Di_Portfolio/publication-type/2/</loc>
     <lastmod>2015-09-01T00:00:00+00:00</lastmod>
@@ -123,5 +129,9 @@
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://hedygithub.github.io/Di_Portfolio/admin/</loc>
+  </url><url>
+    <loc>https://hedygithub.github.io/Di_Portfolio/categories/</loc>
+  </url><url>
+    <loc>https://hedygithub.github.io/Di_Portfolio/projects/</loc>
   </url>
 </urlset>
