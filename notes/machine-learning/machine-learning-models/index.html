@@ -730,6 +730,7 @@
         <li><a href="#kernel-trick">Kernel Trick</a></li>
         <li><a href="#advantagesdisadvantages-3">Advantages/Disadvantages</a></li>
         <li><a href="#extension-the-representaion-theory-and-kernelization">Extension: The Representaion Theory and Kernelization</a></li>
+        <li><a href="#extension-mutli-class">Extension: Mutli-Class</a></li>
       </ul>
     </li>
     <li><a href="#decision-tree-a-namedecisiontreea">Decision Tree <a name="DecisionTree"></a></a>
@@ -760,7 +761,7 @@
         <li><a href="#question-part-1">Question Part</a></li>
       </ul>
     </li>
-    <li><a href="#boosting-adaboost--gradient-descent-a-nameboostinga">Boosting, AdaBoost &amp; Gradient Descent <a name="Boosting"></a></a>
+    <li><a href="#boosting-adaboost--gradient-boosting-a-nameboostinga">Boosting, AdaBoost &amp; Gradient Boosting <a name="Boosting"></a></a>
       <ul>
         <li><a href="#boosting">Boosting</a></li>
         <li><a href="#adaboost">AdaBoost</a></li>
@@ -777,13 +778,19 @@
         <li><a href="#extension-approximate-neatest-neighbors">Extension: Approximate Neatest Neighbors</a></li>
       </ul>
     </li>
-    <li><a href="#clustering-overview--k-means-a-namekmeansa">Clustering Overview &amp; K-Means <a name="kmeans"></a></a>
+    <li><a href="#clustering-overview-a-nameclusteringa">Clustering Overview <a name="clustering"></a></a>
       <ul>
         <li><a href="#clustering">Clustering</a></li>
         <li><a href="#types-of-clustering">Types of Clustering</a></li>
+      </ul>
+    </li>
+    <li><a href="#k-means--gmma-namekmeansa">K-Means &amp; GMM<a name="kmeans"></a></a>
+      <ul>
         <li><a href="#k-means-pseudocode">K-Means Pseudocode</a></li>
         <li><a href="#discussion-of-k-means-similiar-to-knn">Discussion of K-Means (similiar to KNN)</a></li>
         <li><a href="#evaluation">Evaluation</a></li>
+        <li><a href="#extension-em">Extension: EM</a></li>
+        <li><a href="#extension-gmm">Extension: GMM</a></li>
       </ul>
     </li>
   </ul>
@@ -1874,6 +1881,70 @@ The beta distribution is the conjugate prior of the Binomial distribution. It is
     <div class="w-100" ><img src="../images/kernelization.png" alt="" loading="lazy" data-zoomable /></div>
   </div></figure>
 </p>
+<h3 id="extension-mutli-class">Extension: Mutli-Class</h3>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/multi_class_repre.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/multi_class_seperate.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/multi_class_general.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
 <h2 id="decision-tree-a-namedecisiontreea">Decision Tree <a name="DecisionTree"></a></h2>
 <ul>
 <li>Decision tree uses a tree structure to specify sequences of decisions and consequences. It breaks down a dataset into smaller subsets based on the important features.</li>
@@ -2254,7 +2325,7 @@ The above computation is made for each feature in each tree and then averaged ov
 <li>The traditional procedure requires one to have a test statistic that satisfies particular assumptions in order to achieve valid results, and this is largely dependent on the experimental design. The traditional approach also uses theory to tell what the sampling distribution should look like, but the results fall apart if the assumptions of the theory are not met.</li>
 <li>The bootstrapping method, on the other hand, takes the original sample data and then resamples it to create many [simulated] samples. This approach does not rely on the theory since the sampling distribution can simply be observed, and one does not have to worry about any assumptions. This technique allows for accurate estimates of statistics, which is crucial when using data to make decisions.</li>
 </ul>
-<h2 id="boosting-adaboost--gradient-descent-a-nameboostinga">Boosting, AdaBoost &amp; Gradient Descent <a name="Boosting"></a></h2>
+<h2 id="boosting-adaboost--gradient-boosting-a-nameboostinga">Boosting, AdaBoost &amp; Gradient Boosting <a name="Boosting"></a></h2>
 <h3 id="boosting">Boosting</h3>
 <p>Boosting works in a similar way with bagging, except that the trees are grown sequentially: each tree is grown using information from previously grown trees. Boosting does not involve bootstrap sampling; instead each tree is ﬁt on a modiﬁed version of the original data set.
 
@@ -2348,6 +2419,27 @@ The above computation is made for each feature in each tree and then averaged ov
 <p>It depends on the model, could be square loss or exponential loss. For any loss function, we can derive a gradient boosting algorithm. Absolute loss and Huber loss are more robust to outliers than square loss.</p>
 <h4 id="inroduction-of-gradient">Inroduction of &ldquo;gradient&rdquo;</h4>
 <p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/gradient_boosting_gradient.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+
+
 
 
 
@@ -2550,7 +2642,7 @@ You don&rsquo;t have to use a single terminal node. Nearby splits (regions) can 
   </div></figure>
 </li>
 </ul>
-<h2 id="clustering-overview--k-means-a-namekmeansa">Clustering Overview &amp; K-Means <a name="kmeans"></a></h2>
+<h2 id="clustering-overview-a-nameclusteringa">Clustering Overview <a name="clustering"></a></h2>
 <h3 id="clustering">Clustering</h3>
 <p>Clustering is a set of techniques used to partition data into groups, or clusters. Clusters are loosely defined as groups of data objects that are more similar to other objects in their cluster than they are to data objects in other clusters. In practice, clustering helps identify two qualities of data:</p>
 <ul>
@@ -2616,6 +2708,7 @@ You don&rsquo;t have to use a single terminal node. Nearby splits (regions) can 
 <li>They’re computationally expensive with respect to algorithm complexity.</li>
 <li>They’re sensitive to noise and outliers.</li>
 </ul>
+<h2 id="k-means--gmma-namekmeansa">K-Means &amp; GMM<a name="kmeans"></a></h2>
 <h3 id="k-means-pseudocode">K-Means Pseudocode</h3>
 <p>
 
@@ -2718,6 +2811,113 @@ You don&rsquo;t have to use a single terminal node. Nearby splits (regions) can 
 <ul>
 <li>Do the clusters have meaningful and useful interpretations</li>
 </ul>
+<h3 id="extension-em">Extension: EM</h3>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/em_1.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/em_2.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/em_3.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h3 id="extension-gmm">Extension: GMM</h3>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/gmm_1.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="../images/gmm_2.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
           </div>
 
           

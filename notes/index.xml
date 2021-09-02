@@ -5,12 +5,20 @@
     <link>https://hedygithub.github.io/Di_Portfolio/notes/</link>
       <atom:link href="https://hedygithub.github.io/Di_Portfolio/notes/index.xml" rel="self" type="application/rss+xml" />
     <description>Notes</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 24 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 24 Aug 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://hedygithub.github.io/Di_Portfolio/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
       <title>Notes</title>
       <link>https://hedygithub.github.io/Di_Portfolio/notes/</link>
     </image>
+    
+    <item>
+      <title>Deep Learning</title>
+      <link>https://hedygithub.github.io/Di_Portfolio/notes/deep-learning/</link>
+      <pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://hedygithub.github.io/Di_Portfolio/notes/deep-learning/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
