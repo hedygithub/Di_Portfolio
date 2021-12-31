@@ -5,12 +5,27 @@
     <link>https://hedygithub.github.io/Di_Portfolio/tag/machine-learning/</link>
       <atom:link href="https://hedygithub.github.io/Di_Portfolio/tag/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     <description>Machine Learning</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 30 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 06 Dec 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://hedygithub.github.io/Di_Portfolio/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
       <title>Machine Learning</title>
       <link>https://hedygithub.github.io/Di_Portfolio/tag/machine-learning/</link>
     </image>
+    
+    <item>
+      <title>Anomaly Detection for Web Traffic Data</title>
+      <link>https://hedygithub.github.io/Di_Portfolio/project/ts-ad/</link>
+      <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://hedygithub.github.io/Di_Portfolio/project/ts-ad/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Web traffic is the amount of data sent and received by visitors to a website. The web traffic data can be represented by a time series data to record activities on the website. Abnormal data points in this web traffic refers to abnormal changes of such traffic. Such abnormal change can be caused by network attacks. Thus, it is crucial to detect anomalies accurately and efficiently in the time series web traffic to further identity network attacks and prevent consequential economic and social losses.&lt;/p&gt;
+&lt;p&gt;In this project, we experimented with both ARIMA and C-LSTM to perform anomaly detection on web traffic data, where ARIMA is a typical statistical approach and C-LSTM is an innovated deep learning structure applied on time series data. Experiments demonstrate that ARIMA performs differently on different types of anomalies as ARIMA focuses only on local data rather than a full picture. On the other hand, C-LSTM outperforms CNN alone, reaching a recall rate of 79.1%.&lt;/p&gt;
+&lt;h2 id=&#34;data-overview&#34;&gt;Data Overview&lt;/h2&gt;
+&lt;p&gt;The dataset that we use is extracted from the Yahoo Webscope program. The dataset consists of four benchmarks: A1Benchmark, A2Benchmark, A3Benchmark and A4Benchmark.  We choose to use A1Benchmark because it is based on real production of traffic data to some of the Yahoo web servers. The class A1 contains 67 files and each file has a different distribution of traffic. And there is exactly 94,866 datapoints in A1 file and 1669 of them are anomalies, which occupy 1.76%. Note that the timestamps of the A1Benchmark are replaced by integers with the increment of 1, where each datapoint represents one-hour worth of data. Even though an exact timestamp is not available, it is still possible to identify the daily and weekly seasonality given that each datapoint represents one-hour worth of data.&lt;/p&gt;
+&lt;h2 id=&#34;report&#34;&gt;Report&lt;/h2&gt;
+&lt;p&gt;Please review the report pdf for details.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Pyspark Song Recommender System</title>

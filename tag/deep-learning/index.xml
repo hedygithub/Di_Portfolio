@@ -5,12 +5,28 @@
     <link>https://hedygithub.github.io/Di_Portfolio/tag/deep-learning/</link>
       <atom:link href="https://hedygithub.github.io/Di_Portfolio/tag/deep-learning/index.xml" rel="self" type="application/rss+xml" />
     <description>Deep Learning</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 10 May 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 30 Dec 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://hedygithub.github.io/Di_Portfolio/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
       <title>Deep Learning</title>
       <link>https://hedygithub.github.io/Di_Portfolio/tag/deep-learning/</link>
     </image>
+    
+    <item>
+      <title>Question Answering on Long Context</title>
+      <link>https://hedygithub.github.io/Di_Portfolio/project/nlp-qa/</link>
+      <pubDate>Thu, 30 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://hedygithub.github.io/Di_Portfolio/project/nlp-qa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Portfolio Management Using Reinforcement Learning</title>
+      <link>https://hedygithub.github.io/Di_Portfolio/project/rl-pm/</link>
+      <pubDate>Wed, 08 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://hedygithub.github.io/Di_Portfolio/project/rl-pm/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Self/Semi-Supervised Image Classification</title>
@@ -42,6 +58,31 @@ This video explains the modeling and thought process our team had when tackling 
 
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
   &lt;iframe src=&#34;https://www.youtube.com/embed/MJfnamMFylo&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Aspect-Based Sentiment Analysis</title>
+      <link>https://hedygithub.github.io/Di_Portfolio/project/nlp-absa/</link>
+      <pubDate>Thu, 10 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://hedygithub.github.io/Di_Portfolio/project/nlp-absa/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Sentiment Analysis (SA) aims at classifying the sentiment polarity towards a whole sentence.
+Compared to SA, Aspect-Based Sentiment Analysis (ABSA) is designed to identify certain target aspects of an entity and classify sentiment polarities towards these aspects.
+For example, in the sentence “Food is pretty good but the service is horrific”, there are two target aspects: “food” and “service” with opposite sentiment polarities.
+Further, there are two variants of the ABSA problem. One is Aspect-Target Sentiment Classification (ATSC), which is our example before and also the focus of our paper.&lt;/p&gt;
+&lt;p&gt;In recent years, neutral networks have been developed and largely improved the ABSA performance by learning target-context relationships.
+Afterwards, the pre-trained language model shows powerful representation ability.
+Its application to many down-stream tasks, including ABSA, has achieved many accomplishments.
+Lately, domainspecific post-trained BERT shows better performance on this topic. In this paper, we experiment with LSTM-based and BERT-based models for aspect-based sentiment analysis, and apply these models to a more challenging dataset than the commonly used benchmark. We then conduct a robust error analysis for our models to analyze reasons for erroneous classifications.&lt;/p&gt;
+&lt;h2 id=&#34;our-presentation&#34;&gt;Our presentation&lt;/h2&gt;
+&lt;p&gt;We implement LSTM-based models (LSTM and ATAE-LSTM) and BERT-based models (vanilla BERT-base and BERT-ADA) on a challenging dataset called MAMS, which contains multiple aspects with multiple sentiment polarities.
+We also conduct error analysis through the method of input reduction. The experiment results show that BERT-ADA outperforms other models on MAMS dataset. You can find more details in the video.&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/jacbPazwgZ4&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
 </description>
